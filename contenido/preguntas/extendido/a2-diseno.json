@@ -1,0 +1,274 @@
+{
+  "temario": "egel-plus-isoft-2026",
+  "area": "A2",
+  "banco": "extendido",
+  "estimulos": [],
+  "preguntas": [
+    {
+      "id": "A2-101", "subarea": "2.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Un banco quiere poder cambiar su motor de base de datos sin afectar las pantallas del sistema. El arquitecto separa presentación, lógica de negocio y acceso a datos, y establece que cada nivel solo use servicios del nivel inmediato inferior.",
+      "pregunta": "¿Qué estilo arquitectónico se aplica?",
+      "opciones": [
+        { "texto": "Arquitectura en capas", "explicacion": "Correcta. Las capas organizan el sistema en niveles de abstracción con dependencias hacia abajo; cambiar la capa de datos no afecta a la de presentación si las interfaces se mantienen." },
+        { "texto": "Pizarra (blackboard)", "explicacion": "Incorrecta. En la pizarra, varios componentes especializados colaboran sobre un almacén común de conocimiento; es típica de sistemas de IA." },
+        { "texto": "Peer-to-peer", "explicacion": "Incorrecta. En P2P los nodos son pares que actúan como cliente y servidor a la vez; no hay niveles de abstracción." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Niveles» + «cada uno usa solo al de abajo» + «cambiar uno sin afectar a los demás» → capas.",
+      "conceptos": ["Arquitectura en capas", "Separación de intereses"],
+      "fuentes": [{ "recurso": "cervantes-2016" }, { "recurso": "sommerville-2016", "detalle": "Cap. 6 Diseño arquitectónico" }]
+    },
+    {
+      "id": "A2-102", "subarea": "2.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Una aplicación web de ventas muestra los mismos datos en una tabla, una gráfica y un tablero. Cuando cambian los datos, las tres vistas se actualizan, y un componente intermedio recibe las acciones del usuario y decide qué hacer con el modelo.",
+      "pregunta": "¿Qué patrón arquitectónico describe la situación?",
+      "opciones": [
+        { "texto": "Tuberías y filtros", "explicacion": "Incorrecta. Tuberías y filtros transforma datos en etapas secuenciales; no separa vistas de un mismo modelo." },
+        { "texto": "Modelo-Vista-Controlador (MVC)", "explicacion": "Correcta. MVC separa los datos y las reglas (modelo), su presentación (vistas, varias por modelo) y el manejo de las entradas (controlador)." },
+        { "texto": "Broker", "explicacion": "Incorrecta. El broker coordina la comunicación entre componentes distribuidos (por ejemplo, middleware de mensajes); no organiza vistas de interfaz." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Varias vistas del mismo dato» + «componente que procesa las entradas» → MVC.",
+      "conceptos": ["MVC", "Patrones arquitectónicos"],
+      "fuentes": [{ "recurso": "ingeno-2018" }]
+    },
+    {
+      "id": "A2-103", "subarea": "2.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Un sistema procesa bitácoras de servidores en etapas: leer → limpiar → anonimizar datos personales → agregar por hora → guardar. Cada etapa debe poder reemplazarse o reordenarse sin modificar las demás.",
+      "pregunta": "¿Qué estilo arquitectónico es el más adecuado?",
+      "opciones": [
+        { "texto": "Microkernel", "explicacion": "Incorrecta. El microkernel extiende un núcleo mínimo con plugins; no organiza un flujo secuencial de transformaciones." },
+        { "texto": "Publicador-suscriptor", "explicacion": "Incorrecta. Pub/sub difunde eventos a muchos consumidores independientes; aquí los datos pasan por una cadena ordenada de transformaciones." },
+        { "texto": "Tuberías y filtros", "explicacion": "Correcta. Cada filtro recibe datos, los transforma y los envía por una tubería al siguiente; los filtros son independientes y combinables, como en ETL o en los comandos de Unix." }
+      ],
+      "correcta": 2,
+      "estrategia": "Flujo secuencial de transformaciones de datos → tuberías y filtros.",
+      "conceptos": ["Tuberías y filtros", "ETL"],
+      "fuentes": [{ "recurso": "ingeno-2018" }]
+    },
+    {
+      "id": "A2-104", "subarea": "2.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Un editor de código ofrece un núcleo mínimo (abrir, editar y guardar archivos) y permite que terceros agreguen soporte para nuevos lenguajes, depuradores y temas sin modificar el núcleo.",
+      "pregunta": "¿Qué patrón arquitectónico se usa?",
+      "opciones": [
+        { "texto": "Microkernel (arquitectura de plugins)", "explicacion": "Correcta. Un núcleo estable expone puntos de extensión y los plugins agregan funcionalidad de forma independiente. Lo usan los IDE y los navegadores." },
+        { "texto": "Arquitectura en capas", "explicacion": "Incorrecta. Las capas organizan responsabilidades en niveles, pero no están pensadas para extensiones de terceros que se conectan al sistema." },
+        { "texto": "Repositorio", "explicacion": "Incorrecta. El repositorio centraliza datos compartidos por varios componentes; no describe un núcleo extensible." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Núcleo + extensiones de terceros» → microkernel o plugins.",
+      "conceptos": ["Microkernel", "Extensibilidad"],
+      "fuentes": [{ "recurso": "ingeno-2018" }]
+    },
+    {
+      "id": "A2-105", "subarea": "2.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Para cumplir una disponibilidad de 99.99 %, el arquitecto diseña un monitor que envía mensajes periódicos a cada instancia del servicio de pagos; si una instancia no responde, el tráfico se dirige automáticamente a una réplica en espera.",
+      "pregunta": "¿Qué tácticas arquitectónicas se aplican?",
+      "opciones": [
+        { "texto": "Caché y concurrencia (tácticas de desempeño)", "explicacion": "Incorrecta. Estas tácticas reducen el tiempo de respuesta; no detectan fallas ni conmutan instancias." },
+        { "texto": "Heartbeat y redundancia con conmutación (tácticas de disponibilidad)", "explicacion": "Correcta. El heartbeat detecta fallas mediante mensajes periódicos, y la redundancia con failover recupera el servicio. Son tácticas clásicas de disponibilidad." },
+        { "texto": "Autenticación y cifrado (tácticas de seguridad)", "explicacion": "Incorrecta. Protegen contra accesos no autorizados; no tienen que ver con detectar caídas." }
+      ],
+      "correcta": 1,
+      "estrategia": "Relaciona el atributo de calidad con sus tácticas: detectar, recuperar o prevenir fallas → disponibilidad.",
+      "conceptos": ["Tácticas arquitectónicas", "Disponibilidad", "Heartbeat"],
+      "fuentes": [{ "recurso": "bass-2021", "detalle": "Availability tactics" }]
+    },
+    {
+      "id": "A2-106", "subarea": "2.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Con el modelo C4, el arquitecto elabora un diagrama que muestra la aplicación web, la API, la base de datos y la app móvil del sistema, con las tecnologías de cada una y cómo se comunican, pero sin detallar clases ni componentes internos.",
+      "pregunta": "¿Qué nivel del modelo C4 elaboró?",
+      "opciones": [
+        { "texto": "Contexto (nivel 1)", "explicacion": "Incorrecta. El diagrama de contexto muestra el sistema como una sola caja con sus usuarios y los sistemas externos." },
+        { "texto": "Código (nivel 4)", "explicacion": "Incorrecta. El nivel de código muestra clases o tablas; es el más detallado." },
+        { "texto": "Contenedores (nivel 2)", "explicacion": "Correcta. Los contenedores son las unidades desplegables o ejecutables (apps, APIs, bases de datos), con sus tecnologías y las comunicaciones entre ellas." }
+      ],
+      "correcta": 2,
+      "estrategia": "C4 = Contexto → Contenedores → Componentes → Código, de lo general a lo particular.",
+      "conceptos": ["Modelo C4", "Documentación de arquitectura"],
+      "fuentes": [{ "recurso": "brown-2020" }]
+    },
+    {
+      "id": "A2-107", "subarea": "2.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En una aplicación debe existir un único objeto de configuración, compartido por todos los módulos y accesible desde cualquier parte del código, que se crea la primera vez que se solicita.",
+      "pregunta": "¿Qué patrón de diseño se aplica?",
+      "opciones": [
+        { "texto": "Singleton", "explicacion": "Correcta. Singleton garantiza una sola instancia de una clase y le da un punto de acceso global, a menudo con inicialización diferida." },
+        { "texto": "Prototype", "explicacion": "Incorrecta. Prototype crea objetos clonando una instancia existente; produce varias instancias, no una sola." },
+        { "texto": "Builder", "explicacion": "Incorrecta. Builder construye objetos complejos paso a paso; no limita el número de instancias." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Una sola instancia» + «acceso global» → Singleton.",
+      "conceptos": ["Singleton", "Patrones creacionales"],
+      "fuentes": [{ "recurso": "patrones-upsam" }]
+    },
+    {
+      "id": "A2-108", "subarea": "2.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Cuando cambia el estado de un pedido, los módulos de correo, inventario y bitácora deben enterarse. Cada módulo se registra como interesado, y el pedido no conoce las clases concretas de quienes lo observan.",
+      "pregunta": "¿Qué patrón de diseño se aplica?",
+      "opciones": [
+        { "texto": "Command", "explicacion": "Incorrecta. Command encapsula una petición como objeto (para colas, deshacer o bitácoras); no notifica cambios de estado a varios interesados." },
+        { "texto": "Observer", "explicacion": "Correcta. Observer define una dependencia uno a muchos: cuando el sujeto cambia, notifica a todos los observadores registrados sin acoplarse a sus clases concretas." },
+        { "texto": "Composite", "explicacion": "Incorrecta. Composite organiza objetos en estructuras de árbol parte-todo." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Notificar a varios interesados cuando algo cambia» → Observer (a nivel arquitectónico, pub/sub).",
+      "conceptos": ["Observer", "Patrones de comportamiento"],
+      "fuentes": [{ "recurso": "larman-uml-patrones" }]
+    },
+    {
+      "id": "A2-109", "subarea": "2.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "El subsistema de facturación tiene 12 clases (validación, cálculo de impuestos, generación de XML, timbrado, envío por correo). Los demás módulos solo necesitan una operación sencilla: emitirFactura(venta).",
+      "pregunta": "¿Qué patrón de diseño conviene aplicar?",
+      "opciones": [
+        { "texto": "Adapter", "explicacion": "Incorrecta. Adapter convierte una interfaz incompatible en la que espera el cliente; aquí no hay incompatibilidad, sino complejidad." },
+        { "texto": "Proxy", "explicacion": "Incorrecta. Proxy controla el acceso a un objeto (carga diferida, seguridad, acceso remoto) con la misma interfaz que el objeto real." },
+        { "texto": "Facade", "explicacion": "Correcta. Facade ofrece una interfaz unificada y simple para un subsistema complejo, lo que reduce el acoplamiento de los clientes con sus clases internas." }
+      ],
+      "correcta": 2,
+      "estrategia": "Adapter = traducir una interfaz; Facade = simplificar un subsistema; Proxy = controlar el acceso; Decorator = agregar comportamiento.",
+      "conceptos": ["Facade", "Patrones estructurales"],
+      "fuentes": [{ "recurso": "patrones-upsam" }]
+    },
+    {
+      "id": "A2-110", "subarea": "2.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Un sistema de restaurantes maneja un menú con categorías que contienen subcategorías y platillos. El código debe calcular el precio total o mostrar cualquier elemento sin distinguir si es un platillo individual o una categoría completa.",
+      "pregunta": "¿Qué patrón de diseño se ajusta mejor?",
+      "opciones": [
+        { "texto": "Composite", "explicacion": "Correcta. Composite compone objetos en estructuras de árbol y permite tratar de forma uniforme a los objetos individuales (hojas) y a las composiciones." },
+        { "texto": "Decorator", "explicacion": "Incorrecta. Decorator envuelve un objeto para agregarle responsabilidades; no modela jerarquías parte-todo." },
+        { "texto": "Iterator", "explicacion": "Incorrecta. Iterator recorre una colección sin exponer su representación; podría ayudar a recorrer el menú, pero no resuelve el trato uniforme de hojas y contenedores." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Jerarquía o árbol» + «tratar igual una hoja y un grupo» → Composite.",
+      "conceptos": ["Composite", "Estructuras de árbol"],
+      "fuentes": [{ "recurso": "patrones-upsam" }]
+    },
+    {
+      "id": "A2-111", "subarea": "2.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "La clase «Reporte» consulta la base de datos, calcula totales, genera el PDF y lo envía por correo. Cada vez que cambia el formato del PDF o el servidor de correo hay que modificarla y volver a probar todo.",
+      "pregunta": "¿Qué principio SOLID se viola principalmente?",
+      "opciones": [
+        { "texto": "Sustitución de Liskov", "explicacion": "Incorrecta. Liskov exige que las subclases puedan usarse en lugar de sus clases base sin alterar el comportamiento; aquí no hay herencia involucrada." },
+        { "texto": "Responsabilidad única", "explicacion": "Correcta. Una clase debe tener una sola razón para cambiar. Reporte tiene al menos cuatro (datos, cálculo, formato, envío); conviene separarlas." },
+        { "texto": "Segregación de interfaces", "explicacion": "Incorrecta. Este principio evita obligar a los clientes a depender de interfaces con métodos que no usan." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Varias razones para cambiar una misma clase» = violación de la responsabilidad única (y baja cohesión).",
+      "conceptos": ["SOLID", "Responsabilidad única", "Cohesión"],
+      "fuentes": [{ "recurso": "pascual-2019" }]
+    },
+    {
+      "id": "A2-112", "subarea": "2.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Una tabla tiene la estructura:\nEmpleado(id_emp, nombre, id_depto, nombre_depto)\ncon llave primaria id_emp. El atributo «nombre_depto» depende de «id_depto», y este depende de id_emp.",
+      "pregunta": "¿Qué forma normal incumple la tabla?",
+      "opciones": [
+        { "texto": "Primera forma normal", "explicacion": "Incorrecta. Los atributos son atómicos y no hay grupos repetidos." },
+        { "texto": "Segunda forma normal", "explicacion": "Incorrecta. La llave primaria es simple (id_emp), así que no puede haber dependencias parciales." },
+        { "texto": "Tercera forma normal", "explicacion": "Correcta. Hay una dependencia transitiva (id_emp → id_depto → nombre_depto). La solución es crear Departamento(id_depto, nombre_depto)." }
+      ],
+      "correcta": 2,
+      "estrategia": "Con llave simple, la 2FN se cumple automáticamente; busca dependencias entre atributos no clave (transitivas) para la 3FN.",
+      "conceptos": ["Normalización", "3FN", "Dependencia transitiva"],
+      "fuentes": [{ "recurso": "date-2006" }]
+    },
+    {
+      "id": "A2-113", "subarea": "2.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En una universidad, un alumno puede inscribirse en muchos cursos y un curso tiene muchos alumnos. Además, se debe guardar la calificación que obtiene cada alumno en cada curso.",
+      "pregunta": "¿Cuál es el diseño relacional correcto?",
+      "opciones": [
+        { "texto": "Crear la tabla Inscripcion(id_alumno, id_curso, calificacion) con llave primaria compuesta y llaves foráneas a Alumno y Curso", "explicacion": "Correcta. Una relación N:M se resuelve con una tabla intermedia; los atributos de la relación (calificación) se guardan en ella." },
+        { "texto": "Agregar el campo id_curso a la tabla Alumno", "explicacion": "Incorrecta. Así cada alumno solo podría tener un curso: el diseño representaría una relación 1:N, no N:M." },
+        { "texto": "Guardar en Curso un campo de texto con la lista de alumnos separados por comas", "explicacion": "Incorrecta. Viola la 1FN (valores no atómicos) e impide guardar la calificación por alumno o consultarla con eficiencia." }
+      ],
+      "correcta": 0,
+      "estrategia": "Cardinalidad N:M → tabla intermedia (asociativa) con las dos FK y los atributos propios de la relación.",
+      "conceptos": ["Cardinalidad", "Relación N:M", "Modelo E-R"],
+      "fuentes": [{ "recurso": "harrington-2016" }, { "recurso": "video-cardinalidad" }]
+    },
+    {
+      "id": "A2-114", "subarea": "2.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En el diagrama de clases de una tienda, un Pedido tiene varias LineaPedido. Las líneas no tienen sentido sin su pedido y, si se elimina el pedido, se eliminan también sus líneas.",
+      "pregunta": "¿Qué relación UML debe usarse entre Pedido y LineaPedido?",
+      "opciones": [
+        { "texto": "Agregación", "explicacion": "Incorrecta. La agregación (rombo vacío) indica una relación todo-parte débil: las partes pueden existir de forma independiente del todo." },
+        { "texto": "Composición", "explicacion": "Correcta. La composición (rombo relleno) indica una relación todo-parte fuerte: las partes pertenecen a un solo todo y su ciclo de vida depende de él." },
+        { "texto": "Dependencia", "explicacion": "Incorrecta. La dependencia (flecha punteada) indica que una clase usa a otra temporalmente, por ejemplo como parámetro." }
+      ],
+      "correcta": 1,
+      "estrategia": "Pregúntate si la parte existe sin el todo: no → composición; sí → agregación.",
+      "conceptos": ["UML", "Composición", "Agregación"],
+      "fuentes": [{ "recurso": "uml-manual-referencia" }, { "recurso": "alarcon-doo-uml" }]
+    },
+    {
+      "id": "A2-115", "subarea": "2.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Un sistema de pagos replica su base de datos en un segundo centro de datos. La regla de negocio dice que ninguna transacción confirmada al cliente puede perderse si cae el servidor principal, aunque eso aumente el tiempo de respuesta.",
+      "pregunta": "¿Qué tipo de replicación debe usarse?",
+      "opciones": [
+        { "texto": "Replicación asíncrona", "explicacion": "Incorrecta. En la asíncrona, el principal confirma antes de que la réplica reciba el cambio; si cae en ese intervalo, la transacción confirmada se pierde." },
+        { "texto": "Fragmentación vertical", "explicacion": "Incorrecta. La fragmentación divide los datos; no crea copias para tolerar la caída del servidor." },
+        { "texto": "Replicación síncrona", "explicacion": "Correcta. La transacción solo se confirma cuando la réplica también la registró, así que no se pierde nada. El costo es una mayor latencia." }
+      ],
+      "correcta": 2,
+      "estrategia": "Cero pérdida de datos → síncrona (más latencia). Baja latencia con posible pérdida mínima → asíncrona.",
+      "conceptos": ["Replicación síncrona", "Replicación asíncrona", "BD distribuidas"],
+      "fuentes": [{ "recurso": "meier-2019" }]
+    },
+    {
+      "id": "A2-116", "subarea": "2.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En el formulario de reservación de una aerolínea, el usuario puede elegir una fecha de regreso anterior a la de salida; solo al presionar «Buscar» aparece un mensaje de error.",
+      "pregunta": "¿Qué heurística de Nielsen debe atenderse para mejorar el diseño?",
+      "opciones": [
+        { "texto": "Prevención de errores", "explicacion": "Correcta. Es mejor diseñar para que el error no ocurra; por ejemplo, deshabilitar en el calendario de regreso las fechas anteriores a la salida." },
+        { "texto": "Diseño estético y minimalista", "explicacion": "Incorrecta. Esta heurística busca eliminar información irrelevante; el problema aquí es que se permite una entrada inválida." },
+        { "texto": "Reconocer antes que recordar", "explicacion": "Incorrecta. Esta heurística busca reducir la carga de memoria mostrando opciones; no trata de evitar combinaciones inválidas." }
+      ],
+      "correcta": 0,
+      "estrategia": "Si se puede impedir el error con restricciones o valores por defecto → prevención de errores. Si el error ya ocurrió y se trata de explicarlo → ayudar a reconocer, diagnosticar y recuperarse de errores.",
+      "conceptos": ["Heurísticas de Nielsen", "Prevención de errores"],
+      "fuentes": [{ "recurso": "nielsen-2024" }]
+    },
+    {
+      "id": "A2-117", "subarea": "2.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En el punto de venta de una ferretería, el cajero debe teclear de memoria el código de 8 dígitos de cada producto, en lugar de buscarlo por nombre o elegirlo de una lista.",
+      "pregunta": "¿Qué heurística de Nielsen se incumple?",
+      "opciones": [
+        { "texto": "Control y libertad del usuario", "explicacion": "Incorrecta. Se refiere a poder deshacer, cancelar o salir de estados no deseados." },
+        { "texto": "Reconocer en lugar de recordar", "explicacion": "Correcta. La interfaz debe minimizar la carga de memoria del usuario haciendo visibles los objetos, las acciones y las opciones (búsqueda, autocompletado, listas)." },
+        { "texto": "Ayuda y documentación", "explicacion": "Incorrecta. Un manual con los códigos no resolvería el problema de fondo: obligar a memorizar." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Teclear de memoria» → reconocer en lugar de recordar.",
+      "conceptos": ["Heurísticas de Nielsen", "Carga cognitiva"],
+      "fuentes": [{ "recurso": "nielsen-2024" }]
+    },
+    {
+      "id": "A2-118", "subarea": "2.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En un sistema administrativo, el botón «Guardar» aparece a la derecha y en azul en algunas pantallas, y a la izquierda y en gris en otras; en algunas pantallas dice «Aceptar» y en otras «Enviar» para la misma acción.",
+      "pregunta": "¿Qué heurística de Nielsen se incumple?",
+      "opciones": [
+        { "texto": "Visibilidad del estado del sistema", "explicacion": "Incorrecta. Se refiere a informar al usuario de lo que ocurre (progreso, confirmaciones)." },
+        { "texto": "Flexibilidad y eficiencia de uso", "explicacion": "Incorrecta. Se refiere a atajos y personalización para usuarios expertos." },
+        { "texto": "Consistencia y estándares", "explicacion": "Correcta. Los usuarios no deberían preguntarse si palabras, colores o posiciones distintas significan lo mismo; hay que seguir convenciones internas y de la plataforma." }
+      ],
+      "correcta": 2,
+      "estrategia": "Misma acción con apariencia o nombre diferentes → consistencia y estándares.",
+      "conceptos": ["Heurísticas de Nielsen", "Consistencia"],
+      "fuentes": [{ "recurso": "nielsen-2024" }]
+    },
+    {
+      "id": "A2-119", "subarea": "2.3", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Una pizzería lanza una skill de voz. El asistente entiende «ordenar pizza», pero no reconoce frases como «quiero pedir una pizza grande de pepperoni», que son las que más usan los clientes.",
+      "pregunta": "¿Qué mejora de diseño de la interfaz de voz es la adecuada?",
+      "opciones": [
+        { "texto": "Agregar más enunciados de ejemplo (utterances) a la intención y definir slots para el tamaño y el ingrediente", "explicacion": "Correcta. El reconocimiento de intenciones mejora con enunciados variados y slots que capturan parámetros («grande», «pepperoni») dentro de la frase." },
+        { "texto": "Pedir a los clientes que memoricen el comando exacto", "explicacion": "Incorrecta. Traslada el problema al usuario y contradice el principio de reconocer en lugar de recordar." },
+        { "texto": "Subir el volumen de la respuesta del asistente", "explicacion": "Incorrecta. El problema está en la comprensión de la entrada, no en la salida de audio." }
+      ],
+      "correcta": 0,
+      "estrategia": "En interfaces de voz: intención (lo que quiere el usuario), enunciados (las formas de decirlo) y slots (los datos variables).",
+      "conceptos": ["Interfaces de voz", "Intents", "Utterances", "Slots"],
+      "fuentes": [{ "recurso": "sweeting-2017" }]
+    }
+  ]
+}

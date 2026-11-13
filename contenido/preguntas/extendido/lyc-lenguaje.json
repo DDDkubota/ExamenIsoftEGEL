@@ -1,0 +1,515 @@
+{
+  "temario": "egel-plus-isoft-2026",
+  "area": "LYC",
+  "banco": "extendido",
+  "estimulos": [
+    {
+      "id": "LYC-E2",
+      "titulo": "Reseña: «Algoritmos en la plaza pública»",
+      "nota": "Texto original de práctica (ámbito de estudio, reseña académica). La obra reseñada es ficticia.",
+      "texto": "Ramírez Olvera, Lucía (2025). Algoritmos en la plaza pública. Tecnología, gobierno y ciudadanía en México. Ciudad de México: Ediciones Umbral, 214 p.\n\nEn Algoritmos en la plaza pública, la investigadora Lucía Ramírez Olvera examina cómo los gobiernos municipales de México han incorporado sistemas automatizados para decidir sobre trámites cotidianos: la asignación de becas, la programación de inspecciones sanitarias o la priorización de los baches por reparar. El libro se divide en tres partes. La primera reconstruye la historia de la digitalización administrativa desde los años noventa; la segunda presenta cuatro estudios de caso basados en entrevistas con funcionarios y usuarios; la tercera propone un conjunto de principios para auditar estos sistemas.\n\nEl mayor acierto de la obra está en los estudios de caso. La autora muestra, con datos obtenidos mediante solicitudes de transparencia, que un sistema de asignación de becas excluía sistemáticamente a estudiantes de comunidades rurales porque exigía un comprobante de domicilio digital que muchas familias no podían obtener. El ejemplo ilustra la tesis central del libro: un algoritmo no es neutral, pues reproduce las decisiones —y los descuidos— de quienes lo diseñan.\n\nLa tercera parte, en cambio, resulta menos convincente. Los principios de auditoría que se proponen son pertinentes, pero se enuncian de forma general y no se acompañan de ejemplos de aplicación, lo que dificulta imaginar cómo los llevaría a la práctica un ayuntamiento con pocos recursos.\n\nAun con esa limitación, se trata de una lectura recomendable para estudiantes de ingeniería y de administración pública, quienes encontrarán en ella una invitación a pensar el software como una decisión política y no solo técnica."
+    },
+    {
+      "id": "LYC-E3",
+      "titulo": "Efecto de la práctica espaciada en exámenes de egreso",
+      "nota": "Texto original de práctica (ámbito de estudio, artículo de investigación). El estudio y sus datos son ficticios.",
+      "texto": "Resumen. Se analizó si distribuir la práctica de reactivos a lo largo del tiempo, en lugar de concentrarla en los días previos al examen, mejora el desempeño en una prueba de egreso. Participaron 180 estudiantes de último semestre de tres universidades públicas, asignados al azar a dos grupos. El grupo de práctica espaciada (n = 90) respondió 20 reactivos tres veces por semana durante ocho semanas; el grupo de práctica concentrada (n = 90) respondió la misma cantidad total de reactivos en las dos semanas anteriores al examen. Ambos grupos recibieron retroalimentación con la explicación de cada respuesta.\n\nResultados. El grupo de práctica espaciada obtuvo un promedio de 71 % de aciertos en el examen final, frente a 63 % del grupo de práctica concentrada; la diferencia fue estadísticamente significativa. Además, 82 % de los participantes del grupo espaciado reportó menor ansiedad en la semana previa al examen.\n\nDiscusión. Los resultados coinciden con estudios previos sobre el llamado efecto de espaciamiento: el olvido parcial entre sesiones obliga a reconstruir el conocimiento, lo que fortalece su retención. Entre las limitaciones del estudio se encuentran que solo se evaluaron tres instituciones y que no se controló el tiempo de estudio fuera de las sesiones. Se recomienda que los programas de preparación para exámenes de egreso distribuyan la práctica a lo largo del semestre."
+    },
+    {
+      "id": "LYC-E4",
+      "titulo": "La última versión",
+      "nota": "Cuento original de práctica (ámbito literario).",
+      "texto": "Durante treinta años, don Ernesto arregló relojes en un local tan angosto que los clientes tenían que entrar de lado. Cuando su nieta Mariana terminó la carrera de Ingeniería de Software, le prometió hacerle una página web «para que el negocio no se muera».\n\nMariana trabajó tres fines de semana. Puso fotografías, un mapa, un formulario para agendar reparaciones y hasta un sistema que enviaba recordatorios por mensaje. El día que la mostró, don Ernesto se acomodó los lentes, deslizó el dedo por la pantalla con la misma lentitud con que movía las manecillas y no dijo nada.\n\n—¿No te gusta, abuelo?\n\n—Está muy bonita —respondió—. Pero aquí nadie agenda. La gente llega, platica, me cuenta de quién era el reloj. Eso no cabe en tu formulario.\n\nMariana volvió a su casa molesta. Esa noche, sin embargo, abrió el código y borró el formulario. En su lugar escribió una sección que se llamaba «Historias»: cada cliente podía dejar unas líneas sobre el reloj que llevaba a reparar.\n\nUn mes después, la página tenía más de doscientas historias. Un reloj de bolsillo que había cruzado la frontera dos veces, un despertador que sonó la mañana en que nació un hijo, un reloj de pared que nadie se atrevía a tirar. Muchos de los que las escribían terminaban entrando al local, de lado, para conocer al relojero.\n\nDon Ernesto nunca aprendió a usar la página. Pero cada tarde le pedía a Mariana que le leyera las historias nuevas, y escuchaba con los ojos cerrados, como si escuchara un reloj."
+    },
+    {
+      "id": "LYC-E5",
+      "titulo": "Elogio de la lentitud",
+      "nota": "Fragmento de ensayo original de práctica (ámbito literario).",
+      "texto": "Vivimos orgullosos de la velocidad. Medimos el valor de una computadora por sus gigahertz, el de una conexión por sus megabits y el de una persona, cada vez más, por la rapidez con que responde un mensaje. Nadie presume de haber tardado.\n\nY, sin embargo, casi todo lo que vale la pena ha sido lento. Una amistad no se descarga: se construye en tardes que no parecían importantes. Un buen programa tampoco se escribe de un tirón: se lee, se borra, se vuelve a pensar. Quien haya corregido un error a las tres de la mañana sabe que la prisa es la madre de casi todos los errores, y que la solución llega, muchas veces, al día siguiente, en la regadera, cuando ya no se la buscaba.\n\nNo propongo renunciar a la velocidad de las máquinas. Sería absurdo pedirle a un servidor que piense con calma. Propongo, más bien, no confundir su ritmo con el nuestro. Las máquinas son rápidas para que nosotros podamos ser lentos en lo que importa: en entender un problema antes de resolverlo, en escuchar a quien nos lo plantea, en dudar de la primera respuesta.\n\nLa lentitud no es pereza. La pereza evita el trabajo; la lentitud lo honra."
+    },
+    {
+      "id": "LYC-E6",
+      "titulo": "Suspenderán el servicio de agua en 14 colonias por mantenimiento",
+      "nota": "Nota informativa original de práctica (ámbito de participación social). Ficticia.",
+      "texto": "San Jerónimo, 9 de marzo de 2027. El organismo municipal de agua potable informó que el próximo sábado 13 de marzo, de las 6:00 a las 22:00 horas, se suspenderá el suministro en 14 colonias del sector oriente debido a trabajos de mantenimiento en la planta de bombeo Los Pinos.\n\nDe acuerdo con el comunicado, los trabajos consisten en sustituir dos bombas que tienen más de 25 años de uso y que en los últimos meses presentaron fallas frecuentes. La inversión, de 8.5 millones de pesos, proviene de un fondo estatal para infraestructura hidráulica.\n\nEl director del organismo, Raúl Medina, explicó que se eligió un sábado porque es el día de menor consumo en la zona, y recomendó a la población almacenar agua con anticipación y evitar el uso de lavadoras durante la jornada. Señaló que el servicio se restablecerá de manera gradual, por lo que algunas colonias podrían tardar hasta 12 horas adicionales en recuperar la presión normal.\n\nPara atender emergencias, se habilitarán seis pipas que darán servicio gratuito a hospitales, escuelas y estancias de adultos mayores. La lista de colonias afectadas puede consultarse en el sitio web del organismo y en sus redes sociales."
+    }
+  ],
+  "preguntas": [
+    { "id": "LYC-101", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E1", "nivel": "satisfactorio", "base": "Lea la convocatoria y responda.",
+      "pregunta": "¿En qué lugar se realizará el hackatón?",
+      "opciones": [
+        { "texto": "En el sitio web de la Dirección de Innovación", "explicacion": "Incorrecta. En el sitio web se hace el registro (base 4), no el evento." },
+        { "texto": "En la Biblioteca Central", "explicacion": "Correcta. La base 5 indica que el hackatón se realizará los días 20 y 21 de febrero en la Biblioteca Central." },
+        { "texto": "En una dependencia municipal", "explicacion": "Incorrecta. La dependencia municipal es donde el equipo ganador implementará su solución." }
+      ],
+      "correcta": 1, "estrategia": "Distingue los distintos lugares y momentos que menciona el texto (registro, evento, premio) y localiza el que se pregunta.",
+      "conceptos": ["Identificación de información"], "fuentes": [{ "recurso": "guia-oficial-2026", "detalle": "2.6.2" }] },
+    { "id": "LYC-102", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E1", "nivel": "satisfactorio", "base": "Lea la convocatoria y responda.",
+      "pregunta": "¿Qué se infiere de la frase «No se aceptarán registros extemporáneos»?",
+      "opciones": [
+        { "texto": "Que los equipos podrán registrarse el mismo día del evento", "explicacion": "Incorrecta. Contradice la frase: el registro cierra el 5 de febrero." },
+        { "texto": "Que se aceptarán registros sin fecha límite", "explicacion": "Incorrecta. La base fija un periodo de registro definido." },
+        { "texto": "Que no podrán participar los equipos que se registren después del 5 de febrero", "explicacion": "Correcta. «Extemporáneo» significa fuera del tiempo establecido; los registros posteriores al cierre no serán válidos." }
+      ],
+      "correcta": 2, "estrategia": "Para interpretar una frase, sustituye las palabras clave por su significado («extemporáneo» = fuera de plazo) y relaciónala con los datos del texto.",
+      "conceptos": ["Interpretación", "Inferencia"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+
+    { "id": "LYC-103", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E2", "nivel": "satisfactorio", "base": "Lea la reseña y responda.",
+      "pregunta": "Según la reseña, ¿qué requisito provocaba que se excluyera a estudiantes de comunidades rurales?",
+      "opciones": [
+        { "texto": "Un comprobante de domicilio digital", "explicacion": "Correcta. El texto señala que el sistema exigía un comprobante de domicilio digital que muchas familias no podían obtener." },
+        { "texto": "Un promedio mínimo de calificaciones", "explicacion": "Incorrecta. La reseña no menciona un promedio." },
+        { "texto": "Una entrevista presencial con funcionarios", "explicacion": "Incorrecta. Las entrevistas fueron el método de investigación de la autora, no un requisito de la beca." }
+      ],
+      "correcta": 0, "estrategia": "Localiza en el texto la palabra «excluía» y lee la causa que le sigue («porque…»).",
+      "conceptos": ["Identificación de información", "Reseña académica"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-104", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E2", "nivel": "satisfactorio", "base": "Lea la reseña y responda.",
+      "pregunta": "¿Cómo obtuvo la autora los datos del caso de las becas?",
+      "opciones": [
+        { "texto": "Mediante encuestas a los estudiantes afectados", "explicacion": "Incorrecta. El texto no menciona encuestas." },
+        { "texto": "Mediante solicitudes de transparencia", "explicacion": "Correcta. La reseña dice que la autora muestra el caso «con datos obtenidos mediante solicitudes de transparencia»." },
+        { "texto": "Mediante bases de datos de un instituto de estadística", "explicacion": "Incorrecta. No se menciona ninguna institución estadística." }
+      ],
+      "correcta": 1, "estrategia": "Cuando la pregunta pide un dato concreto, no infieras: busca la expresión literal en el texto.",
+      "conceptos": ["Identificación de información"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-105", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E2", "nivel": "satisfactorio", "base": "Lea la reseña y responda.",
+      "pregunta": "¿Cuál es la tesis central del libro reseñado?",
+      "opciones": [
+        { "texto": "Los municipios deberían dejar de usar sistemas automatizados", "explicacion": "Incorrecta. La autora propone auditarlos, no eliminarlos." },
+        { "texto": "La digitalización administrativa en México comenzó en los años noventa", "explicacion": "Incorrecta. Es un dato de la primera parte del libro, no su tesis." },
+        { "texto": "Un algoritmo no es neutral, porque reproduce las decisiones y los descuidos de quienes lo diseñan", "explicacion": "Correcta. La reseña la presenta explícitamente como la tesis central que ilustra el caso de las becas." }
+      ],
+      "correcta": 2, "estrategia": "La tesis es la idea que todo el texto busca demostrar; los datos históricos o los ejemplos la apoyan, pero no la sustituyen.",
+      "conceptos": ["Interpretación", "Tesis"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-106", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E2", "nivel": "sobresaliente", "base": "Lea la reseña y responda.",
+      "pregunta": "¿Qué valoración hace la reseñista de la tercera parte del libro?",
+      "opciones": [
+        { "texto": "Que los principios propuestos son pertinentes, pero demasiado generales y sin ejemplos de aplicación", "explicacion": "Correcta. La reseña reconoce su pertinencia, pero critica que se enuncien de forma general, sin mostrar cómo aplicarlos." },
+        { "texto": "Que es la parte más sólida y convincente del libro", "explicacion": "Incorrecta. La reseñista dice lo contrario: es «menos convincente»; el mayor acierto son los estudios de caso." },
+        { "texto": "Que no tiene relación con el tema del libro", "explicacion": "Incorrecta. La reseña no la considera ajena al tema; critica su falta de concreción." }
+      ],
+      "correcta": 0, "estrategia": "En una reseña, identifica las marcas de valoración («el mayor acierto», «en cambio», «menos convincente») y a qué parte de la obra se refieren.",
+      "conceptos": ["Interpretación", "Valoración crítica"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-107", "subarea": "L1.3", "formato": "multirreactivo", "estimulo": "LYC-E2", "nivel": "sobresaliente", "base": "Lea la reseña y responda.",
+      "pregunta": "¿Con qué propósito incluye la reseñista el ejemplo del sistema de becas?",
+      "opciones": [
+        { "texto": "Para criticar que la autora haya usado pocos datos", "explicacion": "Incorrecta. La reseñista presenta los casos como el mayor acierto, no como una debilidad." },
+        { "texto": "Para ilustrar con un caso concreto la tesis central del libro", "explicacion": "Correcta. El texto dice explícitamente que «el ejemplo ilustra la tesis central»: lo usa para hacer tangible una idea abstracta." },
+        { "texto": "Para describir la estructura del libro", "explicacion": "Incorrecta. La estructura se describe en el primer párrafo (tres partes)." }
+      ],
+      "correcta": 1, "estrategia": "Evaluar la forma es preguntarse para qué sirve un elemento en el texto: ¿ilustra, argumenta, contrasta o describe?",
+      "conceptos": ["Evaluación de la forma y el contenido"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+
+    { "id": "LYC-108", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E3", "nivel": "satisfactorio", "base": "Lea el texto y responda.",
+      "pregunta": "¿Cuántos estudiantes integraron el grupo de práctica espaciada?",
+      "opciones": [
+        { "texto": "180", "explicacion": "Incorrecta. Es el total de participantes de ambos grupos." },
+        { "texto": "20", "explicacion": "Incorrecta. Es el número de reactivos de cada sesión." },
+        { "texto": "90", "explicacion": "Correcta. El texto indica «grupo de práctica espaciada (n = 90)»." }
+      ],
+      "correcta": 2, "estrategia": "En los textos con muchas cifras, identifica a qué se refiere cada una antes de elegir.",
+      "conceptos": ["Identificación de información", "Artículo de investigación"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-109", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E3", "nivel": "satisfactorio", "base": "Lea el texto y responda.",
+      "pregunta": "¿Qué porcentaje de aciertos obtuvo en promedio el grupo de práctica concentrada?",
+      "opciones": [
+        { "texto": "63 %", "explicacion": "Correcta. Los resultados señalan 71 % para el grupo espaciado «frente a 63 % del grupo de práctica concentrada»." },
+        { "texto": "71 %", "explicacion": "Incorrecta. Es el promedio del grupo de práctica espaciada." },
+        { "texto": "82 %", "explicacion": "Incorrecta. Es el porcentaje del grupo espaciado que reportó menor ansiedad." }
+      ],
+      "correcta": 0, "estrategia": "Fíjate en a qué grupo se asocia cada cifra; los distractores suelen ser cifras reales del texto asignadas al grupo equivocado.",
+      "conceptos": ["Identificación de información"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-110", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E3", "nivel": "satisfactorio", "base": "Lea el texto y responda.",
+      "pregunta": "¿Cuál enunciado resume mejor el hallazgo principal del estudio?",
+      "opciones": [
+        { "texto": "La retroalimentación es innecesaria para preparar un examen", "explicacion": "Incorrecta. Ambos grupos recibieron retroalimentación, así que el estudio no evalúa su necesidad." },
+        { "texto": "Distribuir la práctica a lo largo del tiempo produjo mejor desempeño que concentrarla antes del examen", "explicacion": "Correcta. Es la comparación central del estudio y su resultado significativo (71 % frente a 63 %)." },
+        { "texto": "Los estudiantes de universidades públicas tienen un mejor desempeño", "explicacion": "Incorrecta. Todos los participantes provenían de universidades públicas; no se compararon tipos de institución." }
+      ],
+      "correcta": 1, "estrategia": "Para resumir un artículo de investigación, combina la pregunta del estudio con su resultado principal.",
+      "conceptos": ["Interpretación", "Idea central"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-111", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E3", "nivel": "sobresaliente", "base": "Lea el texto y responda.",
+      "pregunta": "Según la discusión, ¿qué explica el efecto de espaciamiento?",
+      "opciones": [
+        { "texto": "Que el grupo espaciado respondió más reactivos en total", "explicacion": "Incorrecta. Ambos grupos respondieron la misma cantidad total de reactivos." },
+        { "texto": "Que el grupo espaciado recibió explicaciones y el otro no", "explicacion": "Incorrecta. Ambos grupos recibieron retroalimentación." },
+        { "texto": "Que el olvido parcial entre sesiones obliga a reconstruir el conocimiento, lo que fortalece su retención", "explicacion": "Correcta. Es la explicación que ofrecen los autores en la discusión." }
+      ],
+      "correcta": 2, "estrategia": "Descarta las explicaciones que el propio diseño del estudio controló (misma cantidad, misma retroalimentación).",
+      "conceptos": ["Interpretación", "Relación causa-efecto"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-112", "subarea": "L1.3", "formato": "multirreactivo", "estimulo": "LYC-E3", "nivel": "sobresaliente", "base": "Lea el texto y responda.",
+      "pregunta": "¿Por qué es importante que ambos grupos respondieran la misma cantidad total de reactivos y recibieran el mismo tipo de retroalimentación?",
+      "opciones": [
+        { "texto": "Para poder atribuir la diferencia de resultados a la distribución de la práctica en el tiempo y no a otros factores", "explicacion": "Correcta. Controlar esas variables permite que la única diferencia entre grupos sea cómo se distribuyó la práctica, lo que da validez a la conclusión." },
+        { "texto": "Para reducir el costo de la investigación", "explicacion": "Incorrecta. El texto no menciona costos, y esa no es la función metodológica del control." },
+        { "texto": "Para que el estudio durara menos tiempo", "explicacion": "Incorrecta. El grupo espaciado practicó durante ocho semanas; el diseño no buscaba acortar el estudio." }
+      ],
+      "correcta": 0, "estrategia": "En los textos de investigación, evaluar el contenido implica entender por qué el método permite sostener la conclusión.",
+      "conceptos": ["Evaluación de la forma y el contenido", "Variables controladas"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+
+    { "id": "LYC-113", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E4", "nivel": "satisfactorio", "base": "Lea el cuento y responda.",
+      "pregunta": "¿Qué elemento eliminó Mariana de la página web?",
+      "opciones": [
+        { "texto": "El mapa del local", "explicacion": "Incorrecta. El cuento no dice que lo haya quitado." },
+        { "texto": "Las fotografías", "explicacion": "Incorrecta. No se menciona que las eliminara." },
+        { "texto": "El formulario para agendar reparaciones", "explicacion": "Correcta. «Esa noche, sin embargo, abrió el código y borró el formulario»." }
+      ],
+      "correcta": 2, "estrategia": "Busca el verbo de la pregunta («eliminó») o un sinónimo («borró») en el texto.",
+      "conceptos": ["Identificación de información", "Cuento"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-114", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E4", "nivel": "satisfactorio", "base": "Lea el cuento y responda.",
+      "pregunta": "¿Cuántas historias tenía la página un mes después del cambio?",
+      "opciones": [
+        { "texto": "Más de doscientas", "explicacion": "Correcta. «Un mes después, la página tenía más de doscientas historias»." },
+        { "texto": "Treinta", "explicacion": "Incorrecta. Treinta son los años que don Ernesto lleva arreglando relojes." },
+        { "texto": "Tres", "explicacion": "Incorrecta. Tres son los fines de semana que Mariana trabajó en la página." }
+      ],
+      "correcta": 0, "estrategia": "Los distractores numéricos suelen ser otras cifras del mismo texto; verifica a qué se refiere cada una.",
+      "conceptos": ["Identificación de información"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-115", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E4", "nivel": "satisfactorio", "base": "Lea el cuento y responda.",
+      "pregunta": "¿Qué quiere decir don Ernesto con la frase «Eso no cabe en tu formulario»?",
+      "opciones": [
+        { "texto": "Que el formulario tenía muy pocos campos", "explicacion": "Incorrecta. Es una lectura literal; el problema no es técnico." },
+        { "texto": "Que la relación con sus clientes se basa en la conversación y en historias personales que el sistema no consideraba", "explicacion": "Correcta. Antes de la frase explica que la gente llega, platica y le cuenta de quién era el reloj; eso es lo que el formulario no recoge." },
+        { "texto": "Que sus clientes no saben usar el celular", "explicacion": "Incorrecta. El texto no lo afirma; de hecho, los clientes después escriben historias en la página." }
+      ],
+      "correcta": 1, "estrategia": "Interpreta la frase a partir de lo que el personaje dice inmediatamente antes; evita la lectura literal.",
+      "conceptos": ["Interpretación", "Sentido figurado"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-116", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E4", "nivel": "sobresaliente", "base": "Lea el cuento y responda.",
+      "pregunta": "¿Cuál es el tema central del cuento?",
+      "opciones": [
+        { "texto": "Los jóvenes no respetan las costumbres de los mayores", "explicacion": "Incorrecta. Mariana escucha a su abuelo y adapta la página; el cuento muestra lo contrario." },
+        { "texto": "Los relojes antiguos valen más que los modernos", "explicacion": "Incorrecta. Los relojes son el pretexto de las historias, no el tema." },
+        { "texto": "La tecnología cobra sentido cuando se adapta a las personas y a sus costumbres", "explicacion": "Correcta. La página solo funciona cuando Mariana sustituye el formulario por un espacio que refleja cómo se relaciona realmente el relojero con sus clientes." }
+      ],
+      "correcta": 2, "estrategia": "El tema central explica el cambio principal de la historia (aquí, la transformación de la página y su resultado).",
+      "conceptos": ["Interpretación global", "Tema"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-117", "subarea": "L1.3", "formato": "multirreactivo", "estimulo": "LYC-E4", "nivel": "sobresaliente", "base": "Lea el cuento y responda.",
+      "pregunta": "¿Qué función cumple la comparación final «como si escuchara un reloj»?",
+      "opciones": [
+        { "texto": "Vincula las historias con el oficio del relojero y muestra la atención y el aprecio con que las escucha", "explicacion": "Correcta. Cierra el cuento uniendo el mundo de don Ernesto (los relojes) con lo que la página le aporta (las historias)." },
+        { "texto": "Indica que don Ernesto se quedaba dormido mientras escuchaba", "explicacion": "Incorrecta. Los ojos cerrados expresan concentración, no sueño; la comparación lo confirma." },
+        { "texto": "Muestra que la página emitía sonidos de reloj", "explicacion": "Incorrecta. Es una lectura literal; el texto no menciona sonidos en la página." }
+      ],
+      "correcta": 0, "estrategia": "En los textos literarios, evalúa los recursos (comparaciones, metáforas) preguntándote qué ideas del relato conectan.",
+      "conceptos": ["Evaluación de la forma", "Recursos literarios"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+
+    { "id": "LYC-118", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E5", "nivel": "satisfactorio", "base": "Lea el ensayo y responda.",
+      "pregunta": "Según el autor, ¿qué es «la madre de casi todos los errores»?",
+      "opciones": [
+        { "texto": "La pereza", "explicacion": "Incorrecta. La pereza aparece al final, contrastada con la lentitud." },
+        { "texto": "La prisa", "explicacion": "Correcta. El autor afirma que «la prisa es la madre de casi todos los errores»." },
+        { "texto": "La velocidad de las máquinas", "explicacion": "Incorrecta. El autor no critica la velocidad de las máquinas; dice que sería absurdo pedirles calma." }
+      ],
+      "correcta": 1, "estrategia": "Localiza la expresión entre comillas en el texto y lee su sujeto.",
+      "conceptos": ["Identificación de información", "Ensayo"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-119", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E5", "nivel": "satisfactorio", "base": "Lea el ensayo y responda.",
+      "pregunta": "¿Qué ejemplos menciona el autor de cosas valiosas que son lentas?",
+      "opciones": [
+        { "texto": "Un servidor y una conexión", "explicacion": "Incorrecta. Son ejemplos de la velocidad que valoramos, no de cosas lentas." },
+        { "texto": "Un mensaje y un error", "explicacion": "Incorrecta. No se presentan como cosas valiosas y lentas." },
+        { "texto": "Una amistad y un buen programa", "explicacion": "Correcta. «Una amistad no se descarga…» y «Un buen programa tampoco se escribe de un tirón»." }
+      ],
+      "correcta": 2, "estrategia": "Ubica el párrafo que desarrolla la idea («casi todo lo que vale la pena ha sido lento») y sus ejemplos.",
+      "conceptos": ["Identificación de información"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-120", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E5", "nivel": "satisfactorio", "base": "Lea el ensayo y responda.",
+      "pregunta": "¿Cuál es la tesis del ensayo?",
+      "opciones": [
+        { "texto": "Debemos aprovechar la rapidez de las máquinas sin imponernos su ritmo en lo que requiere reflexión", "explicacion": "Correcta. El autor no rechaza la velocidad tecnológica; propone no confundir su ritmo con el humano en lo importante." },
+        { "texto": "Hay que renunciar a la tecnología para vivir mejor", "explicacion": "Incorrecta. El autor lo descarta: «No propongo renunciar a la velocidad de las máquinas»." },
+        { "texto": "La rapidez es el mejor criterio para valorar a las personas", "explicacion": "Incorrecta. Es la actitud que el ensayo critica." }
+      ],
+      "correcta": 0, "estrategia": "En los ensayos, la tesis suele aparecer tras «propongo», «sostengo» o «más bien»; descarta las posturas que el autor rechaza.",
+      "conceptos": ["Interpretación", "Tesis"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-121", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E5", "nivel": "sobresaliente", "base": "Lea el ensayo y responda.",
+      "pregunta": "¿Qué distinción establece la frase final «La pereza evita el trabajo; la lentitud lo honra»?",
+      "opciones": [
+        { "texto": "Que pereza y lentitud son sinónimos", "explicacion": "Incorrecta. La frase las opone explícitamente." },
+        { "texto": "Que la pereza evita el trabajo, mientras que la lentitud lo realiza con cuidado y respeto", "explicacion": "Correcta. «Honrar» el trabajo significa hacerlo con atención; la lentitud no es inactividad." },
+        { "texto": "Que la lentitud es una forma de descanso", "explicacion": "Incorrecta. El ensayo asocia la lentitud con entender, escuchar y dudar, no con descansar." }
+      ],
+      "correcta": 1, "estrategia": "Las oraciones con punto y coma suelen contraponer dos ideas: identifica qué se opone a qué.",
+      "conceptos": ["Interpretación", "Contraste"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-122", "subarea": "L1.3", "formato": "multirreactivo", "estimulo": "LYC-E5", "nivel": "sobresaliente", "base": "Lea el ensayo y responda.",
+      "pregunta": "¿Cuál situación ejemplifica mejor la postura del autor?",
+      "opciones": [
+        { "texto": "Un programador entrega una función en una hora, sin probarla, para responder rápido al cliente", "explicacion": "Incorrecta. Es la prisa que el autor señala como fuente de errores." },
+        { "texto": "Una empresa prohíbe a sus equipos usar servidores en la nube", "explicacion": "Incorrecta. El autor no rechaza la tecnología rápida." },
+        { "texto": "Un equipo dedica dos días a entender el problema con el cliente y luego usa herramientas automáticas para compilar y desplegar", "explicacion": "Correcta. Combina la lentitud humana en lo que importa (entender, escuchar) con la velocidad de las máquinas en lo mecánico." }
+      ],
+      "correcta": 2, "estrategia": "Para elegir un ejemplo, verifica que cumpla las dos partes de la tesis, no solo una.",
+      "conceptos": ["Evaluación del contenido", "Ejemplificación"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+
+    { "id": "LYC-123", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E6", "nivel": "satisfactorio", "base": "Lea la nota informativa y responda.",
+      "pregunta": "¿Por qué se eligió un sábado para realizar los trabajos?",
+      "opciones": [
+        { "texto": "Porque es el día de menor consumo de agua en la zona", "explicacion": "Correcta. Lo explica el director: «se eligió un sábado porque es el día de menor consumo en la zona»." },
+        { "texto": "Porque las escuelas no tienen clases", "explicacion": "Incorrecta. La nota menciona escuelas solo como beneficiarias de las pipas." },
+        { "texto": "Porque ese día hay más personal disponible", "explicacion": "Incorrecta. La nota no habla del personal." }
+      ],
+      "correcta": 0, "estrategia": "Las preguntas «¿por qué?» suelen responderse con la oración que contiene «porque», «debido a» o «ya que».",
+      "conceptos": ["Identificación de información", "Nota informativa"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-124", "subarea": "L1.1", "formato": "multirreactivo", "estimulo": "LYC-E6", "nivel": "satisfactorio", "base": "Lea la nota informativa y responda.",
+      "pregunta": "¿De dónde proviene la inversión para los trabajos?",
+      "opciones": [
+        { "texto": "Del presupuesto municipal", "explicacion": "Incorrecta. La nota indica otra fuente." },
+        { "texto": "De un fondo estatal para infraestructura hidráulica", "explicacion": "Correcta. «La inversión, de 8.5 millones de pesos, proviene de un fondo estatal para infraestructura hidráulica»." },
+        { "texto": "De aportaciones de los vecinos", "explicacion": "Incorrecta. No se mencionan aportaciones vecinales." }
+      ],
+      "correcta": 1, "estrategia": "Localiza el dato de la inversión y lee la oración completa.",
+      "conceptos": ["Identificación de información"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-125", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E6", "nivel": "satisfactorio", "base": "Lea la nota informativa y responda.",
+      "pregunta": "¿Cuál es la información principal de la nota?",
+      "opciones": [
+        { "texto": "El organismo invertirá 8.5 millones de pesos en pipas para hospitales", "explicacion": "Incorrecta. La inversión es para las bombas; las pipas son una medida de apoyo." },
+        { "texto": "El director del organismo recomendó no usar lavadoras", "explicacion": "Incorrecta. Es un detalle secundario." },
+        { "texto": "Se suspenderá el agua en 14 colonias el 13 de marzo por la sustitución de bombas en una planta", "explicacion": "Correcta. Responde al qué, cuándo, dónde y por qué del primer párrafo (la entrada de la nota), que contiene lo esencial." }
+      ],
+      "correcta": 2, "estrategia": "En las notas informativas, lo principal suele estar en el primer párrafo (pirámide invertida).",
+      "conceptos": ["Interpretación", "Pirámide invertida"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-126", "subarea": "L1.2", "formato": "multirreactivo", "estimulo": "LYC-E6", "nivel": "sobresaliente", "base": "Lea la nota informativa y responda.",
+      "pregunta": "¿Qué se infiere de que el servicio «se restablecerá de manera gradual»?",
+      "opciones": [
+        { "texto": "Que algunas colonias no recuperarán la presión normal inmediatamente después de las 22:00 horas", "explicacion": "Correcta. La misma oración lo aclara: algunas colonias podrían tardar hasta 12 horas adicionales." },
+        { "texto": "Que el agua regresará antes de las 22:00 horas", "explicacion": "Incorrecta. Gradual implica que tardará más, no menos." },
+        { "texto": "Que la suspensión durará una semana", "explicacion": "Incorrecta. El texto habla de una jornada más hasta 12 horas adicionales." }
+      ],
+      "correcta": 0, "estrategia": "Las inferencias deben apoyarse en el texto; descarta las que exageran o contradicen los datos.",
+      "conceptos": ["Inferencia"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-127", "subarea": "L1.3", "formato": "multirreactivo", "estimulo": "LYC-E6", "nivel": "sobresaliente", "base": "Lea la nota informativa y responda.",
+      "pregunta": "¿Qué situación muestra que un vecino de una colonia afectada siguió correctamente las recomendaciones?",
+      "opciones": [
+        { "texto": "Espera el sábado a que pase una pipa gratuita para llenar su tinaco", "explicacion": "Incorrecta. Las pipas gratuitas son solo para hospitales, escuelas y estancias de adultos mayores." },
+        { "texto": "Llena su tinaco y algunas cubetas el viernes y deja el lavado de ropa para el lunes", "explicacion": "Correcta. Almacena agua con anticipación y evita usar la lavadora en la jornada, y también considera que el restablecimiento puede tardar." },
+        { "texto": "Programa la lavadora el sábado a mediodía confiando en el agua que queda en la red", "explicacion": "Incorrecta. Contradice la recomendación de evitar las lavadoras durante la jornada." }
+      ],
+      "correcta": 1, "estrategia": "Compara cada situación con todas las recomendaciones y restricciones del texto.",
+      "conceptos": ["Evaluación del contenido", "Aplicación a situaciones"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+
+    { "id": "LYC-128", "subarea": "L2.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Un equipo redacta el protocolo de un proyecto de investigación sobre el uso de chatbots en la atención a estudiantes.",
+      "pregunta": "¿Qué fragmento corresponde al apartado de objetivos del protocolo?",
+      "opciones": [
+        { "texto": "«Objetivo general: analizar el efecto del uso de un chatbot en el tiempo de respuesta a las dudas administrativas de los estudiantes de primer ingreso.»", "explicacion": "Correcta. Usa un verbo en infinitivo y delimita qué se estudiará, en quién y con qué propósito, como corresponde a un objetivo de investigación." },
+        { "texto": "«Los resultados mostraron una reducción de 40 % en el tiempo de respuesta.»", "explicacion": "Incorrecta. Reporta resultados, que no existen todavía en un protocolo (es un plan)." },
+        { "texto": "«¡Te invitamos a probar nuestro nuevo chatbot y a dejar tus comentarios!»", "explicacion": "Incorrecta. Es un mensaje promocional con registro informal, ajeno al protocolo." }
+      ],
+      "correcta": 0, "estrategia": "Un protocolo es un plan: incluye problema, justificación, objetivos, método y cronograma, pero no resultados.",
+      "conceptos": ["Protocolo de investigación", "Dimensión comunicativa"], "fuentes": [{ "recurso": "guia-oficial-2026", "detalle": "2.6.3" }] },
+    { "id": "LYC-129", "subarea": "L2.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Una revista busca textos de divulgación científica dirigidos al público en general.",
+      "pregunta": "¿Qué fragmento es adecuado para ese propósito?",
+      "opciones": [
+        { "texto": "«La entropía H(X) = −Σ p(x) log p(x) cuantifica la incertidumbre de una variable aleatoria discreta X.»", "explicacion": "Incorrecta. Usa un registro especializado y una fórmula sin explicación; es propio de un texto técnico, no de divulgación." },
+        { "texto": "«¿Alguna vez te has preguntado cómo sabe tu teléfono qué palabra vas a escribir? Detrás hay programas que aprenden de millones de textos.»", "explicacion": "Correcta. Acerca un tema científico al lector general con lenguaje claro, una pregunta que despierta el interés y un ejemplo cotidiano." },
+        { "texto": "«Por medio de la presente, solicito se me otorgue una prórroga para la entrega de mi tesis.»", "explicacion": "Incorrecta. Es una solicitud formal, no un texto de divulgación." }
+      ],
+      "correcta": 1, "estrategia": "Divulgación = rigor + claridad para no especialistas (ejemplos cotidianos, preguntas, analogías).",
+      "conceptos": ["Artículo de divulgación", "Registro"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-130", "subarea": "L2.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente", "base": "Un periódico prepara su texto editorial sobre la aprobación de una ley de transparencia.",
+      "pregunta": "¿Qué fragmento corresponde a una editorial?",
+      "opciones": [
+        { "texto": "«El Congreso pospuso ayer la votación de la ley, informó la presidencia de la mesa directiva.»", "explicacion": "Incorrecta. Es un enunciado informativo propio de una noticia, sin postura." },
+        { "texto": "«Se convoca a los ciudadanos interesados a participar en el foro de consulta del 5 de mayo.»", "explicacion": "Incorrecta. Es propio de una convocatoria." },
+        { "texto": "«Este diario considera inadmisible que el Congreso posponga otra vez la ley de transparencia: cada aplazamiento es una señal de que la rendición de cuentas no es prioridad.»", "explicacion": "Correcta. La editorial expresa la postura institucional del medio sobre un tema de actualidad y la argumenta." }
+      ],
+      "correcta": 2, "estrategia": "Editorial = opinión del medio (frecuentemente «este diario considera…»). Noticia = hechos sin opinión.",
+      "conceptos": ["Editorial", "Géneros periodísticos"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-131", "subarea": "L2.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Una facultad redactará la convocatoria para un concurso de proyectos de software.",
+      "pregunta": "¿Qué información es indispensable que incluya la convocatoria?",
+      "opciones": [
+        { "texto": "La opinión del director sobre la importancia del software libre", "explicacion": "Incorrecta. Una opinión no es un elemento indispensable de la convocatoria." },
+        { "texto": "Los requisitos, las fechas, el lugar y el procedimiento de registro", "explicacion": "Correcta. La convocatoria debe precisar quién convoca, a quién, para qué, los requisitos, las fechas, el lugar y el procedimiento para participar." },
+        { "texto": "La hipótesis y el marco teórico del concurso", "explicacion": "Incorrecta. Son elementos de un protocolo o de un artículo de investigación." }
+      ],
+      "correcta": 1, "estrategia": "Pregúntate qué necesita saber el lector para actuar: en una convocatoria, cómo y cuándo participar.",
+      "conceptos": ["Convocatoria", "Dimensión comunicativa"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-132", "subarea": "L2.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente", "base": "Un estudiante escribe una reseña de un libro sobre arquitectura de software para una revista universitaria.",
+      "pregunta": "¿Qué fragmento cumple con las características de una reseña?",
+      "opciones": [
+        { "texto": "«En Arquitectura de software (2016), los autores recorren los conceptos y el ciclo de desarrollo arquitectónico con ejemplos de proyectos reales. Aunque el capítulo de evaluación resulta breve, la obra es una guía valiosa para estudiantes.»", "explicacion": "Correcta. Incluye los datos de la obra, una síntesis del contenido y una valoración argumentada, que son los elementos de una reseña." },
+        { "texto": "«El capítulo 1 trata de conceptos. El capítulo 2 trata del ciclo. El capítulo 3 trata de vistas.»", "explicacion": "Incorrecta. Es un índice resumido, sin valoración ni datos de la obra." },
+        { "texto": "«Se solicita a los alumnos entregar el libro en la biblioteca antes del viernes.»", "explicacion": "Incorrecta. Es un aviso, no una reseña." }
+      ],
+      "correcta": 0, "estrategia": "Reseña = referencia + síntesis + valoración crítica.",
+      "conceptos": ["Reseña", "Dimensión comunicativa"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-133", "subarea": "L2.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Una estudiante escribirá un correo a la directora de su facultad para solicitar una prórroga en la entrega de su proyecto terminal.",
+      "pregunta": "¿Qué inicio de correo tiene el registro adecuado?",
+      "opciones": [
+        { "texto": "«Qué onda, doctora, oiga, ¿me da chance de entregar después?»", "explicacion": "Incorrecta. Usa un registro coloquial inadecuado para dirigirse a una autoridad académica." },
+        { "texto": "«¡¡Necesito una prórroga YA!! Es urgente.»", "explicacion": "Incorrecta. Las mayúsculas y la exigencia resultan descorteses; no se ajusta al propósito de solicitar." },
+        { "texto": "«Estimada Dra. Ramírez: por medio del presente, le solicito de la manera más atenta una prórroga de dos semanas para la entrega de mi proyecto terminal.»", "explicacion": "Correcta. Usa un saludo formal, un tratamiento adecuado y una solicitud cortés y precisa." }
+      ],
+      "correcta": 2, "estrategia": "Ajusta el registro a la relación con el receptor: autoridad o institución → formal.",
+      "conceptos": ["Registro formal", "Adecuación"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-134", "subarea": "L2.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Un egresado termina su carta de exposición de motivos para solicitar una beca de posgrado.",
+      "pregunta": "¿Qué cierre es el adecuado para ese tipo de carta?",
+      "opciones": [
+        { "texto": "«En conclusión, los resultados confirman la hipótesis planteada.»", "explicacion": "Incorrecta. Es el cierre propio de un artículo de investigación." },
+        { "texto": "«Bye, ojalá me acepten.»", "explicacion": "Incorrecta. Su registro es informal y no corresponde a una carta dirigida a un comité." },
+        { "texto": "«Agradezco de antemano la atención a la presente y quedo a su disposición para ampliar cualquier información.»", "explicacion": "Correcta. Es una fórmula de cortesía formal propia del cierre de una carta institucional." }
+      ],
+      "correcta": 2, "estrategia": "Cada género tiene fórmulas de cierre propias; las cartas formales cierran con agradecimiento y disposición.",
+      "conceptos": ["Carta de exposición de motivos"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-135", "subarea": "L2.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente", "base": "Un equipo redacta un artículo de investigación sobre el uso de pruebas automatizadas en empresas mexicanas.",
+      "pregunta": "¿Qué fragmento corresponde a la sección de método?",
+      "opciones": [
+        { "texto": "«Participaron 120 desarrolladores de 15 empresas. Se aplicó un cuestionario de 20 reactivos y los datos se analizaron con estadística descriptiva.»", "explicacion": "Correcta. Describe a los participantes, el instrumento y el procedimiento de análisis, que son los elementos del método." },
+        { "texto": "«Se concluye que la automatización reduce los defectos en producción.»", "explicacion": "Incorrecta. Es una conclusión." },
+        { "texto": "«Desde hace décadas, la calidad del software preocupa a la industria.»", "explicacion": "Incorrecta. Es una frase de introducción o de antecedentes." }
+      ],
+      "correcta": 0, "estrategia": "Estructura IMRyD: Introducción (por qué), Método (cómo), Resultados (qué se encontró) y Discusión (qué significa).",
+      "conceptos": ["Artículo de investigación", "IMRyD"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-136", "subarea": "L2.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Una ingeniera redacta un informe técnico dirigido al equipo de redes de su empresa sobre una falla reciente.",
+      "pregunta": "¿Qué fragmento tiene el registro adecuado para ese receptor?",
+      "opciones": [
+        { "texto": "«El internet se puso lentísimo y nadie sabe por qué, está horrible.»", "explicacion": "Incorrecta. Es un registro coloquial e impreciso para un informe técnico." },
+        { "texto": "«Tras la actualización del firmware, la latencia promedio entre nodos aumentó de 12 a 48 ms; se recomienda revertir a la versión 3.2.»", "explicacion": "Correcta. Usa un registro especializado, preciso y con datos, adecuado para especialistas." },
+        { "texto": "«Había una vez una red que, de pronto, se volvió muy lenta…»", "explicacion": "Incorrecta. Usa una forma narrativa literaria inadecuada para un informe." }
+      ],
+      "correcta": 1, "estrategia": "Receptor especialista → registro especializado: términos técnicos, cifras y recomendaciones concretas.",
+      "conceptos": ["Registro especializado"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+
+    { "id": "LYC-137", "subarea": "L2.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Elija la oración con la concordancia correcta.",
+      "pregunta": "¿Cuál oración está redactada correctamente?",
+      "opciones": [
+        { "texto": "El código y la documentación fueron revisados por el equipo.", "explicacion": "Correcta. Un sujeto compuesto lleva el verbo en plural, y con sustantivos de distinto género el participio va en masculino plural." },
+        { "texto": "El código y la documentación fue revisada por el equipo.", "explicacion": "Incorrecta. Con dos sustantivos coordinados el verbo debe ir en plural, y el participio no debe concordar solo con el último." },
+        { "texto": "El código y la documentación fueron revisadas por el equipo.", "explicacion": "Incorrecta. Con sustantivos de distinto género, la concordancia se hace en masculino plural, no solo con «documentación»." }
+      ],
+      "correcta": 0, "estrategia": "Sujeto compuesto → plural; géneros mezclados → masculino plural.",
+      "conceptos": ["Concordancia nominal", "Concordancia verbal"], "fuentes": [{ "recurso": "rae-dpd", "detalle": "Concordancia" }] },
+    { "id": "LYC-138", "subarea": "L2.2", "formato": "completamiento", "nivel": "satisfactorio", "base": "Cada uno de los integrantes del equipo ________ su informe a tiempo.",
+      "pregunta": "¿Qué forma verbal completa correctamente la oración?",
+      "opciones": [
+        { "texto": "entregaron", "explicacion": "Incorrecta. El núcleo del sujeto es «cada uno» (singular); «de los integrantes» es un complemento." },
+        { "texto": "entregó", "explicacion": "Correcta. El verbo concuerda con el núcleo singular «cada uno»." },
+        { "texto": "entregamos", "explicacion": "Incorrecta. La primera persona del plural no concuerda con el sujeto." }
+      ],
+      "correcta": 1, "estrategia": "Quita los complementos que empiezan con «de…» para encontrar el núcleo del sujeto.",
+      "conceptos": ["Concordancia verbal"], "fuentes": [{ "recurso": "rae-dpd" }] },
+    { "id": "LYC-139", "subarea": "L2.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente", "base": "Elija la oración redactada correctamente.",
+      "pregunta": "¿Cuál oración no presenta dequeísmo ni queísmo?",
+      "opciones": [
+        { "texto": "Pienso de que el proyecto terminará a tiempo.", "explicacion": "Incorrecta. Es dequeísmo: «pensar algo» no lleva la preposición «de»." },
+        { "texto": "Estoy seguro que el proyecto terminará a tiempo.", "explicacion": "Incorrecta. Es queísmo: se dice «estar seguro de algo», así que debe ser «seguro de que»." },
+        { "texto": "Pienso que el proyecto terminará a tiempo y estoy seguro de que lo lograremos.", "explicacion": "Correcta. Usa «pensar que» (sin preposición) y «estar seguro de que» (con la preposición que exige el régimen)." }
+      ],
+      "correcta": 2, "estrategia": "Prueba sustituir la subordinada por «eso»: «pienso eso» (sin de) / «estoy seguro de eso» (con de).",
+      "conceptos": ["Dequeísmo", "Queísmo"], "fuentes": [{ "recurso": "rae-dpd", "detalle": "Dequeísmo" }] },
+    { "id": "LYC-140", "subarea": "L2.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente", "base": "Elija la oración que expresa la idea sin ambigüedad.",
+      "pregunta": "¿Cuál oración tiene una referencia clara?",
+      "opciones": [
+        { "texto": "Ana le dijo a Lucía que su proyecto había ganado.", "explicacion": "Incorrecta. «Su» puede referirse a Ana o a Lucía: es ambigua." },
+        { "texto": "Ana felicitó a Lucía porque el proyecto de esta había ganado.", "explicacion": "Correcta. «Esta» retoma al referente más cercano (Lucía), y la oración deja claro de quién es el proyecto." },
+        { "texto": "Ana le dijo a Lucía que ella ganó con su proyecto.", "explicacion": "Incorrecta. «Ella» y «su» pueden referirse a cualquiera de las dos." }
+      ],
+      "correcta": 1, "estrategia": "Cuando hay dos personas del mismo género, los pronombres «su» o «ella» generan ambigüedad; busca la opción con un referente explícito.",
+      "conceptos": ["Cohesión", "Correferencia", "Ambigüedad"], "fuentes": [{ "recurso": "guia-oficial-2026", "detalle": "Cohesión gramatical" }] },
+    { "id": "LYC-141", "subarea": "L2.2", "formato": "completamiento", "nivel": "satisfactorio", "base": "El prototipo funcionó correctamente en el laboratorio; ________, falló al conectarse con el servidor real.",
+      "pregunta": "¿Qué marcador completa el enunciado de forma coherente?",
+      "opciones": [
+        { "texto": "no obstante", "explicacion": "Correcta. Es un marcador adversativo: introduce un hecho que contrasta con lo anterior (funcionó / falló)." },
+        { "texto": "por lo tanto", "explicacion": "Incorrecta. Es consecutivo: presentaría la falla como consecuencia del buen funcionamiento, lo que no tiene sentido." },
+        { "texto": "además", "explicacion": "Incorrecta. Es aditivo: sumaría información del mismo sentido, pero aquí las ideas se oponen." }
+      ],
+      "correcta": 0, "estrategia": "Identifica la relación: idea positiva + idea negativa → contraste → adversativo (sin embargo, no obstante, pero).",
+      "conceptos": ["Marcadores textuales", "Cohesión"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-142", "subarea": "L2.2", "formato": "completamiento", "nivel": "satisfactorio", "base": "Primero se instaló el nuevo sistema en todas las sucursales; ________, se capacitó al personal en su uso.",
+      "pregunta": "¿Qué marcador completa el enunciado de forma coherente?",
+      "opciones": [
+        { "texto": "sin embargo", "explicacion": "Incorrecta. No hay oposición entre instalar y capacitar." },
+        { "texto": "es decir", "explicacion": "Incorrecta. La segunda parte no reformula la primera; describe otra acción." },
+        { "texto": "posteriormente", "explicacion": "Correcta. Es un marcador temporal u ordenador que expresa la secuencia (primero… posteriormente)." }
+      ],
+      "correcta": 2, "estrategia": "Cuando el texto inicia con «primero», busca un marcador de secuencia (después, posteriormente, luego, finalmente).",
+      "conceptos": ["Marcadores de orden"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+    { "id": "LYC-143", "subarea": "L2.2", "formato": "completamiento", "nivel": "satisfactorio", "base": "A los usuarios del sistema ________ enviamos un aviso sobre el mantenimiento.",
+      "pregunta": "¿Qué pronombre completa correctamente la oración?",
+      "opciones": [
+        { "texto": "le", "explicacion": "Incorrecta. «Le» es singular, y el complemento indirecto («a los usuarios») es plural." },
+        { "texto": "les", "explicacion": "Correcta. El pronombre de complemento indirecto debe concordar en número con su referente plural: «les enviamos»." },
+        { "texto": "los", "explicacion": "Incorrecta. «Los» es de complemento directo; aquí lo enviado es «un aviso», y los usuarios son quienes lo reciben (complemento indirecto)." }
+      ],
+      "correcta": 1, "estrategia": "Le / les = a quién (complemento indirecto); lo, la, los, las = qué (complemento directo). El número debe concordar con el referente.",
+      "conceptos": ["Pronombres", "Concordancia"], "fuentes": [{ "recurso": "rae-dpd", "detalle": "le/les" }] },
+    { "id": "LYC-144", "subarea": "L2.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Elija la oración que tiene coherencia lógica.",
+      "pregunta": "¿Cuál oración es coherente?",
+      "opciones": [
+        { "texto": "Aunque el servidor estaba saturado, por eso las páginas cargaban con lentitud.", "explicacion": "Incorrecta. Mezcla un marcador concesivo («aunque») con uno causal («por eso»), lo que produce una contradicción." },
+        { "texto": "Como el servidor estaba saturado, las páginas cargaban con lentitud.", "explicacion": "Correcta. El marcador causal «como» introduce la causa de la lentitud de forma lógica." },
+        { "texto": "El servidor estaba saturado, es decir, las páginas cargaban rápidamente.", "explicacion": "Incorrecta. «Es decir» introduce una reformulación, pero la segunda idea contradice a la primera." }
+      ],
+      "correcta": 1, "estrategia": "Lee la oración en voz baja y pregúntate si el conector expresa la relación real entre las ideas.",
+      "conceptos": ["Coherencia", "Conectores"], "fuentes": [{ "recurso": "guia-oficial-2026" }] },
+
+    { "id": "LYC-145", "subarea": "L2.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Elija la oración escrita correctamente.",
+      "pregunta": "¿Cuál oración no tiene errores ortográficos?",
+      "opciones": [
+        { "texto": "Uvo barias versiones del programa.", "explicacion": "Incorrecta. «Hubo» (del verbo haber) se escribe con h y b; «varias», con v." },
+        { "texto": "Hubo barias berciones del programa.", "explicacion": "Incorrecta. «Varias» y «versiones» se escriben con v, y «versiones» con s." },
+        { "texto": "Hubo varias versiones del programa.", "explicacion": "Correcta. Todas las grafías son correctas: hubo (h, b), varias y versiones (v)." }
+      ],
+      "correcta": 2, "estrategia": "Revisa palabra por palabra las grafías dudosas (b/v, h, c/s/z, g/j).",
+      "conceptos": ["Grafías", "b/v", "h"], "fuentes": [{ "recurso": "rae-ortografia" }] },
+    { "id": "LYC-146", "subarea": "L2.3", "formato": "cuestionamiento-directo", "nivel": "sobresaliente", "base": "Elija la oración escrita correctamente.",
+      "pregunta": "¿Cuál oración usa correctamente «por qué», «porque» y «porqué»?",
+      "opciones": [
+        { "texto": "No sé por qué falló la prueba; tal vez porque faltó memoria.", "explicacion": "Correcta. «Por qué» (separado y con tilde) introduce una pregunta indirecta; «porque» (junto y sin tilde) introduce una causa." },
+        { "texto": "No sé porque falló la prueba; tal vez por qué faltó memoria.", "explicacion": "Incorrecta. Intercambia los usos: la pregunta indirecta lleva «por qué» y la causa, «porque»." },
+        { "texto": "No sé porqué falló la prueba; tal vez por que faltó memoria.", "explicacion": "Incorrecta. «Porqué» es un sustantivo («el porqué»), y la causa se escribe «porque»." }
+      ],
+      "correcta": 0, "estrategia": "Por qué = pregunta (directa o indirecta); porque = causa; porqué = sustantivo (el motivo); por que = preposición + relativo.",
+      "conceptos": ["Por qué / porque / porqué"], "fuentes": [{ "recurso": "rae-dpd", "detalle": "porqué" }] },
+    { "id": "LYC-147", "subarea": "L2.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Elija la oración con la acentuación correcta.",
+      "pregunta": "¿Cuál oración está acentuada correctamente?",
+      "opciones": [
+        { "texto": "La grafica muestra el numero maximo de paginas.", "explicacion": "Incorrecta. Las esdrújulas siempre llevan tilde: gráfica, número, máximo, páginas." },
+        { "texto": "La gráfica muestra el número máximo de páginas.", "explicacion": "Correcta. Las cuatro palabras son esdrújulas y llevan tilde." },
+        { "texto": "La gráfica muestra el número maximo de pàginas.", "explicacion": "Incorrecta. Falta la tilde en «máximo», y en español la tilde es aguda (´), no grave (`)." }
+      ],
+      "correcta": 1, "estrategia": "Las esdrújulas (acento en la antepenúltima sílaba) siempre llevan tilde.",
+      "conceptos": ["Acentuación", "Esdrújulas"], "fuentes": [{ "recurso": "rae-ortografia" }] },
+    { "id": "LYC-148", "subarea": "L2.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Elija la oración con la acentuación correcta.",
+      "pregunta": "¿Cuál oración está escrita correctamente?",
+      "opciones": [
+        { "texto": "La aplicacion tambien envia notificaciones.", "explicacion": "Incorrecta. «Aplicación» y «también» son agudas terminadas en n, y «envía» lleva tilde por hiato." },
+        { "texto": "La aplicación tambíen envía notificaciónes.", "explicacion": "Incorrecta. «También» lleva la tilde en la última sílaba, y «notificaciones» es grave terminada en s, por lo que no lleva tilde." },
+        { "texto": "La aplicación también envía notificaciones.", "explicacion": "Correcta. Aplicación y también (agudas en n), envía (hiato í-a) y notificaciones (grave en s, sin tilde)." }
+      ],
+      "correcta": 2, "estrategia": "Cuidado con los plurales: «notificación» lleva tilde, pero «notificaciones» no (cambia la sílaba tónica de lugar en la palabra).",
+      "conceptos": ["Acentuación", "Hiato", "Agudas"], "fuentes": [{ "recurso": "rae-ortografia" }] },
+    { "id": "LYC-149", "subarea": "L2.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Una jefa de proyecto le da una instrucción directa a un integrante de su equipo, llamándolo por su nombre.",
+      "pregunta": "¿Cuál enunciado está puntuado correctamente?",
+      "opciones": [
+        { "texto": "Carlos, envía el reporte antes de las cinco.", "explicacion": "Correcta. El vocativo (el nombre de la persona a quien se habla) se separa con coma." },
+        { "texto": "Carlos envía, el reporte antes de las cinco.", "explicacion": "Incorrecta. Separa el verbo de su complemento directo y no aísla el vocativo." },
+        { "texto": "Carlos envía el reporte, antes, de las cinco.", "explicacion": "Incorrecta. Fragmenta sin motivo el complemento de tiempo y no marca el vocativo." }
+      ],
+      "correcta": 0, "estrategia": "Cuando se nombra a quien se le habla (vocativo), va entre comas o seguido de coma.",
+      "conceptos": ["Puntuación", "Vocativo"], "fuentes": [{ "recurso": "rae-ortografia", "detalle": "Coma" }] },
+    { "id": "LYC-150", "subarea": "L2.3", "formato": "cuestionamiento-directo", "nivel": "sobresaliente", "base": "Elija el enunciado con la puntuación correcta.",
+      "pregunta": "¿Cuál enunciado está puntuado correctamente?",
+      "opciones": [
+        { "texto": "Se requieren tres herramientas; Git, Docker, y Node.js.", "explicacion": "Incorrecta. Para anunciar una enumeración se usan dos puntos, no punto y coma; además, sobra la coma antes de «y»." },
+        { "texto": "Se requieren: tres herramientas Git, Docker y Node.js.", "explicacion": "Incorrecta. Los dos puntos separan el verbo de su sujeto y están mal ubicados." },
+        { "texto": "Se requieren tres herramientas: Git, Docker y Node.js.", "explicacion": "Correcta. Los dos puntos anuncian la enumeración, que se separa con comas, sin coma antes de la «y» final." }
+      ],
+      "correcta": 2, "estrategia": "Los dos puntos anuncian una enumeración después de una palabra que la anticipa («tres herramientas»); nunca separan el verbo de su complemento.",
+      "conceptos": ["Dos puntos", "Enumeración"], "fuentes": [{ "recurso": "rae-ortografia", "detalle": "Dos puntos" }] },
+    { "id": "LYC-151", "subarea": "L2.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Elija la oración con el uso correcto de mayúsculas.",
+      "pregunta": "¿Cuál oración está escrita correctamente?",
+      "opciones": [
+        { "texto": "El Lunes 3 de Marzo, la Universidad Nacional publicó la Convocatoria.", "explicacion": "Incorrecta. En español, los días de la semana y los meses se escriben con minúscula, y «convocatoria» es un sustantivo común." },
+        { "texto": "El lunes 3 de marzo, la Universidad Nacional publicó la convocatoria.", "explicacion": "Correcta. Días y meses van en minúscula, y el nombre propio de la institución, con mayúscula." },
+        { "texto": "el lunes 3 de marzo, la universidad nacional publicó la convocatoria.", "explicacion": "Incorrecta. La oración debe iniciar con mayúscula y el nombre propio de la institución también." }
+      ],
+      "correcta": 1, "estrategia": "Mayúscula: inicio de oración y nombres propios (personas, instituciones, lugares). Minúscula: días, meses y sustantivos comunes.",
+      "conceptos": ["Mayúsculas"], "fuentes": [{ "recurso": "rae-ortografia" }] },
+    { "id": "LYC-152", "subarea": "L2.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio", "base": "Elija la oración escrita correctamente.",
+      "pregunta": "¿Cuál oración no tiene errores ortográficos?",
+      "opciones": [
+        { "texto": "La exijencia del proyecto requiere eficiensia.", "explicacion": "Incorrecta. «Exigencia» se escribe con g y «eficiencia», con c." },
+        { "texto": "La exigencia del proyecto requiere eficienzia.", "explicacion": "Incorrecta. «Eficiencia» se escribe con c, no con z." },
+        { "texto": "La exigencia del proyecto requiere eficiencia.", "explicacion": "Correcta. «Exigencia» (de exigir, con g) y «eficiencia» (con c), ambas escritas correctamente." }
+      ],
+      "correcta": 2, "estrategia": "Relaciona la palabra con su familia léxica: exigir → exigencia (g); eficiente → eficiencia (c).",
+      "conceptos": ["Grafías", "g/j", "c/s/z"], "fuentes": [{ "recurso": "rae-ortografia" }] }
+  ]
+}

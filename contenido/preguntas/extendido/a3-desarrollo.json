@@ -1,0 +1,412 @@
+{
+  "temario": "egel-plus-isoft-2026",
+  "area": "A3",
+  "banco": "extendido",
+  "estimulos": [],
+  "preguntas": [
+    {
+      "id": "A3-101", "subarea": "3.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Una empresa necesita una aplicación de escritorio que corra sin recompilar en Windows, Linux y macOS, con tipado estático y un amplio ecosistema de bibliotecas empresariales.",
+      "pregunta": "¿Qué lenguaje cumple mejor estas condiciones?",
+      "opciones": [
+        { "texto": "Java", "explicacion": "Correcta. Java compila a bytecode que ejecuta la JVM en cualquier sistema operativo («write once, run anywhere»), con tipado estático y un ecosistema empresarial maduro." },
+        { "texto": "C", "explicacion": "Incorrecta. C compila a código máquina específico de cada plataforma, así que hay que recompilar para cada sistema operativo." },
+        { "texto": "Ensamblador", "explicacion": "Incorrecta. Depende de la arquitectura del procesador; no es portable y es inadecuado para aplicaciones empresariales." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Portabilidad sin recompilar» → lenguajes sobre máquina virtual (Java/JVM, C#/.NET).",
+      "conceptos": ["JVM", "Bytecode", "Portabilidad"],
+      "fuentes": [{ "recurso": "loy-2023" }]
+    },
+    {
+      "id": "A3-102", "subarea": "3.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Analice el siguiente código JavaScript:",
+      "codigo": "let x = 1;\nfunction f() {\n  let x = 2;\n  if (true) {\n    let x = 3;\n  }\n  return x;\n}\nconsole.log(f(), x);",
+      "pregunta": "¿Qué se imprime?",
+      "opciones": [
+        { "texto": "3 1", "explicacion": "Incorrecta. La «x = 3» se declara con let dentro del bloque if, así que solo existe en ese bloque y no modifica la x de la función." },
+        { "texto": "2 1", "explicacion": "Correcta. let tiene alcance de bloque: f() devuelve la x de la función (2), y la x global sigue valiendo 1." },
+        { "texto": "3 3", "explicacion": "Incorrecta. Ninguna declaración interna modifica la variable global, porque cada let crea una variable nueva en su propio alcance." }
+      ],
+      "correcta": 1,
+      "estrategia": "Dibuja los alcances como cajas anidadas: cada let crea una variable nueva en su caja; las lecturas buscan en la caja más cercana hacia afuera.",
+      "conceptos": ["Alcance (scope)", "let", "Ocultamiento de variables"],
+      "fuentes": [{ "recurso": "ohanlon-2019" }]
+    },
+    {
+      "id": "A3-103", "subarea": "3.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Analice el siguiente fragmento en Java:",
+      "codigo": "static void cambiar(int n) {\n    n = 10;\n}\n\npublic static void main(String[] args) {\n    int a = 5;\n    cambiar(a);\n    System.out.println(a);\n}",
+      "pregunta": "¿Qué se imprime?",
+      "opciones": [
+        { "texto": "10", "explicacion": "Incorrecta. Sería el resultado si el parámetro se pasara por referencia, pero Java pasa los primitivos por valor." },
+        { "texto": "Error de compilación", "explicacion": "Incorrecta. El código es válido." },
+        { "texto": "5", "explicacion": "Correcta. Java pasa los argumentos por valor: n recibe una copia de a, y modificar n no afecta a la variable original." }
+      ],
+      "correcta": 2,
+      "estrategia": "En Java todo se pasa por valor; con objetos se copia la referencia, así que se puede modificar el objeto, pero no reasignar la variable del llamador.",
+      "conceptos": ["Paso por valor", "Tipos primitivos"],
+      "fuentes": [{ "recurso": "dean-2009" }]
+    },
+    {
+      "id": "A3-104", "subarea": "3.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Un sistema de atención en ventanilla debe llamar a los clientes en estricto orden de llegada.",
+      "pregunta": "¿Qué estructura de datos es la adecuada?",
+      "opciones": [
+        { "texto": "Cola (FIFO)", "explicacion": "Correcta. En una cola, el primero en entrar es el primero en salir: se encola al llegar y se desencola al atender." },
+        { "texto": "Pila (LIFO)", "explicacion": "Incorrecta. En una pila se atendería primero al último en llegar." },
+        { "texto": "Árbol binario de búsqueda", "explicacion": "Incorrecta. Ordena por clave para búsquedas eficientes; no conserva el orden de llegada." }
+      ],
+      "correcta": 0,
+      "estrategia": "Orden de llegada → cola; deshacer o retroceder → pila; búsqueda por llave → tabla hash o árbol.",
+      "conceptos": ["Estructuras de datos", "Cola", "FIFO"],
+      "fuentes": [{ "recurso": "sanchez-2013" }]
+    },
+    {
+      "id": "A3-105", "subarea": "3.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Un editor de texto debe implementar la función «Deshacer», que revierte las acciones empezando por la más reciente.",
+      "pregunta": "¿Qué estructura de datos es la más apropiada para almacenar las acciones?",
+      "opciones": [
+        { "texto": "Cola", "explicacion": "Incorrecta. Una cola revertiría primero la acción más antigua." },
+        { "texto": "Pila", "explicacion": "Correcta. La pila (LIFO) devuelve primero el último elemento insertado, que es exactamente la acción más reciente que hay que deshacer." },
+        { "texto": "Tabla hash", "explicacion": "Incorrecta. Una tabla hash no conserva el orden de inserción como criterio de recuperación." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Lo más reciente primero» = LIFO = pila.",
+      "conceptos": ["Pila", "LIFO"],
+      "fuentes": [{ "recurso": "sanchez-2013" }]
+    },
+    {
+      "id": "A3-106", "subarea": "3.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Un servicio debe buscar registros por CURP entre 5 millones de ciudadanos cargados en memoria, con un tiempo de búsqueda promedio constante, independiente del número de registros.",
+      "pregunta": "¿Qué estructura de datos debe usarse?",
+      "opciones": [
+        { "texto": "Lista enlazada", "explicacion": "Incorrecta. Buscar en una lista enlazada es O(n): en el peor caso hay que recorrer los 5 millones de nodos." },
+        { "texto": "Arreglo no ordenado con búsqueda secuencial", "explicacion": "Incorrecta. La búsqueda secuencial también es O(n)." },
+        { "texto": "Tabla hash (diccionario)", "explicacion": "Correcta. La función hash calcula la posición a partir de la llave, lo que da búsquedas O(1) en promedio." }
+      ],
+      "correcta": 2,
+      "estrategia": "O(1) promedio → hash; O(log n) → árbol balanceado o búsqueda binaria en un arreglo ordenado; O(n) → recorridos secuenciales.",
+      "conceptos": ["Tabla hash", "Complejidad", "Notación O"],
+      "fuentes": [{ "recurso": "marti-oliet-2013" }]
+    },
+    {
+      "id": "A3-107", "subarea": "3.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Observe la clase en Java:",
+      "codigo": "public class Cuenta {\n    public double saldo;\n}\n\n// En otra clase:\nCuenta c = new Cuenta();\nc.saldo = -5000;",
+      "pregunta": "¿Qué principio de la programación orientada a objetos no se respeta?",
+      "opciones": [
+        { "texto": "Encapsulamiento", "explicacion": "Correcta. El atributo es público y cualquier clase puede dejar la cuenta en un estado inválido. Debe ser private y modificarse solo con métodos que validen (depositar, retirar)." },
+        { "texto": "Herencia", "explicacion": "Incorrecta. El fragmento no involucra jerarquías de clases." },
+        { "texto": "Polimorfismo", "explicacion": "Incorrecta. No hay métodos que se comporten de forma distinta según la clase del objeto." }
+      ],
+      "correcta": 0,
+      "estrategia": "Atributo public modificado sin control desde fuera → encapsulamiento.",
+      "conceptos": ["Encapsulamiento", "Modificadores de acceso"],
+      "fuentes": [{ "recurso": "joyanes-2014" }]
+    },
+    {
+      "id": "A3-108", "subarea": "3.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "En Java, la clase Factura ya hereda de la clase Documento y, además, debe poder ser tratada como «Imprimible» y como «Exportable» por distintos módulos.",
+      "pregunta": "¿Cómo se resuelve en Java?",
+      "opciones": [
+        { "texto": "Haciendo que Factura herede de Documento, Imprimible y Exportable", "explicacion": "Incorrecta. Java no permite la herencia múltiple de clases." },
+        { "texto": "Haciendo que Factura herede de Documento e implemente las interfaces Imprimible y Exportable", "explicacion": "Correcta. Una clase hereda de una sola clase, pero puede implementar varias interfaces, que definen contratos de comportamiento." },
+        { "texto": "Sobrecargando los métodos imprimir() y exportar() en Documento", "explicacion": "Incorrecta. La sobrecarga no crea nuevos tipos; los módulos no podrían tratar a Factura como Imprimible." }
+      ],
+      "correcta": 1,
+      "estrategia": "Herencia simple de clases + implementación múltiple de interfaces (Java, C#).",
+      "conceptos": ["Interfaces", "Herencia", "Clases abstractas"],
+      "fuentes": [{ "recurso": "loy-2023" }]
+    },
+    {
+      "id": "A3-109", "subarea": "3.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Analice la siguiente función recursiva en Python:",
+      "codigo": "def f(n):\n    return 1 if n <= 1 else n * f(n - 1)\n\nprint(f(4))",
+      "pregunta": "¿Qué se imprime?",
+      "opciones": [
+        { "texto": "10", "explicacion": "Incorrecta. Sería la suma 4+3+2+1; la función multiplica." },
+        { "texto": "4", "explicacion": "Incorrecta. La función se llama a sí misma hasta el caso base, así que no devuelve solo n." },
+        { "texto": "24", "explicacion": "Correcta. Calcula el factorial: f(4) = 4·f(3) = 4·3·f(2) = 4·3·2·f(1) = 4·3·2·1 = 24." }
+      ],
+      "correcta": 2,
+      "estrategia": "En la recursión, identifica el caso base y luego desarrolla las llamadas hasta llegar a él.",
+      "conceptos": ["Recursión", "Caso base"],
+      "fuentes": [{ "recurso": "herrera-2017" }]
+    },
+    {
+      "id": "A3-110", "subarea": "3.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Evalúe la siguiente expresión en JavaScript:",
+      "codigo": "[1, 2, 3, 4].reduce((acc, x) => acc + x * x, 0)",
+      "pregunta": "¿Cuál es el resultado?",
+      "opciones": [
+        { "texto": "30", "explicacion": "Correcta. reduce acumula la suma de los cuadrados a partir de 0: 0+1+4+9+16 = 30." },
+        { "texto": "10", "explicacion": "Incorrecta. Sería la suma simple (1+2+3+4); la función suma x*x." },
+        { "texto": "100", "explicacion": "Incorrecta. Sería el cuadrado de la suma, (1+2+3+4)²." }
+      ],
+      "correcta": 0,
+      "estrategia": "En reduce, escribe la tabla acumulador | elemento | nuevo acumulador paso a paso.",
+      "conceptos": ["Programación funcional", "reduce", "Funciones de orden superior"],
+      "fuentes": [{ "recurso": "gabbrielli-2010" }]
+    },
+    {
+      "id": "A3-111", "subarea": "3.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "En el paradigma funcional se prefieren las funciones puras.",
+      "pregunta": "¿Cuál de las siguientes funciones de JavaScript es pura?",
+      "opciones": [
+        { "texto": "function registrar(x) { console.log(x); return x; }", "explicacion": "Incorrecta. Escribir en consola es un efecto lateral (modifica el estado del mundo exterior)." },
+        { "texto": "function total(precio, cantidad) { return precio * cantidad; }", "explicacion": "Correcta. Siempre devuelve el mismo resultado para los mismos argumentos y no produce efectos laterales." },
+        { "texto": "let c = 0; function siguiente() { return ++c; }", "explicacion": "Incorrecta. Modifica una variable externa y devuelve valores distintos en cada llamada." }
+      ],
+      "correcta": 1,
+      "estrategia": "Una función pura cumple dos condiciones: el mismo resultado para la misma entrada y ningún efecto lateral (E/S, variables externas, mutaciones).",
+      "conceptos": ["Funciones puras", "Efectos laterales", "Paradigma funcional"],
+      "fuentes": [{ "recurso": "gabbrielli-2010" }]
+    },
+    {
+      "id": "A3-112", "subarea": "3.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En una aplicación de escritorio, el programa queda en espera y ejecuta funciones registradas (callbacks) solo cuando el usuario hace clic, escribe o mueve una ventana.",
+      "pregunta": "¿Qué paradigma describe el flujo de ejecución?",
+      "opciones": [
+        { "texto": "Lógico", "explicacion": "Incorrecta. La programación lógica resuelve consultas a partir de hechos y reglas." },
+        { "texto": "Procesamiento por lotes", "explicacion": "Incorrecta. El procesamiento por lotes ejecuta tareas sin interacción del usuario, de principio a fin." },
+        { "texto": "Orientado a eventos", "explicacion": "Correcta. El flujo lo determinan los eventos externos, que un ciclo de eventos despacha a los manejadores (callbacks) registrados." }
+      ],
+      "correcta": 2,
+      "estrategia": "«Callbacks», «manejadores» o «cuando el usuario…» → orientado a eventos.",
+      "conceptos": ["Programación orientada a eventos", "Callbacks"],
+      "fuentes": [{ "recurso": "joyanes-2014" }]
+    },
+    {
+      "id": "A3-113", "subarea": "3.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Un desarrollador subió a la rama main, que comparten diez personas, un commit que rompe el inicio de sesión. Necesita deshacerlo sin reescribir el historial que los demás ya descargaron.",
+      "pregunta": "¿Qué comando de Git debe usar?",
+      "opciones": [
+        { "texto": "git revert <hash-del-commit>", "explicacion": "Correcta. revert crea un commit nuevo que invierte los cambios del commit indicado, sin alterar el historial existente; es seguro en ramas compartidas." },
+        { "texto": "git reset --hard HEAD~1 seguido de git push --force", "explicacion": "Incorrecta. Reescribe el historial público: los demás tendrían commits huérfanos y conflictos." },
+        { "texto": "git commit --amend", "explicacion": "Incorrecta. amend modifica el último commit local (reescribiéndolo); no deshace un commit ya publicado de forma segura." }
+      ],
+      "correcta": 0,
+      "estrategia": "Commit publicado → revert. Commit solo local → reset o amend.",
+      "conceptos": ["Git", "revert", "Historial compartido"],
+      "fuentes": [{ "recurso": "swebok-v4", "detalle": "Configuration management" }]
+    },
+    {
+      "id": "A3-114", "subarea": "3.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Al ejecutar git merge feature/pagos, Git reporta un conflicto en el archivo app.js porque ambas ramas modificaron las mismas líneas.",
+      "pregunta": "¿Cuál es el procedimiento correcto?",
+      "opciones": [
+        { "texto": "Ejecutar git push --force para sobrescribir los cambios del otro desarrollador", "explicacion": "Incorrecta. No resuelve el conflicto y destruye trabajo ajeno en el remoto." },
+        { "texto": "Editar app.js eligiendo el contenido correcto entre los marcadores <<<<<<<, ======= y >>>>>>>, ejecutar git add app.js y concluir con git commit", "explicacion": "Correcta. Los conflictos se resuelven a mano en los archivos marcados; luego se preparan (add) y se confirma el merge." },
+        { "texto": "Borrar la rama feature/pagos y volver a programar los cambios", "explicacion": "Incorrecta. Es innecesario y desperdicia trabajo; los conflictos son parte normal de la integración." }
+      ],
+      "correcta": 1,
+      "estrategia": "Conflicto → editar → add → commit (o merge --continue).",
+      "conceptos": ["Git", "Conflictos de merge"],
+      "fuentes": [{ "recurso": "swebok-v4" }]
+    },
+    {
+      "id": "A3-115", "subarea": "3.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "El campo «edad» de un formulario de registro acepta valores enteros de 18 a 65, inclusive. Se diseñarán casos de prueba con la técnica de análisis de valores límite.",
+      "pregunta": "¿Qué conjunto de valores corresponde a esta técnica?",
+      "opciones": [
+        { "texto": "20, 40 y 60", "explicacion": "Incorrecta. Son valores representativos del interior del rango (más propios de particiones de equivalencia), no de sus límites." },
+        { "texto": "0, −1 y 100", "explicacion": "Incorrecta. Son valores inválidos lejanos a los límites; no prueban los bordes donde suelen ocurrir los errores." },
+        { "texto": "17, 18, 65 y 66", "explicacion": "Correcta. Se prueba justo en cada límite y justo fuera de él, donde se concentran los errores típicos (usar < en lugar de ≤)." }
+      ],
+      "correcta": 2,
+      "estrategia": "Valores límite: mínimo−1, mínimo, máximo y máximo+1 (a veces también mínimo+1 y máximo−1).",
+      "conceptos": ["Pruebas de caja negra", "Valores límite"],
+      "fuentes": [{ "recurso": "sommerville-2016", "detalle": "Cap. 8" }]
+    },
+    {
+      "id": "A3-116", "subarea": "3.3", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Analice la función:",
+      "codigo": "function clasificar(x) {\n  if (x < 0) return \"negativo\";\n  while (x > 100) x = x / 10;\n  if (x % 2 === 0) return \"par\";\n  return \"impar\";\n}",
+      "pregunta": "¿Cuál es su complejidad ciclomática V(G)?",
+      "opciones": [
+        { "texto": "3", "explicacion": "Incorrecta. Es el número de decisiones; la fórmula suma uno." },
+        { "texto": "4", "explicacion": "Correcta. Hay tres decisiones (if, while, if), y V(G) = decisiones + 1 = 4: se necesitan al menos cuatro casos para cubrir los caminos independientes." },
+        { "texto": "5", "explicacion": "Incorrecta. Las sentencias return no son decisiones." }
+      ],
+      "correcta": 1,
+      "estrategia": "V(G) = número de decisiones (if, while, for, case, && y ||) + 1 = aristas − nodos + 2.",
+      "conceptos": ["Complejidad ciclomática", "Pruebas de caja blanca"],
+      "fuentes": [{ "recurso": "pressman-2020", "detalle": "Prueba de ruta básica" }]
+    },
+    {
+      "id": "A3-117", "subarea": "3.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En un equipo es frecuente escuchar «en mi máquina sí funciona»: el sistema falla en producción por versiones distintas de Node.js y de bibliotecas del sistema.",
+      "pregunta": "¿Qué herramienta del entorno de desarrollo resuelve principalmente el problema?",
+      "opciones": [
+        { "texto": "Contenedores (por ejemplo, Docker) que empaquetan la aplicación con sus dependencias", "explicacion": "Correcta. Una imagen de contenedor incluye el runtime y las bibliotecas exactas, de modo que el mismo artefacto se ejecuta igual en desarrollo, pruebas y producción." },
+        { "texto": "Un IDE con autocompletado", "explicacion": "Incorrecta. Mejora la productividad al escribir código, pero no unifica los entornos de ejecución." },
+        { "texto": "Compilar en modo depuración", "explicacion": "Incorrecta. Agrega información de depuración, pero no elimina las diferencias de versiones entre ambientes." }
+      ],
+      "correcta": 0,
+      "estrategia": "Diferencias entre ambientes → contenedores o infraestructura como código.",
+      "conceptos": ["Docker", "Contenedores", "Ambientes"],
+      "fuentes": [{ "recurso": "swebok-v4", "detalle": "Software Engineering Operations" }]
+    },
+    {
+      "id": "A3-118", "subarea": "3.3", "formato": "ordenamiento", "nivel": "satisfactorio",
+      "base": "Un equipo adopta el desarrollo guiado por pruebas (TDD) para una nueva función.",
+      "lista": [
+        "1. Refactorizar el código manteniendo las pruebas en verde",
+        "2. Escribir una prueba que falla",
+        "3. Escribir el código mínimo para que la prueba pase"
+      ],
+      "pregunta": "¿Cuál es el orden de un ciclo de TDD?",
+      "opciones": [
+        { "texto": "3, 2, 1", "explicacion": "Incorrecta. En TDD la prueba se escribe antes que el código de producción." },
+        { "texto": "2, 1, 3", "explicacion": "Incorrecta. No se refactoriza hasta que la prueba pasa." },
+        { "texto": "2, 3, 1", "explicacion": "Correcta. Es el ciclo rojo → verde → refactorizar: la prueba falla, el código mínimo la hace pasar y después se mejora el diseño." }
+      ],
+      "correcta": 2,
+      "estrategia": "Recuerda los colores: rojo (prueba falla), verde (pasa) y refactorizar.",
+      "conceptos": ["TDD", "Pruebas unitarias", "Refactorización"],
+      "fuentes": [{ "recurso": "wells-xp" }]
+    },
+    {
+      "id": "A3-119", "subarea": "3.4", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Un desarrollador ejecuta en producción la sentencia:\nUPDATE Producto SET precio = precio * 1.10;",
+      "pregunta": "¿Qué efecto tiene?",
+      "opciones": [
+        { "texto": "Incrementa 10 % el precio de todos los productos de la tabla", "explicacion": "Correcta. Sin cláusula WHERE, UPDATE afecta todas las filas. Por eso conviene usar transacciones y probar primero con un SELECT." },
+        { "texto": "Incrementa solo el precio del primer producto", "explicacion": "Incorrecta. SQL no actualiza «la primera fila» por omisión; sin WHERE actualiza todo." },
+        { "texto": "Produce un error de sintaxis por la falta de WHERE", "explicacion": "Incorrecta. WHERE es opcional; la sentencia es válida." }
+      ],
+      "correcta": 0,
+      "estrategia": "UPDATE o DELETE sin WHERE afectan toda la tabla: es un error clásico en producción.",
+      "conceptos": ["SQL", "UPDATE", "DML"],
+      "fuentes": [{ "recurso": "beaulieu-2020" }]
+    },
+    {
+      "id": "A3-120", "subarea": "3.4", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "La consulta SELECT * FROM Cliente WHERE correo = 'ana@ejemplo.com' tarda varios segundos en una tabla de 2 millones de filas, porque el motor revisa la tabla completa.",
+      "pregunta": "¿Qué acción mejora el desempeño de la consulta?",
+      "opciones": [
+        { "texto": "Agregar más columnas a la tabla Cliente", "explicacion": "Incorrecta. Más columnas aumentan el tamaño de cada fila y no ayudan a localizar el registro." },
+        { "texto": "Crear un índice sobre la columna correo", "explicacion": "Correcta. Un índice (por ejemplo, un árbol B) permite localizar las filas por correo sin recorrer toda la tabla." },
+        { "texto": "Cambiar la consulta por SELECT * FROM Cliente y filtrar en la aplicación", "explicacion": "Incorrecta. Traslada 2 millones de filas a la aplicación: es aún más lento." }
+      ],
+      "correcta": 1,
+      "estrategia": "Búsquedas frecuentes por una columna que no es llave → índice sobre esa columna.",
+      "conceptos": ["Índices", "Optimización de consultas"],
+      "fuentes": [{ "recurso": "beaulieu-2020" }, { "recurso": "date-2001" }]
+    },
+    {
+      "id": "A3-121", "subarea": "3.4", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "En MongoDB se ejecuta la consulta:",
+      "codigo": "db.alumnos.find(\n  { promedio: { $gte: 9 } },\n  { nombre: 1, _id: 0 }\n)",
+      "pregunta": "¿Qué devuelve?",
+      "opciones": [
+        { "texto": "Todos los campos de los alumnos con promedio exactamente igual a 9", "explicacion": "Incorrecta. $gte significa «mayor o igual», y el segundo argumento es una proyección que limita los campos." },
+        { "texto": "Actualiza a 9 el promedio de todos los alumnos", "explicacion": "Incorrecta. find es una operación de lectura; las actualizaciones usan updateOne o updateMany." },
+        { "texto": "Solo el nombre de los alumnos con promedio mayor o igual a 9, sin el campo _id", "explicacion": "Correcta. El primer argumento es el filtro ($gte: 9) y el segundo, la proyección: incluye nombre y excluye _id." }
+      ],
+      "correcta": 2,
+      "estrategia": "En MongoDB, find(filtro, proyección): $gt, $gte, $lt, $lte, $in, $eq; en la proyección, 1 incluye y 0 excluye.",
+      "conceptos": ["MongoDB", "NoSQL", "Proyección"],
+      "fuentes": [{ "recurso": "meier-2019" }]
+    },
+    {
+      "id": "A3-122", "subarea": "3.4", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Dos cajeros leen al mismo tiempo el saldo de $1 000 de una cuenta. Uno deposita $200 y el otro retira $100; cada uno escribe su resultado calculado. El saldo final queda en $900 en lugar de $1 100.",
+      "pregunta": "¿Qué propiedad de las transacciones se incumplió?",
+      "opciones": [
+        { "texto": "Aislamiento", "explicacion": "Correcta. Es el problema de la actualización perdida: las transacciones concurrentes interfirieron. Se resuelve con niveles de aislamiento adecuados o con bloqueos." },
+        { "texto": "Durabilidad", "explicacion": "Incorrecta. Ambas escrituras persistieron; el problema es la concurrencia, no que se pierdan datos confirmados por una falla." },
+        { "texto": "Atomicidad", "explicacion": "Incorrecta. Cada transacción se ejecutó completa; el error surge de su ejecución simultánea." }
+      ],
+      "correcta": 0,
+      "estrategia": "Problemas de concurrencia (lectura sucia, actualización perdida, lectura no repetible, fantasmas) → aislamiento.",
+      "conceptos": ["ACID", "Aislamiento", "Concurrencia"],
+      "fuentes": [{ "recurso": "date-2001" }]
+    },
+    {
+      "id": "A3-123", "subarea": "3.5", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Una cadena de restaurantes quiere que sus clientes consulten el menú y hagan pedidos desde el celular sin instalar nada desde una tienda de aplicaciones, que funcione con conexión intermitente y a bajo costo.",
+      "pregunta": "¿Qué tipo de aplicación conviene?",
+      "opciones": [
+        { "texto": "Aplicación web progresiva (PWA)", "explicacion": "Correcta. Una PWA se abre desde el navegador, se puede «instalar» sin tienda, usa service workers para trabajar sin conexión y tiene una sola base de código." },
+        { "texto": "Aplicaciones nativas para iOS y Android", "explicacion": "Incorrecta. Requieren descargarse de la tienda y mantener dos bases de código, lo que contradice el bajo costo y la condición de no instalar." },
+        { "texto": "Aplicación de escritorio", "explicacion": "Incorrecta. No corresponde a una experiencia en el celular." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Sin tienda» + «offline» + «bajo costo» → PWA.",
+      "conceptos": ["PWA", "Service workers"],
+      "fuentes": [{ "recurso": "laudon-2016" }]
+    },
+    {
+      "id": "A3-124", "subarea": "3.5", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Una pyme quiere usar un sistema de gestión de clientes (CRM) sin desarrollar nada ni administrar servidores, bases de datos o actualizaciones; solo pagaría una suscripción mensual por usuario.",
+      "pregunta": "¿Qué modelo de servicio en la nube necesita?",
+      "opciones": [
+        { "texto": "IaaS", "explicacion": "Incorrecta. Con IaaS tendría que instalar y administrar el sistema operativo y el CRM sobre máquinas virtuales." },
+        { "texto": "SaaS", "explicacion": "Correcta. Software como servicio: la aplicación completa se consume por suscripción y el proveedor administra todo." },
+        { "texto": "PaaS", "explicacion": "Incorrecta. PaaS sirve para desplegar aplicaciones propias; la pyme no quiere desarrollar." }
+      ],
+      "correcta": 1,
+      "estrategia": "Usar un producto terminado → SaaS; desplegar tu código → PaaS; administrar máquinas → IaaS.",
+      "conceptos": ["SaaS", "Cómputo en la nube"],
+      "fuentes": [{ "recurso": "laudon-2016" }]
+    },
+    {
+      "id": "A3-125", "subarea": "3.5", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Una tienda en línea necesita redimensionar las imágenes cada vez que un vendedor sube una foto. Las cargas son esporádicas y con picos impredecibles, y la empresa quiere pagar solo por el tiempo de ejecución.",
+      "pregunta": "¿Qué plataforma de ejecución es la más adecuada?",
+      "opciones": [
+        { "texto": "Una máquina virtual dedicada encendida 24/7", "explicacion": "Incorrecta. Se paga aunque esté ociosa y hay que escalarla manualmente ante los picos." },
+        { "texto": "Un servidor físico en las instalaciones de la empresa", "explicacion": "Incorrecta. Implica inversión inicial y capacidad fija; es ineficiente para cargas esporádicas." },
+        { "texto": "Funciones serverless (FaaS) disparadas por el evento de carga", "explicacion": "Correcta. Las funciones se ejecutan ante un evento (subir un archivo), escalan automáticamente y se cobran por invocación y tiempo de ejecución." }
+      ],
+      "correcta": 2,
+      "estrategia": "«Por evento» + «picos impredecibles» + «pagar por uso» → serverless (FaaS).",
+      "conceptos": ["Serverless", "FaaS", "Arquitectura por eventos"],
+      "fuentes": [{ "recurso": "laudon-2016" }]
+    },
+    {
+      "id": "A3-126", "subarea": "3.5", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Se diseña una API REST para un sistema de pedidos. Una app móvil necesita consultar los datos del pedido con identificador 15.",
+      "pregunta": "¿Qué petición sigue las convenciones REST?",
+      "opciones": [
+        { "texto": "GET /pedidos/15", "explicacion": "Correcta. En REST se usan sustantivos para los recursos y verbos HTTP para las acciones: GET obtiene la representación del recurso /pedidos/15." },
+        { "texto": "POST /obtenerPedido?id=15", "explicacion": "Incorrecta. Usa un verbo en la URL y POST para una lectura; es estilo RPC, no REST." },
+        { "texto": "DELETE /pedidos/15", "explicacion": "Incorrecta. DELETE eliminaría el pedido." }
+      ],
+      "correcta": 0,
+      "estrategia": "GET leer, POST crear, PUT/PATCH actualizar, DELETE eliminar; las URLs nombran recursos en plural.",
+      "conceptos": ["REST", "HTTP", "APIs"],
+      "fuentes": [{ "recurso": "pavlenko-2024" }]
+    },
+    {
+      "id": "A3-127", "subarea": "3.5", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Un cliente solicita GET /productos/9999, pero ese producto no existe en la base de datos.",
+      "pregunta": "¿Qué código de estado HTTP debe devolver la API?",
+      "opciones": [
+        { "texto": "500 Internal Server Error", "explicacion": "Incorrecta. Indica una falla inesperada del servidor; aquí el servidor funcionó bien, pero el recurso no existe." },
+        { "texto": "404 Not Found", "explicacion": "Correcta. Indica que el recurso solicitado no existe en el servidor." },
+        { "texto": "201 Created", "explicacion": "Incorrecta. Se usa cuando una petición (normalmente POST) crea un recurso nuevo." }
+      ],
+      "correcta": 1,
+      "estrategia": "2xx éxito (200 OK, 201 Created, 204 No Content), 4xx error del cliente (400, 401, 403, 404), 5xx error del servidor (500, 503).",
+      "conceptos": ["HTTP", "Códigos de estado", "REST"],
+      "fuentes": [{ "recurso": "pavlenko-2024" }]
+    },
+    {
+      "id": "A3-128", "subarea": "3.5", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Un periódico digital necesita que sus notas aparezcan bien posicionadas en buscadores (SEO) y que la primera carga sea rápida en celulares de gama baja, con conexiones lentas.",
+      "pregunta": "¿Qué enfoque de renderizado web conviene?",
+      "opciones": [
+        { "texto": "SPA renderizada solo en el cliente", "explicacion": "Incorrecta. La SPA descarga primero un bundle de JavaScript y construye el contenido en el navegador: la primera carga es más lenta y el SEO es más difícil." },
+        { "texto": "Aplicación de escritorio con Electron", "explicacion": "Incorrecta. No es un sitio web indexable ni sirve para celulares." },
+        { "texto": "Renderizado del lado del servidor (SSR) o generación estática", "explicacion": "Correcta. El servidor entrega el HTML ya construido: los buscadores lo indexan directamente y el usuario ve contenido antes de que cargue el JavaScript." }
+      ],
+      "correcta": 2,
+      "estrategia": "SEO + primera carga rápida → SSR o sitio estático. Interactividad tipo app tras iniciar sesión → SPA.",
+      "conceptos": ["SSR", "SPA", "SEO"],
+      "fuentes": [{ "recurso": "ohanlon-2019" }]
+    }
+  ]
+}
