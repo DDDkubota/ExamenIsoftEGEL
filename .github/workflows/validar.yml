@@ -1,0 +1,19 @@
+name: Validar contenido
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validar temario, preguntas, guías y recursos
+        run: node scripts/validar.mjs
+      - name: Revisar sintaxis de la app
+        run: for f in app/js/*.js scripts/*.mjs; do node --check "$f"; done
