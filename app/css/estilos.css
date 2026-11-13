@@ -283,3 +283,6 @@ th { background: var(--fondo); }
 .quiz .opcion code { font-size: .92rem; }
 .rejilla-2 > *, .rejilla-3 > *, .guia-layout > * { min-width: 0; }
 .script code { white-space: pre; }
+.chip.libre { background: #e3f6e8; border-color: #8fd4a3; color: #0b5a23; }
+:root[data-tema="oscuro"] .chip.libre { background: #12301f; color: #8fe3ad; border-color: #2c6b43; }
+.alternativas { font-size: .88rem; background: var(--fondo); border-radius: 8px; padding: .4rem .6rem; }

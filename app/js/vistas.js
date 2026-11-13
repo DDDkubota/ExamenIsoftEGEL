@@ -154,10 +154,11 @@ export async function vistaBiblioteca(cont, params) {
         (f.origen === "oficial" && r.oficial) ||
         (f.origen === "repo" && r.archivo) ||
         (f.origen === "libre" && r.url && !r.archivo) ||
-        (f.origen === "mios" && r.mio),
+        (f.origen === "mios" && r.mio) ||
+        (f.origen === "gratuito" && (r.gratuito || r.archivo || r.mio)),
     )
     .filter((r) => !f.q || `${r.titulo} ${r.autores ?? ""} ${r.nota ?? ""}`.toLowerCase().includes(f.q.toLowerCase()))
-    .sort((a, b) => (a.prioridad ?? 9) - (b.prioridad ?? 9) || Number(!!b.oficial) - Number(!!a.oficial) || a.titulo.localeCompare(b.titulo));
+    .sort((a, b) => (a.prioridad ?? 9) - (b.prioridad ?? 9) || Number(!!b.oficial) - Number(!!a.oficial) || Number(!!b.gratuito) - Number(!!a.gratuito) || a.titulo.localeCompare(b.titulo));
 
   const areasOpts = [...D.areas.values()].map((a) => `<option value="${a.id}" ${f.area === a.id ? "selected" : ""}>${esc(a.nombre)}</option>`).join("");
   const tiposOpts = D.tiposRecurso.map((t) => `<option value="${t}" ${f.tipo === t ? "selected" : ""}>${TIPO_ICONO[t] ?? ""} ${t}</option>`).join("");
@@ -172,6 +173,7 @@ export async function vistaBiblioteca(cont, params) {
         <option value="oficial" ${f.origen === "oficial" ? "selected" : ""}>Bibliografía Ceneval</option>
         <option value="repo" ${f.origen === "repo" ? "selected" : ""}>Archivos en el repo</option>
         <option value="libre" ${f.origen === "libre" ? "selected" : ""}>Enlaces en línea</option>
+        <option value="gratuito" ${f.origen === "gratuito" ? "selected" : ""}>Gratuitos / libres</option>
         <option value="mios" ${f.origen === "mios" ? "selected" : ""}>Agregados por mí</option></select></label>
       ${f.id ? `<a class="btn btn-mini" href="#/biblioteca">Quitar filtro «${esc(f.id)}»</a>` : ""}
     </form>
@@ -325,11 +327,16 @@ function tarjetaRecurso(r, nCitas) {
   return `<article class="recurso tarjeta ${r.mio ? "mio" : ""}">
     <header><span class="icono" aria-hidden="true">${TIPO_ICONO[r.tipo] ?? "•"}</span>
       <div><h3>${esc(r.titulo)}</h3><p class="tenue">${esc(r.autores ?? "")}${r.anio ? ` (${r.anio})` : ""}</p></div></header>
-    <p>${r.oficial ? `<span class="chip oficial">Ceneval</span>` : ""}${r.prioridad === 1 ? `<span class="chip clave">clave</span>` : ""}${r.mio ? `<span class="chip">mío</span>` : ""}
+    <p>${r.oficial ? `<span class="chip oficial">Ceneval</span>` : ""}${r.licencia ? `<span class="chip libre" title="${esc(r.licencia)}">🔓 libre</span>` : r.gratuito ? `<span class="chip libre">gratuito</span>` : ""}${r.prioridad === 1 ? `<span class="chip clave">clave</span>` : ""}${r.mio ? `<span class="chip">mío</span>` : ""}
       ${(r.areas ?? []).map((a) => `<span class="chip area-${a}">${esc(nombreArea(a))}</span>`).join("")}
       ${(r.subareas ?? []).map((s) => `<a class="chip" href="#/guias/${encodeURIComponent(s)}">${esc(s)}</a>`).join("")}
       ${r.idioma === "en" ? `<span class="chip tenue">inglés</span>` : ""}</p>
     ${r.nota ? `<p class="nota">${esc(r.nota)}</p>` : ""}
+    ${r.alternativasLibres?.length ? `<p class="alternativas">🔓 <strong>Alternativas gratuitas:</strong> ${r.alternativasLibres
+      .map((id) => D.recursosPorId.get(id))
+      .filter(Boolean)
+      .map((a) => `<a href="${esc(a.url ?? `#/biblioteca?id=${a.id}`)}" ${a.url ? 'target="_blank" rel="noopener"' : ""}>${esc(a.titulo)}</a>`)
+      .join(" · ")}</p>` : ""}
     ${nCitas ? `<p class="tenue">Citado en ${nCitas} pregunta(s)</p>` : ""}
     <p class="acciones-recurso">${enlacesRecurso(r)}
       ${r.pdfId ? `<button class="btn btn-mini" data-pdf="${r.pdfId}">📄 Mi PDF</button>` : ""}

@@ -20,7 +20,7 @@ Cuando GitHub Pages esté activado, también estará en línea (ver *Publicació
 | **Diagnóstico** | Al terminar cualquier sesión: temas a reforzar ponderados por su peso en el examen, conceptos fallados, qué leer, comparación con tu sesión anterior y el siguiente paso recomendado. |
 | **Seguimiento** | Indicadores (precisión reciente, racha, cobertura, proyección por sección), gráficas de aciertos por sesión, actividad diaria y antes/ahora por área, **dominio por subárea**, conceptos débiles e historial. Repetición espaciada (Leitner: 1, 3, 7, 14 y 30 días). |
 | **Guías** | Una guía por subárea (conceptos, tablas comparativas, trampas, qué leer), más «Cómo responder reactivos Ceneval». |
-| **Biblioteca** | 115 recursos **clasificados por área y subárea** (la bibliografía oficial aparece marcada con *Ceneval*). Corrige URLs, agrega recursos, guarda **tus PDFs en tu navegador** y propónlos al repo. |
+| **Biblioteca** | 140 recursos **clasificados por área y subárea** (la bibliografía oficial aparece marcada con *Ceneval*); 47 gratuitos y cada libro comercial muestra sus **alternativas gratuitas**. Corrige URLs, agrega recursos, guarda **tus PDFs en tu navegador** y propónlos al repo. |
 | **Comandos** | 130 comandos en 10 ramas (Git, GitHub CLI, Linux, SQL, MongoDB, Docker, Node, Python, Java y este proyecto): búsqueda, copiar, **agregar los tuyos**, **quiz por rama** y **generador de tu propio repositorio** con esta herramienta. |
 | **Plan** | Reparte tus horas por subárea según su peso y tu desempeño hasta la fecha de tu examen. |
 
@@ -53,7 +53,8 @@ app/                 Simulador (HTML + JS sin dependencias)
 contenido/           Temario, preguntas (base + extendido), guías, recursos y comandos (todo editable)
 biblioteca/          Dónde agregar PDFs NUEVOS, por área
 GUIAS/OFICIAL/       Guía oficial Ceneval vigente
-GUIAS/, LIBROS/      Material existente que sigue siendo relevante
+GUIAS/               Material existente que sigue siendo relevante
+LIBROS/              Solo un README: los libros comerciales se retiraron (ver alternativas libres)
 EJEMPLOS/, VIDEOS/   Ejemplos y enlaces de la comunidad
 legacy/              Temas de temarios anteriores que ya no se evalúan (redes, SO, matemáticas…)
 scripts/             validar.mjs (validación del contenido) · servir.mjs (servidor local)

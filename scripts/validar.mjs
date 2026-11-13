@@ -157,6 +157,16 @@ for (const ruta of manifest.comandos ?? []) {
 }
 if (ramasVistas.size) console.log(`Comandos: ${totalComandos} en ${ramasVistas.size} ramas`);
 
+for (const r of recursosDoc?.recursos ?? []) {
+  const donde = `recursos.json › ${r.id}`;
+  if (r.gratuito !== undefined && typeof r.gratuito !== "boolean") err(donde, "«gratuito» debe ser true/false");
+  if (r.licencia !== undefined && (typeof r.licencia !== "string" || !r.gratuito)) err(donde, "«licencia» debe ser texto y el recurso debe marcarse gratuito");
+  for (const a of r.alternativasLibres ?? []) {
+    const alt = recursos.get(a);
+    if (!alt) err(donde, `alternativa «${a}» no existe`);
+    else if (!alt.gratuito) err(donde, `alternativa «${a}» no está marcada como gratuita`);
+  }
+}
 for (const [donde, id] of globalThis.__refs ?? []) if (!recursos.has(id)) err(donde, `fuente «${id}» no existe en recursos.json`);
 
 finalizar();
