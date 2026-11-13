@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador EGEL Plus ISOFT</title>
+  <meta name="description" content="Simulador de examen, guías de estudio y biblioteca clasificada para el EGEL Plus ISOFT (Ceneval). Proyecto comunitario.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#vista">Saltar al contenido</a>
+  <header class="cabecera">
+    <a class="marca" href="#/inicio"><span aria-hidden="true">🎓</span> EGEL Plus <strong>ISOFT</strong></a>
+    <button id="menu-btn" class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menú">☰</button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#/inicio">Inicio</a>
+      <a href="#/simulacro">Simulacro</a>
+      <a href="#/examen">Examen completo</a>
+      <a href="#/practica">Práctica</a>
+      <a href="#/seguimiento">Seguimiento</a>
+      <a href="#/guias">Guías</a>
+      <a href="#/biblioteca">Biblioteca</a>
+      <a href="#/comandos">Comandos</a>
+      <a href="#/plan">Plan</a>
+    </nav>
+    <button id="tema-btn" class="menu-btn" aria-label="Cambiar tema claro u oscuro" title="Tema">◐</button>
+  </header>
+  <main id="vista" class="contenedor" tabindex="-1"><p class="tenue">Cargando…</p></main>
+  <footer class="pie contenedor">
+    <span id="pie-stats"></span> ·
+    <a id="repo-link" href="#" target="_blank" rel="noopener">Código y contribuciones en GitHub</a> ·
+    Sin afiliación con Ceneval.
+  </footer>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
