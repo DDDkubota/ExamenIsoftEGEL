@@ -16,9 +16,10 @@ export function dominioSubareas(n = 12) {
     const h = hist[i];
     const p = D.porId.get(h.id);
     if (!p) continue;
-    const s = (porSub[p.subarea] ??= { recientes: [], vistas: new Set() });
+    const s = (porSub[p.subarea] ??= { recientes: [], vistas: new Set(), tiempos: [] });
     s.vistas.add(h.id);
     if (s.recientes.length < n) s.recientes.push(h.ok);
+    if (h.s > 0 && s.tiempos.length < n) s.tiempos.push(h.s);
   }
   const lt = E.get().leitner;
   const ahora = Date.now();
@@ -35,7 +36,8 @@ export function dominioSubareas(n = 12) {
     else if (p < 60) estado = { id: "aprendiendo", nombre: "Reforzar", icono: "▲" };
     else if (p < 80 || intentos < 5) estado = { id: "progreso", nombre: "En progreso", icono: "◐" };
     else estado = { id: "dominada", nombre: "Dominada", icono: "✔" };
-    res[sub.id] = { ...sub, intentos, aciertos, p, vistas: s?.vistas.size ?? 0, total, pendientes, estado };
+    const tiempo = s?.tiempos.length ? s.tiempos.reduce((x, y) => x + y, 0) / s.tiempos.length : null;
+    res[sub.id] = { ...sub, intentos, aciertos, p, vistas: s?.vistas.size ?? 0, total, pendientes, estado, tiempo };
   }
   return res;
 }
@@ -203,6 +205,7 @@ export function htmlDiagnostico(items, modo) {
     }
   const topLecturas = [...lecturas.values()].sort((a, b) => b.n - a.n || (a.r.prioridad ?? 9) - (b.r.prioridad ?? 9)).slice(0, 6);
   const pendientesHoy = E.pendientesRepaso().length;
+  const trampas = fallas.filter((x) => x.p.trampa);
 
   let consejo;
   if (!fallas.length) consejo = "¡Sesión perfecta! Sube la dificultad: prueba un simulacro cronometrado o solo preguntas de nivel sobresaliente.";
@@ -233,6 +236,8 @@ export function htmlDiagnostico(items, modo) {
           })
           .join("")}</ul>` : ""}</div>` : ""}
     </div>
+    ${trampas.length ? `<div class="trampa"><strong>🪤 Caíste en ${trampas.length} trampa(s).</strong> La más frecuente en tu sesión: ${esc(trampas[0].p.trampa)}
+      <a href="#/guias/temas-criticos">Repasa «Temas críticos y preguntas trampa» →</a></div>` : ""}
     <p class="acciones">
       ${fallas.length ? `<a class="btn btn-primario" href="#/practica?filtro=falladas&iniciar=1&n=${Math.min(20, fallas.length)}">Repasar ahora mis ${fallas.length} errores</a>` : ""}
       <a class="btn" href="#/practica?filtro=repaso&iniciar=1&n=20">Repaso programado${pendientesHoy ? ` (${pendientesHoy} hoy)` : ""}</a>
@@ -258,4 +263,51 @@ export function htmlNiveles(porArea) {
       <tr><th>Global (conjuntivo)</th><td></td><td>${global ? chip(global) : "<span class='tenue'>Se requiere responder ambas secciones</span>"}${premio ? " 🏅 candidato al Premio Ceneval*" : ""}</td></tr>
     </tbody></table>
     <p class="tenue">Cada área se pondera por su número de reactivos y el global sigue la tabla 5.1.3 de la guía. *El premio exige además presentar por primera vez y tener máximo un año de egreso. Estimación orientativa: Ceneval usa el Índice Ceneval (700–1300).</p></div>`;
+}
+
+// ---------------- Indicadores finos (tiempo y trampas) ----------------
+
+/** Segundos promedio por reactivo en las últimas n respuestas cronometradas. */
+export function tiempoMedio(n = 100, filtro = () => true) {
+  const conTiempo = E.get().historial.filter((h) => h.s > 0 && filtro(h)).slice(-n);
+  return conTiempo.length ? conTiempo.reduce((a, h) => a + h.s, 0) / conTiempo.length : null;
+}
+
+/** Desempeño en preguntas con trampa (banco reto) y las trampas que más fallas. */
+export function estadisticaTrampas() {
+  let t = 0;
+  let a = 0;
+  const fallos = {};
+  for (const h of E.get().historial) {
+    const p = D.porId.get(h.id);
+    if (!p?.trampa) continue;
+    t++;
+    if (h.ok) a++;
+    else fallos[p.id] = (fallos[p.id] ?? 0) + 1;
+  }
+  const peores = Object.entries(fallos)
+    .sort((x, y) => y[1] - x[1])
+    .slice(0, 5)
+    .map(([id, n]) => ({ p: D.porId.get(id), n }));
+  return { t, a, p: pct(a, t), peores };
+}
+
+/** Distractor más elegido por pregunta (solo si se eligió al menos 2 veces). */
+export function distractoresFrecuentes(limite = 6) {
+  const conteo = {};
+  for (const h of E.get().historial) {
+    if (h.ok || h.e < 0) continue;
+    const k = `${h.id}|${h.e}`;
+    conteo[k] = (conteo[k] ?? 0) + 1;
+  }
+  return Object.entries(conteo)
+    .filter(([, n]) => n >= 2)
+    .sort((x, y) => y[1] - x[1])
+    .slice(0, limite)
+    .map(([k, n]) => {
+      const [id, e] = k.split("|");
+      const p = D.porId.get(id);
+      return p ? { p, opcion: p.opciones[Number(e)], n } : null;
+    })
+    .filter(Boolean);
 }

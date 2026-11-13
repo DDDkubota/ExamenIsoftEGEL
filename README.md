@@ -19,12 +19,13 @@ Cuando GitHub Pages esté activado, también estará en línea (ver *Publicació
 | **Práctica** | Retroalimentación inmediata: por qué cada opción es correcta o incorrecta, **estrategia para razonar**, conceptos y fuentes. Filtros por área, subárea, banco, nivel, no vistas, falladas, marcadas y **repaso programado**. |
 | **Diagnóstico** | Al terminar cualquier sesión: temas a reforzar ponderados por su peso en el examen, conceptos fallados, qué leer, comparación con tu sesión anterior y el siguiente paso recomendado. |
 | **Seguimiento** | Indicadores (precisión reciente, racha, cobertura, proyección por sección), gráficas de aciertos por sesión, actividad diaria y antes/ahora por área, **dominio por subárea**, conceptos débiles e historial. Repetición espaciada (Leitner: 1, 3, 7, 14 y 30 días). |
-| **Guías** | Una guía por subárea (conceptos, tablas comparativas, trampas, qué leer), más «Cómo responder reactivos Ceneval». |
+| **Modo reto** | 45 preguntas trampa de nivel exigente, concentradas en los temas con más errores históricos; cada una explica **la trampa** y cómo evitarla. |
+| **Guías** | Una guía por subárea, «Cómo responder reactivos Ceneval» y **«Temas críticos y preguntas trampa»**, con los datos de desempeño por área de los informes de Ceneval 2017–2021, los pares de conceptos que más se confunden, las normas renombradas, los cálculos y las trampas de código y SQL. |
 | **Biblioteca** | 140 recursos **clasificados por área y subárea** (la bibliografía oficial aparece marcada con *Ceneval*); 47 gratuitos y cada libro comercial muestra sus **alternativas gratuitas**. Corrige URLs, agrega recursos, guarda **tus PDFs en tu navegador** y propónlos al repo. |
 | **Comandos** | 130 comandos en 10 ramas (Git, GitHub CLI, Linux, SQL, MongoDB, Docker, Node, Python, Java y este proyecto): búsqueda, copiar, **agregar los tuyos**, **quiz por rama** y **generador de tu propio repositorio** con esta herramienta. |
 | **Plan** | Reparte tus horas por subárea según su peso y tu desempeño hasta la fecha de tu examen. |
 
-**Banco de reactivos:** 203 preguntas originales con la **misma distribución por subárea que el examen real**: banco *base* (72) y banco *extendido* (131), con 6 textos para comprensión lectora.
+**Banco de reactivos:** 248 preguntas originales: 203 con la **misma distribución por subárea que el examen real** (banco *base* 72 y *extendido* 131, con 6 textos para comprensión lectora) y 45 del banco *reto*.
 
 Las preguntas son **originales** y siguen el formato público de la guía (cuestionamiento directo, completamiento,
 ordenamiento y multirreactivo). **No son reactivos reales del examen.** Complementa con la
@@ -67,6 +68,10 @@ En este proyecto:
 - El repo guarda **referencias y URLs públicas legales** (editorial, autor, acceso abierto, bibliotecas institucionales).
 - Cada persona puede guardar **su propia copia** en la app (Biblioteca → Mis PDFs), en su navegador, sin subirla a ningún lado.
 - Solo se suben al repo PDFs con licencia libre, de dominio público, propios o con permiso (ver [`biblioteca/README.md`](biblioteca/README.md)).
+
+## 💾 Tus datos
+
+Todo tu avance (respuestas con su tiempo y la opción elegida, repasos, simulacros, recursos y comandos propios) vive **solo en tu navegador**, en `localStorage`, **comprimido** (codificación compacta + LZ: ~30× menos espacio), lo que permite guardar alrededor de 100 000 respuestas. Los PDFs personales van en IndexedDB. Cada visitante del sitio publicado tiene su propia información; el respaldo de *Seguimiento → Exportar* también va comprimido.
 
 ## 🤝 Contribuir
 

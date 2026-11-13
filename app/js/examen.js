@@ -114,6 +114,7 @@ export function htmlReactivo(p, { orden, elegida = null, revelar = false, numero
         <ol class="explicaciones">${orden
           .map((iOrig, iVis) => `<li class="${iOrig === p.correcta ? "es-correcta" : ""}"><strong>${LETRAS[iVis]})</strong> ${esc(p.opciones[iOrig].explicacion)}</li>`)
           .join("")}</ol>
+        ${p.trampa ? `<div class="trampa"><strong>🪤 La trampa:</strong> ${esc(p.trampa)} <a href="#/guias/temas-criticos">Ver temas críticos →</a></div>` : ""}
         ${p.estrategia ? `<div class="estrategia"><strong>🧭 Cómo razonarla:</strong> ${esc(p.estrategia)}</div>` : ""}
         ${p.conceptos?.length ? `<p class="conceptos">${p.conceptos.map((c) => `<span class="chip">${esc(c)}</span>`).join(" ")}</p>` : ""}
         ${p.fuentes?.length ? `<details open><summary>📚 Fuentes para estudiar</summary><ul class="fuentes">${htmlFuentes(p)}</ul></details>` : ""}
@@ -127,6 +128,7 @@ export function htmlReactivo(p, { orden, elegida = null, revelar = false, numero
       <span class="chip area-${esc(p.area)}">${esc(nombreArea(p.area))}</span>
       <span class="chip">${esc(nombreSub(p.subarea))}</span>
       <span class="chip tenue">${esc(FORMATOS[p.formato] ?? p.formato)}</span>
+      ${p.banco === "reto" ? `<span class="chip reto">🔥 Reto</span>` : ""}
       ${p.nivel ? `<span class="chip nivel-${esc(p.nivel)}">${p.nivel === "sobresaliente" ? "Nivel sobresaliente" : "Nivel satisfactorio"}</span>` : ""}
       <button type="button" class="btn-marca" data-marca aria-pressed="${marcada}" title="Guardar para repasar">${marcada ? "★" : "☆"}</button>
     </header>
@@ -157,7 +159,7 @@ const ordenOpciones = (p) => (E.get().ajustes.barajar ? barajar(p.opciones.map((
 
 // ---------------- Formulario de configuración común ----------------
 
-const NOMBRE_BANCO = { base: "Base (demo)", extendido: "Extendido" };
+const NOMBRE_BANCO = { base: "Base (demo)", extendido: "Extendido", reto: "🔥 Reto (preguntas trampa)" };
 
 function selectorAlcance(params, { conNivel = true, conFiltro = true, conBanco = true } = {}) {
   const areas = [...D.areas.values()];
@@ -257,9 +259,11 @@ export function vistaPractica(cont, params) {
   };
   cerrarPractica = registrarSesion;
 
+  let mostrada = Date.now();
   const pintar = (elegida = null) => {
     const p = sesion[i];
     const revelar = elegida !== null;
+    if (!revelar) mostrada = Date.now();
     const aciertos = items.filter((x) => x.ok).length;
     cont.innerHTML = `<div class="barra-sesion"><a href="#/practica" class="btn btn-mini">← Configurar</a>
         <span>${esc(modo)} · Aciertos: <strong>${aciertos}</strong> / ${items.length}</span>
@@ -282,8 +286,9 @@ export function vistaPractica(cont, params) {
   const elegir = (iOrig) => {
     const p = sesion[i];
     const ok = iOrig === p.correcta;
-    items.push({ p, elegida: iOrig, ok });
-    E.registrar(p.id, ok, "practica");
+    const segundos = (Date.now() - mostrada) / 1000;
+    items.push({ p, elegida: iOrig, ok, s: segundos });
+    E.registrar(p.id, ok, "practica", iOrig, segundos);
     pintar(iOrig);
   };
   const siguiente = () => {
@@ -326,11 +331,21 @@ export function vistaPractica(cont, params) {
 let temporizador = null;
 let activo = null; // estado del simulacro en pantalla
 
+/** Suma al reactivo actual el tiempo que lleva en pantalla. */
+function acumularTiempo(st) {
+  if (!st.vista) return;
+  const id = st.ids[st.i];
+  st.tiempos[id] = (st.tiempos[id] ?? 0) + (Date.now() - st.vista) / 1000;
+  st.vista = Date.now();
+}
+
 const transcurrido = (st) => Math.floor(st.acumulado + (st.reanudado ? (Date.now() - st.reanudado) / 1000 : 0));
 const persistir = (st) => E.guardarEnCurso({ ...st });
 const alSalirDePagina = () => activo && pausar(activo);
 
 function pausar(st) {
+  acumularTiempo(st);
+  st.vista = null;
   st.acumulado = transcurrido(st);
   st.reanudado = null;
   persistir(st);
@@ -369,6 +384,7 @@ export function vistaSimulacro(cont, params) {
       ${tarjetaModo("diagnostico", "🎯 Diagnóstico rápido", "20 reactivos disciplinares en proporción al peso de cada subárea. Ideal para empezar.", 20)}
       ${tarjetaModo("disciplinar", "🧠 Disciplinar (143)", `143 reactivos con la distribución real por subárea (de ${disciplinares} disponibles), 7 horas.`, disciplinares)}
       ${tarjetaModo("lenguaje", "📝 Lenguaje y Comunicación", `Comprensión lectora y redacción indirecta (${lyc} reactivos), 2 horas.`, lyc)}
+      ${tarjetaModo("reto", "🔥 Modo reto", `20 preguntas trampa de nivel exigente (de ${preguntasDe({ banco: "reto" }).length}), centradas en los temas con más errores históricos. Cada una explica la trampa al final.`, preguntasDe({ banco: "reto" }).length)}
     </div>
     <form class="tarjeta form-config" id="cfg-area"><h2>Simulacro personalizado</h2>
       ${selectorAlcance(params, { conNivel: false, conFiltro: false })}
@@ -390,6 +406,7 @@ export function vistaSimulacro(cont, params) {
       if (modo === "diagnostico") iniciar(cont, muestraProporcional(preguntasDe({ seccion: "DIS" }), 20), { modo: "Diagnóstico", crono: true });
       if (modo === "disciplinar") iniciar(cont, muestraExacta("DIS"), { modo: "Disciplinar (143)", crono: true });
       if (modo === "lenguaje") iniciar(cont, muestraExacta("LYC"), { modo: "Lenguaje y Comunicación", crono: true });
+      if (modo === "reto") iniciar(cont, muestraProporcional(preguntasDe({ banco: "reto" }), 20), { modo: "Reto", crono: true });
     }),
   );
   const form = $("#cfg-area", cont);
@@ -425,13 +442,15 @@ function iniciar(cont, lista, { modo, crono, limiteMin = null, bloque = null, or
     reanudado: Date.now(),
     limite: crono ? Math.ceil(limiteMin ?? minutosDe(sesion)) * 60 : null,
     fecha: new Date().toISOString(),
+    tiempos: {},
+    vista: Date.now(),
   };
   persistir(st);
   correr(cont, st);
 }
 
 function reanudar(cont, guardado) {
-  const st = { ...guardado, reanudado: Date.now() };
+  const st = { tiempos: {}, ...guardado, reanudado: Date.now(), vista: Date.now() };
   if (st.ids.some((id) => !D.porId.has(id))) {
     aviso("Algunas preguntas de ese simulacro ya no existen; se omitirán.", "error");
     st.ids = st.ids.filter((id) => D.porId.has(id));
@@ -499,6 +518,7 @@ function pintarSim(cont, st) {
     $(`[data-ir="${st.i}"]`, cont).classList.toggle("revisar", e.target.checked);
   });
   const ir = (k) => {
+    acumularTiempo(st);
     st.i = k;
     persistir(st);
     pintarSim(cont, st);
@@ -528,6 +548,7 @@ function confirmarFin(cont, st) {
 }
 
 function terminar(cont, st) {
+  acumularTiempo(st);
   clearInterval(temporizador);
   temporizador = null;
   window.removeEventListener("pagehide", alSalirDePagina);
@@ -536,9 +557,9 @@ function terminar(cont, st) {
   const items = st.ids.map((id) => {
     const p = D.porId.get(id);
     const elegida = st.resp[id];
-    return { p, elegida: elegida ?? null, ok: elegida === p.correcta };
+    return { p, elegida: elegida ?? null, ok: elegida === p.correcta, s: st.tiempos?.[id] ?? 0 };
   });
-  for (const x of items) if (x.elegida !== null) E.registrar(x.p.id, x.ok, st.tipo);
+  for (const x of items) if (x.elegida !== null) E.registrar(x.p.id, x.ok, st.tipo, x.elegida, x.s);
   const aciertos = items.filter((x) => x.ok).length;
   const porArea = resumenPorArea(items);
   E.agregarSimulacro({ fecha: new Date().toISOString(), modo: st.modo, tipo: st.tipo, total: items.length, aciertos, duracion, porArea });

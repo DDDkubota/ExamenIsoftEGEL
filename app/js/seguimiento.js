@@ -1,8 +1,8 @@
 // Seguimiento del progreso de estudio: indicadores, tendencias, dominio por subárea y conceptos débiles.
 import { D, guiaDe } from "./datos.js";
-import { E } from "./almacen.js";
+import { E, usoAlmacenamiento } from "./almacen.js";
 import { $, esc, aviso, pct, fmtTiempo, nombreSub, nivelEstimado } from "./ui.js";
-import { dominioSubareas, conceptosDebiles, serieSesiones, actividadDiaria, antesAhoraPorArea, racha, proyeccion } from "./analisis.js";
+import { dominioSubareas, conceptosDebiles, serieSesiones, actividadDiaria, antesAhoraPorArea, racha, proyeccion, tiempoMedio, estadisticaTrampas, distractoresFrecuentes } from "./analisis.js";
 import { graficaLinea, graficaColumnas, graficaPesas } from "./graficas.js";
 
 export function vistaSeguimiento(cont) {
@@ -17,6 +17,12 @@ export function vistaSeguimiento(cont) {
   const conceptos = conceptosDebiles();
   const sesiones = serieSesiones();
   const tiempoTotal = st.simulacros.reduce((a, s) => a + (s.duracion ?? 0), 0);
+  const tMedio = tiempoMedio();
+  const objetivo = (D.temario.formato.minutosDisciplinar * 60) / 143;
+  const trampas = estadisticaTrampas();
+  const distractores = distractoresFrecuentes();
+  const uso = usoAlmacenamiento();
+  const fmtMin = (seg) => (seg >= 60 ? `${Math.floor(seg / 60)} min ${Math.round(seg % 60)} s` : `${Math.round(seg)} s`);
 
   const tile = (valor, etiqueta, nota = "") => `<div class="tile"><div class="tile-valor">${valor}</div><div class="tile-etiqueta">${etiqueta}</div>${nota ? `<div class="tile-nota">${nota}</div>` : ""}</div>`;
   const nivelProy = (sec) => (proy[sec] ? `${proy[sec].p}%` : "—");
@@ -31,6 +37,8 @@ export function vistaSeguimiento(cont) {
       ${tile(pendientes, "repasos para hoy", pendientes ? `<a href="#/practica?filtro=repaso&iniciar=1&n=${Math.min(30, pendientes)}">Repasar ahora →</a>` : "al día ✔")}
       ${tile(`${pct(vistas, D.preguntas.length)}%`, "del banco visto", `${vistas} de ${D.preguntas.length} preguntas`)}
       ${tile(nivelProy("DIS"), "proyección disciplinar", proy.DIS ? `${nivelEstimado(proy.DIS.p).nombre} · cubres ${proy.DIS.cobertura}% del temario` : "practica para estimarla")}
+      ${tile(tMedio ? fmtMin(tMedio) : "—", "tiempo medio por reactivo", tMedio ? (tMedio > objetivo ? `⚠ por encima del ritmo del examen (${fmtMin(objetivo)})` : `✔ dentro del ritmo del examen (${fmtMin(objetivo)})`) : "se mide al responder")}
+      ${tile(trampas.t ? `${trampas.p}%` : "—", "trampas superadas", trampas.t ? `${trampas.a} de ${trampas.t} preguntas de reto` : `<a href="#/simulacro">prueba el modo reto →</a>`)}
     </div>
 
     <div class="tarjeta"><h2>Aciertos por sesión</h2>
@@ -43,13 +51,14 @@ export function vistaSeguimiento(cont) {
 
     <div class="tarjeta"><h2>Dominio por subárea</h2>
       <p class="tenue">Según tus últimas 12 respuestas de cada subárea. «Dominada» = 80% o más con al menos 5 respuestas.</p>
-      <table class="tabla-datos"><thead><tr><th>Subárea</th><th>Peso</th><th>Estado</th><th>Aciertos recientes</th><th>Vistas</th><th>Repaso hoy</th><th></th></tr></thead><tbody>
+      <table class="tabla-datos"><thead><tr><th>Subárea</th><th>Peso</th><th>Estado</th><th>Aciertos recientes</th><th>Tiempo medio</th><th>Vistas</th><th>Repaso hoy</th><th></th></tr></thead><tbody>
       ${Object.values(dom)
         .sort((a, b) => ordenEstado(a) - ordenEstado(b) || b.reactivos - a.reactivos)
         .map(
           (d) => `<tr><td>${esc(nombreSub(d.id))}</td><td>${d.reactivos}</td>
           <td><span class="estado estado-${d.estado.id}"><span aria-hidden="true">${d.estado.icono}</span> ${d.estado.nombre}</span></td>
           <td>${d.intentos ? `${d.p}% <span class="tenue">(${d.aciertos}/${d.intentos})</span>` : "—"}</td>
+          <td>${d.tiempo ? `${fmtMin(d.tiempo)}${d.tiempo > objetivo * 1.25 ? " ⚠" : ""}` : "—"}</td>
           <td>${d.vistas}/${d.total}</td><td>${d.pendientes || ""}</td>
           <td>${guiaDe(d.id) ? `<a class="btn btn-mini" href="#/guias/${encodeURIComponent(d.id)}">Guía</a>` : ""} <a class="btn btn-mini" href="#/practica?subarea=${encodeURIComponent(d.id)}&iniciar=1&n=10">Practicar</a></td></tr>`,
         )
@@ -63,6 +72,15 @@ export function vistaSeguimiento(cont) {
           .join(", ")}</li>`)
         .join("")}</ul></div>` : ""}
 
+    ${trampas.peores.length || distractores.length ? `<div class="rejilla-2">
+      ${trampas.peores.length ? `<div class="tarjeta"><h2>🪤 Trampas en las que más caes</h2><ul class="lista-trampas">${trampas.peores
+        .map(({ p, n }) => `<li><strong>${esc(nombreSub(p.subarea))}</strong> <span class="tenue">(${n}×)</span><br>${esc(p.trampa)}</li>`)
+        .join("")}</ul><a href="#/guias/temas-criticos">Temas críticos y preguntas trampa →</a></div>` : ""}
+      ${distractores.length ? `<div class="tarjeta"><h2>Distractores que eliges con frecuencia</h2><p class="tenue">Respuestas incorrectas que has elegido dos veces o más: son confusiones arraigadas.</p><ul class="lista-trampas">${distractores
+        .map(({ p, opcion, n }) => `<li><strong>${esc(p.id)}</strong> · ${esc(nombreSub(p.subarea))} <span class="tenue">(${n}×)</span><br>Elegiste «${esc(opcion.texto)}» — ${esc(opcion.explicacion)}</li>`)
+        .join("")}</ul></div>` : ""}
+    </div>` : ""}
+
     <div class="tarjeta"><h2>Historial de sesiones</h2>${
       st.simulacros.length
         ? `<div class="tabla"><table class="tabla-datos"><thead><tr><th>Fecha</th><th>Tipo</th><th>Resultado</th><th>Tiempo</th></tr></thead><tbody>${st.simulacros
@@ -74,9 +92,10 @@ export function vistaSeguimiento(cont) {
 
     <div class="tarjeta"><h2>Ajustes y respaldo</h2>
       <label class="check"><input type="checkbox" id="barajar" ${st.ajustes.barajar ? "checked" : ""}> Barajar el orden de las opciones (evita memorizar la letra)</label>
-      <p>Tu progreso se guarda solo en este navegador. Exporta un respaldo para pasarlo a otra computadora.</p>
+      <p>Tu progreso se guarda solo en este navegador, <strong>comprimido</strong>: ocupa ${(uso.bytes / 1024).toFixed(1)} KB${uso.sinComprimir > uso.bytes ? ` (sin comprimir serían ${(uso.sinComprimir / 1024).toFixed(1)} KB, ${(uso.sinComprimir / Math.max(1, uso.bytes)).toFixed(1)}× menos)` : ""}. Caben alrededor de 100 000 respuestas con detalle (tiempo y opción elegida).
+      El respaldo también va comprimido: sirve para pasar tu avance a otro equipo con «Importar».</p>
       <button class="btn" id="exportar">Exportar progreso</button>
-      <label class="btn">Importar progreso<input type="file" id="importar" accept="application/json" hidden></label>
+      <label class="btn">Importar progreso<input type="file" id="importar" accept=".egel,.json" hidden></label>
       <button class="btn btn-peligro" id="reiniciar">Reiniciar progreso</button></div>`;
 
   // Gráficas (necesitan el ancho real del contenedor)
@@ -95,8 +114,8 @@ export function vistaSeguimiento(cont) {
   $("#barajar", cont).addEventListener("change", (e) => E.ajustes({ barajar: e.target.checked }));
   $("#exportar", cont).addEventListener("click", () => {
     const a = document.createElement("a");
-    a.href = URL.createObjectURL(new Blob([E.exportar()], { type: "application/json" }));
-    a.download = `egel-isoft-progreso-${new Date().toISOString().slice(0, 10)}.json`;
+    a.href = URL.createObjectURL(new Blob([E.exportar()], { type: "application/octet-stream" }));
+    a.download = `egel-isoft-progreso-${new Date().toISOString().slice(0, 10)}.egel`;
     a.click();
   });
   $("#importar", cont).addEventListener("change", async (e) => {

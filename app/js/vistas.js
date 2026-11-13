@@ -24,6 +24,7 @@ export function vistaInicio(cont) {
       <div class="acciones">
         <a class="btn btn-primario" href="#/simulacro">${totalVistas ? "Hacer un simulacro" : "Empezar con un diagnóstico"}</a>
         <a class="btn" href="#/examen">Examen completo (203)</a>
+        <a class="btn" href="#/guias/temas-criticos">🔥 Temas críticos</a>
         <a class="btn" href="#/practica">Práctica guiada</a>
         <a class="btn" href="#/seguimiento">Mi seguimiento</a>
         <a class="btn" href="#/guias/estrategias">Cómo responder reactivos Ceneval</a>
@@ -91,6 +92,7 @@ export async function vistaGuias(cont, params, id) {
     cont.innerHTML = `<h1>Guías de estudio</h1>
       <p class="intro">Una guía por subárea del temario oficial: conceptos clave, trampas frecuentes y qué leer. Empieza por las de mayor peso.</p>
       <div class="tarjeta"><a href="#/guias/estrategias"><strong>🧭 Cómo responder reactivos tipo Ceneval</strong></a> — método, manejo del tiempo y calificación.</div>
+      <div class="tarjeta destacada"><a href="#/guias/temas-criticos"><strong>🔥 Temas críticos y preguntas trampa</strong></a> — dónde se equivocan más los sustentantes (datos de Ceneval 2017–2021), pares de conceptos que se confunden, normas renombradas, cálculos y trampas de código y SQL.</div>
       ${D.secciones
         .map(
           (sec) => `<h2>Sección ${esc(sec.nombre)}</h2><div class="rejilla-areas">${sec.areas

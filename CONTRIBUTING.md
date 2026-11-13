@@ -61,6 +61,8 @@ Reglas de calidad (estilo Ceneval):
 - Cita al menos una fuente de `recursos.json`.
 - ⚠️ **Escribe preguntas originales.** No copies reactivos reales del examen: Ceneval los protege por derechos de autor y su difusión puede anular el resultado de quien los comparta.
 
+**Banco reto.** `contenido/preguntas/reto/reto.json` contiene preguntas de nivel exigente. Cada una **debe** incluir `"trampa"`: qué hace que la pregunta engañe y cómo evitarlo (el validador lo exige).
+
 **Bancos.** Cada archivo declara `"banco": "base"` o `"banco": "extendido"` (puedes crear otro, por ejemplo `"banco": "mi-escuela"`, y registrarlo en `manifest.json → bancos`). El examen completo toma de todos los bancos exactamente los reactivos que tiene cada subárea en el examen real; si agregas más, se eligen al azar. Los estímulos (`LYC-E1`, …) se comparten entre bancos.
 
 ## 2. Agregar o corregir un recurso / URL

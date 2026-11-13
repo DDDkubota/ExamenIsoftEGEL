@@ -286,3 +286,8 @@ th { background: var(--fondo); }
 .chip.libre { background: #e3f6e8; border-color: #8fd4a3; color: #0b5a23; }
 :root[data-tema="oscuro"] .chip.libre { background: #12301f; color: #8fe3ad; border-color: #2c6b43; }
 .alternativas { font-size: .88rem; background: var(--fondo); border-radius: 8px; padding: .4rem .6rem; }
+.trampa { padding: .6rem .8rem; border-left: 4px solid var(--mal); background: color-mix(in srgb, var(--mal) 8%, var(--superficie)); border-radius: 6px; margin: .6rem 0; }
+.chip.reto { background: #fde8e4; border-color: #ec835a; color: #8a2a12; }
+:root[data-tema="oscuro"] .chip.reto { background: #3a1715; color: #ffb39a; border-color: #8a3a22; }
+.lista-trampas { padding-left: 1.1rem; } .lista-trampas li { margin-bottom: .5rem; font-size: .92rem; }
+@media (min-width: 761px) and (max-width: 1240px) { .nav a { padding: .35rem .5rem; font-size: .92rem; } .cabecera { gap: .5rem; } }
