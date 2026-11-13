@@ -1,0 +1,14 @@
+{
+  "id": "java-maven", "nombre": "Java / Maven / Gradle", "icono": "☕", "subareas": ["3.1", "3.3"],
+  "descripcion": "Compilación, dependencias y construcción de proyectos Java.",
+  "comandos": [
+    { "comando": "javac Main.java && java Main", "descripcion": "Compila a bytecode (.class) y lo ejecuta en la JVM." },
+    { "comando": "mvn clean package", "descripcion": "Limpia, compila, prueba y empaqueta (genera el .jar) con Maven." },
+    { "comando": "mvn test", "descripcion": "Ejecuta las pruebas unitarias (JUnit)." },
+    { "comando": "mvn dependency:tree", "descripcion": "Muestra el árbol de dependencias del proyecto." },
+    { "comando": "./gradlew build", "descripcion": "Construye el proyecto con Gradle (usando el wrapper)." },
+    { "comando": "./gradlew test", "descripcion": "Ejecuta las pruebas con Gradle." },
+    { "comando": "java -jar app.jar", "descripcion": "Ejecuta una aplicación empaquetada en un .jar." },
+    { "comando": "jshell", "descripcion": "Consola interactiva de Java para probar expresiones rápidamente." }
+  ]
+}

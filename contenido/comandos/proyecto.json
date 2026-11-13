@@ -1,0 +1,14 @@
+{
+  "id": "proyecto", "nombre": "Este proyecto (simulador EGEL)", "icono": "🎓", "subareas": [],
+  "descripcion": "Comandos para usar, validar, contribuir o crear tu propia copia de esta herramienta.",
+  "comandos": [
+    { "comando": "git clone https://github.com/DDDkubota/ExamenIsoftEGEL.git && cd ExamenIsoftEGEL", "descripcion": "Descarga el repositorio." },
+    { "comando": "npm run dev", "descripcion": "Levanta el simulador en http://localhost:8080/app/ (sin dependencias)." },
+    { "comando": "npm run validar", "descripcion": "Valida el temario, las preguntas, las guías, los recursos y los comandos antes de hacer un Pull Request." },
+    { "comando": "python3 -m http.server 8080", "descripcion": "Alternativa sin Node: sirve el repo y abre /app/." },
+    { "comando": "gh repo create mi-egel --template DDDkubota/ExamenIsoftEGEL --public --clone", "descripcion": "Crea TU propio repositorio a partir de esta herramienta (también puedes usar el generador de la pestaña Comandos)." },
+    { "comando": "gh repo fork DDDkubota/ExamenIsoftEGEL --clone", "descripcion": "Haz un fork para contribuir al repositorio original con Pull Requests." },
+    { "comando": "git switch -c contenido/nuevas-preguntas-2-2", "descripcion": "Crea una rama para tu contribución." },
+    { "comando": "gh pr create --fill", "descripcion": "Abre el Pull Request con tus cambios." }
+  ]
+}

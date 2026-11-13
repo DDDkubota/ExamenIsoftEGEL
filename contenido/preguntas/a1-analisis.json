@@ -1,0 +1,270 @@
+{
+  "temario": "egel-plus-isoft-2026",
+  "area": "A1",
+  "banco": "base",
+  "estimulos": [],
+  "preguntas": [
+    {
+      "id": "A1-001",
+      "subarea": "1.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Una aseguradora contrata el desarrollo de un portal de siniestros. En la minuta de arranque se acuerda: «El sistema deberá desarrollarse con Java 21 y Spring Boot, que son las tecnologías que ya mantiene el área de TI del cliente, y entregarse documentado conforme a su plantilla interna».",
+      "pregunta": "¿A qué tipo de requerimiento corresponde lo acordado?",
+      "opciones": [
+        { "texto": "Funcional", "explicacion": "Incorrecta. Un requerimiento funcional describe un servicio o comportamiento del sistema (qué hace ante una entrada). Aquí no se describe ninguna función del portal." },
+        { "texto": "No funcional de producto", "explicacion": "Incorrecta. Los no funcionales de producto restringen el comportamiento del software en ejecución (rendimiento, seguridad, confiabilidad). El lenguaje de desarrollo no cambia cómo se comporta el portal para el usuario." },
+        { "texto": "No funcional organizacional", "explicacion": "Correcta. Según Sommerville, los requerimientos organizacionales se derivan de políticas y procedimientos del cliente o del desarrollador: lenguaje de programación, estándares de proceso, formato de entrega. Es una restricción administrativa." }
+      ],
+      "correcta": 2,
+      "estrategia": "Pregúntate: ¿esto cambia lo que el usuario ve o mide en ejecución (producto), viene de una política de la empresa (organizacional) o de una ley/tercero (externo)? Las palabras «tecnologías que ya mantiene» y «plantilla interna» delatan una política interna.",
+      "conceptos": ["Requerimiento funcional", "No funcional de producto / organizacional / externo", "Restricciones administrativas"],
+      "fuentes": [
+        { "recurso": "sommerville-2016", "detalle": "Cap. 4.1 Requerimientos funcionales y no funcionales (fig. 4.3)" },
+        { "recurso": "wiegers-2023", "detalle": "Cap. 1, clasificación de requerimientos y restricciones" }
+      ]
+    },
+    {
+      "id": "A1-002",
+      "subarea": "1.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En una reunión con el director médico de una clínica, el analista anota: «Los médicos podrán consultar el historial de sus pacientes». Días después, el equipo lo refina como: «El sistema mostrará las últimas 50 consultas del paciente seleccionado, ordenadas por fecha descendente, en un tiempo menor a 3 s, y solo al médico tratante».",
+      "pregunta": "La primera declaración, tal como la anotó el analista, es un requerimiento…",
+      "opciones": [
+        { "texto": "de usuario", "explicacion": "Correcta. Los requerimientos de usuario se expresan en lenguaje natural, a alto nivel y orientados al cliente: describen qué servicios espera, sin detalle técnico." },
+        { "texto": "de sistema", "explicacion": "Incorrecta. El requerimiento de sistema es la segunda declaración: detallada, precisa y medible, pensada para los desarrolladores y como base del contrato." },
+        { "texto": "de dominio", "explicacion": "Incorrecta. Un requerimiento de dominio proviene de las reglas del área de aplicación (p. ej., una norma de expedientes clínicos). La frase solo expresa una necesidad general del usuario." }
+      ],
+      "correcta": 0,
+      "estrategia": "Fíjate en el nivel de detalle y en el destinatario: lenguaje del cliente y sin métricas → usuario; con cifras, condiciones y precisión técnica → sistema.",
+      "conceptos": ["Requerimientos de usuario vs. de sistema", "Niveles de abstracción"],
+      "fuentes": [
+        { "recurso": "sommerville-2016", "detalle": "Cap. 4, requerimientos de usuario y de sistema" },
+        { "recurso": "pressman-2020", "detalle": "Cap. 7 Comprensión de los requerimientos" }
+      ]
+    },
+    {
+      "id": "A1-003",
+      "subarea": "1.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "El SAT cambia las reglas de facturación cada año, y el equipo de un ERP ha tenido retrasos al adaptar su módulo de facturación. Para el siguiente release se establece: «Cada método del módulo de facturación tendrá una complejidad ciclomática menor o igual a 10 y la cobertura de pruebas unitarias será al menos de 80%».",
+      "pregunta": "¿Qué característica de calidad del producto (ISO/IEC 25010) atiende principalmente este requerimiento?",
+      "opciones": [
+        { "texto": "Fiabilidad", "explicacion": "Incorrecta. La fiabilidad se refiere a operar sin fallas durante un tiempo y en condiciones dadas (disponibilidad, tolerancia a fallos). El objetivo declarado es adaptar el código con facilidad, no evitar caídas." },
+        { "texto": "Mantenibilidad", "explicacion": "Correcta. Medir la complejidad ciclomática y la cobertura busca que el código sea modificable y fácil de probar (subcaracterísticas de mantenibilidad: modularidad, analizabilidad, modificabilidad, capacidad de ser probado). Es un requerimiento de calidad interna." },
+        { "texto": "Eficiencia de desempeño", "explicacion": "Incorrecta. Esta característica trata del comportamiento temporal y del uso de recursos (CPU, memoria). La complejidad y la cobertura no miden tiempos de respuesta." }
+      ],
+      "correcta": 1,
+      "estrategia": "Busca el propósito detrás de la métrica: «adaptar el módulo cada año» = cambiarlo con facilidad = mantenibilidad. Las métricas de código (complejidad, cobertura, duplicación) casi siempre apuntan a calidad interna.",
+      "conceptos": ["ISO/IEC 25010", "Calidad interna", "Complejidad ciclomática", "Mantenibilidad"],
+      "fuentes": [
+        { "recurso": "iso-25010-2023", "detalle": "Característica Mantenibilidad" },
+        { "recurso": "iso-25002-2024", "detalle": "Uso de modelos de calidad" },
+        { "recurso": "pressman-2020", "detalle": "Métricas de producto: complejidad ciclomática" }
+      ]
+    },
+    {
+      "id": "A1-004",
+      "subarea": "1.1",
+      "formato": "completamiento",
+      "nivel": "satisfactorio",
+      "base": "Una aplicación de banca móvil se ejecuta en tres servidores. Uno de los requerimientos dice: «Si uno de los servidores falla, la aplicación debe seguir atendiendo operaciones sin que el usuario perciba ninguna interrupción».",
+      "pregunta": "Este requerimiento corresponde a la subcaracterística de ________ dentro de la característica de fiabilidad.",
+      "opciones": [
+        { "texto": "tolerancia a fallos", "explicacion": "Correcta. La tolerancia a fallos es el grado en que el sistema sigue operando como se espera aunque haya fallas de hardware o software. «Seguir atendiendo sin interrupción» es exactamente eso." },
+        { "texto": "capacidad de recuperación", "explicacion": "Incorrecta. La capacidad de recuperación trata de restablecer los datos y el estado *después* de una interrupción. Aquí se pide que la interrupción no ocurra." },
+        { "texto": "interoperabilidad", "explicacion": "Incorrecta. La interoperabilidad pertenece a la compatibilidad: intercambiar información con otros sistemas. No tiene que ver con fallas." }
+      ],
+      "correcta": 0,
+      "estrategia": "Distingue entre «no se interrumpe» (tolerancia a fallos), «se interrumpe y vuelve» (recuperación) y «está disponible cuando se necesita» (disponibilidad). La palabra clave aquí es «sin interrupción».",
+      "conceptos": ["Fiabilidad", "Tolerancia a fallos", "Capacidad de recuperación"],
+      "fuentes": [
+        { "recurso": "iso-25010-2023", "detalle": "Fiabilidad: ausencia de fallos, disponibilidad, tolerancia a fallos, capacidad de recuperación" }
+      ]
+    },
+    {
+      "id": "A1-005",
+      "subarea": "1.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Un hospital público en México solicita un expediente clínico electrónico. El área jurídica exige que el sistema cumpla con la NOM-024-SSA3-2012, que establece los requisitos para que los sistemas de información de registro electrónico para la salud intercambien información de manera segura.",
+      "pregunta": "¿Cómo se clasifica este requerimiento?",
+      "opciones": [
+        { "texto": "Funcional de usuario", "explicacion": "Incorrecta. No describe una función que el usuario solicite; impone una condición que viene de fuera del proyecto." },
+        { "texto": "No funcional externo", "explicacion": "Correcta. Los requerimientos externos se derivan de factores ajenos al sistema y a su proceso de desarrollo, como leyes, normas oficiales y regulaciones (requerimientos legislativos o regulatorios)." },
+        { "texto": "No funcional de producto de eficiencia", "explicacion": "Incorrecta. La eficiencia se refiere a tiempos de respuesta y uso de recursos; la NOM regula el intercambio seguro y la interoperabilidad de la información clínica." }
+      ],
+      "correcta": 1,
+      "estrategia": "Cuando aparece una ley, una NOM o un regulador (SAT, Secretaría de Salud, INAI), el requerimiento casi siempre es externo (legislativo/regulatorio).",
+      "conceptos": ["Requerimientos externos / regulatorios", "Restricciones legales"],
+      "fuentes": [
+        { "recurso": "sommerville-2016", "detalle": "Cap. 4.1.2 Requerimientos no funcionales (externos)" }
+      ]
+    },
+    {
+      "id": "A1-006",
+      "subarea": "1.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Para la primera versión de una app de reservaciones, el Product Owner clasifica los requerimientos en cuatro grupos: los imprescindibles sin los cuales no se puede liberar, los importantes pero no vitales, los deseables si hay tiempo y los que se acordó no incluir en esta versión.",
+      "pregunta": "¿Qué técnica de priorización aplicó?",
+      "opciones": [
+        { "texto": "Modelo Kano", "explicacion": "Incorrecta. Kano clasifica las características según su efecto en la satisfacción del cliente (básicas, de desempeño, de entusiasmo/deleite, indiferentes), no según si entran en una entrega." },
+        { "texto": "Proceso analítico jerárquico (AHP)", "explicacion": "Incorrecta. AHP prioriza comparando requerimientos por pares y calculando pesos relativos; no usa cuatro categorías fijas." },
+        { "texto": "MoSCoW", "explicacion": "Correcta. MoSCoW agrupa en Must have, Should have, Could have y Won't have (this time), justo las cuatro categorías descritas." }
+      ],
+      "correcta": 2,
+      "estrategia": "Memoriza la «firma» de cada técnica: 4 categorías con «no se hará esta vez» → MoSCoW; satisfacción del cliente → Kano; comparación por pares → AHP; repartir 100 puntos → $100 test.",
+      "conceptos": ["Priorización", "MoSCoW", "Kano", "AHP"],
+      "fuentes": [
+        { "recurso": "hatton-2008", "detalle": "Comparación de métodos de priorización" },
+        { "recurso": "wiegers-2023", "detalle": "Cap. Priorización de requerimientos" }
+      ]
+    },
+    {
+      "id": "A1-007",
+      "subarea": "1.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En un centro de distribución, los surtidores llevan años usando atajos y trucos para preparar pedidos. En las entrevistas no logran explicar cómo trabajan realmente («nada más lo hacemos»), y lo que describen no coincide con el manual de procedimientos.",
+      "pregunta": "¿Qué técnica de obtención de requerimientos es la más adecuada en esta situación?",
+      "opciones": [
+        { "texto": "Observación en sitio (etnografía)", "explicacion": "Correcta. La etnografía o la observación permiten descubrir los requerimientos implícitos que surgen de cómo se trabaja en la práctica, y que los usuarios no saben verbalizar." },
+        { "texto": "Cuestionarios", "explicacion": "Incorrecta. Si los usuarios no logran explicarlo en una entrevista, menos lo harán por escrito. Los cuestionarios sirven para recoger datos de muchas personas sobre algo que ya se entiende." },
+        { "texto": "Lluvia de ideas", "explicacion": "Incorrecta. Una lluvia de ideas genera propuestas y soluciones nuevas, pero no revela el procedimiento real y tácito que hoy sigue la gente." }
+      ],
+      "correcta": 0,
+      "estrategia": "Busca pistas de conocimiento tácito («no saben explicar», «no coincide con el manual»): la respuesta suele ser observación o etnografía. Si el caso habla de muchos usuarios dispersos, piensa en cuestionarios; si pide consenso rápido, en un taller JAD.",
+      "conceptos": ["Elicitación", "Etnografía", "Conocimiento tácito"],
+      "fuentes": [
+        { "recurso": "sommerville-2016", "detalle": "Cap. 4.3 Obtención de requerimientos: etnografía" },
+        { "recurso": "rohrer-2022", "detalle": "Métodos de investigación de UX: actitudinales vs. conductuales" }
+      ]
+    },
+    {
+      "id": "A1-008",
+      "subarea": "1.2",
+      "formato": "ordenamiento",
+      "nivel": "satisfactorio",
+      "base": "Un equipo comienza la ingeniería de requerimientos de un sistema de control escolar y sigue el proceso de obtención y análisis propuesto por Sommerville.",
+      "lista": [
+        "1. Priorización y negociación de requerimientos",
+        "2. Descubrimiento de requerimientos con los stakeholders",
+        "3. Documentación (especificación) de requerimientos",
+        "4. Clasificación y organización de requerimientos"
+      ],
+      "pregunta": "¿Cuál es el orden en que se realizan estas actividades?",
+      "opciones": [
+        { "texto": "2, 4, 1, 3", "explicacion": "Correcta. Primero se descubren los requerimientos, luego se agrupan en conjuntos coherentes, después se priorizan y se resuelven conflictos, y al final se documentan. El proceso es iterativo, pero en ese orden." },
+        { "texto": "4, 2, 3, 1", "explicacion": "Incorrecta. No se puede clasificar lo que todavía no se ha descubierto." },
+        { "texto": "2, 1, 4, 3", "explicacion": "Incorrecta. Antes de negociar prioridades hay que organizar los requerimientos para detectar traslapes y conflictos entre ellos." }
+      ],
+      "correcta": 0,
+      "estrategia": "En las preguntas de ordenamiento, ubica primero el elemento que solo puede ir al inicio (aquí «descubrir») y el que solo puede ir al final (aquí «documentar»). Eso suele dejar una sola opción.",
+      "conceptos": ["Proceso de ingeniería de requerimientos", "Obtención y análisis"],
+      "fuentes": [
+        { "recurso": "sommerville-2016", "detalle": "Cap. 4.3, fig. 4.7 Proceso de obtención y análisis" }
+      ]
+    },
+    {
+      "id": "A1-009",
+      "subarea": "1.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Durante la revisión del documento de requerimientos de un sistema de logística, el equipo de QA marca el requerimiento R-12: «El reporte de entregas se generará rápidamente». QA argumenta que no puede diseñar un caso de prueba para aceptarlo o rechazarlo.",
+      "pregunta": "¿Qué característica de un buen requerimiento NO cumple R-12?",
+      "opciones": [
+        { "texto": "Consistencia", "explicacion": "Incorrecta. La consistencia exige que no haya contradicciones entre requerimientos. Nada indica que R-12 contradiga a otro." },
+        { "texto": "Completitud", "explicacion": "Incorrecta. La completitud se refiere a que estén incluidos todos los requerimientos y la información necesaria. El problema señalado es otro: no se puede probar." },
+        { "texto": "Verificabilidad", "explicacion": "Correcta. Un requerimiento verificable se puede comprobar de manera objetiva (prueba, inspección, análisis). «Rápidamente» es ambiguo; debería decir, por ejemplo, «en menos de 5 s para 10 000 registros»." }
+      ],
+      "correcta": 2,
+      "estrategia": "Las palabras vagas («rápido», «amigable», «fácil», «robusto») delatan problemas de ambigüedad y verificabilidad. Si el enunciado menciona «no se puede probar», la respuesta es verificabilidad.",
+      "conceptos": ["Validación de requerimientos", "Verificabilidad", "Ambigüedad", "ISO/IEC/IEEE 29148"],
+      "fuentes": [
+        { "recurso": "iso-29148-2018", "detalle": "Características de requerimientos individuales: verificable, no ambiguo, completo, consistente, factible" },
+        { "recurso": "sommerville-2016", "detalle": "Cap. 4.6 Validación de requerimientos" }
+      ]
+    },
+    {
+      "id": "A1-010",
+      "subarea": "1.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En el backlog de un sistema de punto de venta aparece la historia: «Como cajero, quiero registrar devoluciones para reintegrar el dinero al cliente». En el refinamiento, los desarrolladores preguntan cómo sabrán cuándo la historia está terminada.",
+      "pregunta": "¿Qué elemento debe agregarse a la historia de usuario?",
+      "opciones": [
+        { "texto": "Diagrama de clases del módulo de devoluciones", "explicacion": "Incorrecta. El diagrama de clases es un artefacto de diseño; no define cuándo la historia satisface al usuario." },
+        { "texto": "Criterios de aceptación", "explicacion": "Correcta. Los criterios de aceptación (por ejemplo, en formato Dado/Cuando/Entonces) hacen que la historia se pueda probar, que es la «T» (Testable) de INVEST, y definen las condiciones para darla por cumplida." },
+        { "texto": "Estimación en horas de cada tarea", "explicacion": "Incorrecta. La estimación ayuda a planear, pero no dice qué comportamiento se debe verificar para aceptar la historia." }
+      ],
+      "correcta": 1,
+      "estrategia": "Recuerda las 3C de una historia (Card, Conversation, Confirmation). La «Confirmation» son los criterios de aceptación.",
+      "conceptos": ["Historias de usuario", "INVEST", "Criterios de aceptación", "3C"],
+      "fuentes": [
+        { "recurso": "visual-paradigm-us", "detalle": "Estructura de una historia de usuario y 3C" },
+        { "recurso": "patton-2014", "detalle": "Conversación y confirmación de historias" }
+      ]
+    },
+    {
+      "id": "A1-011",
+      "subarea": "1.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En el modelo de casos de uso de un cajero automático, el caso de uso «Retirar efectivo» siempre debe ejecutar «Validar PIN». Además, solo cuando el cliente lo solicita, se ejecuta «Imprimir comprobante».",
+      "pregunta": "¿Qué relaciones deben modelarse?",
+      "opciones": [
+        { "texto": "«Retirar efectivo» incluye (include) a «Validar PIN» y «Imprimir comprobante» extiende (extend) a «Retirar efectivo»", "explicacion": "Correcta. «include» se usa para un comportamiento que siempre se ejecuta como parte del caso base; «extend», para un comportamiento opcional o condicional que se inserta en un punto de extensión del caso base." },
+        { "texto": "«Retirar efectivo» incluye tanto a «Validar PIN» como a «Imprimir comprobante»", "explicacion": "Incorrecta. Imprimir es condicional (solo si el cliente lo pide), así que no debe modelarse como inclusión obligatoria." },
+        { "texto": "«Validar PIN» extiende a «Retirar efectivo» y «Retirar efectivo» incluye a «Imprimir comprobante»", "explicacion": "Incorrecta. Invierte la semántica: lo obligatorio quedaría como opcional y lo opcional como obligatorio." }
+      ],
+      "correcta": 0,
+      "estrategia": "Regla mnemotécnica: «siempre» → include (la flecha sale del caso base); «a veces / si…» → extend (la flecha sale del caso que extiende hacia el caso base).",
+      "conceptos": ["Casos de uso", "include", "extend", "UML"],
+      "fuentes": [
+        { "recurso": "booch-uml-2005", "detalle": "Diagramas de casos de uso" },
+        { "recurso": "jacobson-usecase2", "detalle": "Use-Case 2.0" }
+      ]
+    },
+    {
+      "id": "A1-012",
+      "subarea": "1.3",
+      "formato": "completamiento",
+      "nivel": "sobresaliente",
+      "base": "Un equipo usa User Story Mapping para planear un marketplace. Pegan notas en la pared y organizan el mapa en dos ejes.",
+      "pregunta": "En el eje horizontal se colocan las ________ del usuario en orden narrativo, y en el eje vertical las historias se ordenan por ________ para definir las entregas.",
+      "opciones": [
+        { "texto": "actividades (columna vertebral) - prioridad", "explicacion": "Correcta. Patton propone una «columna vertebral» horizontal de actividades y tareas del usuario en el orden en que ocurren, y debajo los detalles priorizados de arriba abajo; las líneas horizontales marcan los releases (por ejemplo, el MVP)." },
+        { "texto": "módulos técnicos - esfuerzo", "explicacion": "Incorrecta. El mapa se organiza desde la perspectiva del usuario, no por la arquitectura técnica." },
+        { "texto": "sprints - desarrollador asignado", "explicacion": "Incorrecta. El mapa no es un calendario ni una matriz de asignación de personas." }
+      ],
+      "correcta": 0,
+      "estrategia": "Story mapping = recorrer la historia completa del usuario (horizontal) y cortar rebanadas de valor (vertical).",
+      "conceptos": ["User Story Mapping", "MVP", "Backbone"],
+      "fuentes": [
+        { "recurso": "patton-2014", "detalle": "Cap. 1-3" }
+      ]
+    },
+    {
+      "id": "A1-013",
+      "subarea": "1.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Una empresa desarrolla un sistema embebido para dosificar medicamentos que integra sensores, motores y software. Necesita documentar los requerimientos, relacionarlos con los bloques físicos y lógicos que los satisfacen y mantener su trazabilidad hasta las pruebas.",
+      "pregunta": "¿Qué notación ofrece un diagrama específico para modelar requerimientos y su trazabilidad hacia los bloques del sistema?",
+      "opciones": [
+        { "texto": "Diagrama de casos de uso de UML", "explicacion": "Incorrecta. Los casos de uso describen interacciones de actores con el sistema, pero UML no tiene un elemento «requerimiento» con relaciones satisfy/verify." },
+        { "texto": "BPMN", "explicacion": "Incorrecta. BPMN modela procesos de negocio, no requerimientos de ingeniería de sistemas." },
+        { "texto": "Diagrama de requerimientos de SysML", "explicacion": "Correcta. SysML, una extensión de UML para ingeniería de sistemas, incluye un diagrama de requerimientos con relaciones como «satisfy», «verify», «deriveReqt» y «trace» hacia bloques y casos de prueba." }
+      ],
+      "correcta": 2,
+      "estrategia": "Si el caso combina hardware y software («sistema de sistemas», embebido) y pide trazabilidad, piensa en SysML.",
+      "conceptos": ["SysML", "Trazabilidad", "Diagrama de requerimientos"],
+      "fuentes": [
+        { "recurso": "sysml", "detalle": "What is SysML?" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "temario": "egel-plus-isoft-2026",
+  "area": "A1",
+  "banco": "extendido",
+  "estimulos": [],
+  "preguntas": [
+    {
+      "id": "A1-101", "subarea": "1.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En el sistema de control escolar de una preparatoria se documenta: «El sistema calculará la calificación final de cada alumno ponderando los exámenes con 60 % y las tareas con 40 %».",
+      "pregunta": "¿Qué tipo de requerimiento es?",
+      "opciones": [
+        { "texto": "Funcional", "explicacion": "Correcta. Describe un servicio que el sistema debe realizar: transforma entradas (calificaciones) en una salida (promedio ponderado)." },
+        { "texto": "No funcional de desempeño", "explicacion": "Incorrecta. El desempeño se refiere a tiempos de respuesta o al uso de recursos; aquí no se menciona ninguna métrica de rapidez." },
+        { "texto": "No funcional de usabilidad", "explicacion": "Incorrecta. La usabilidad (capacidad de interacción) se refiere a la facilidad de uso, no a una regla de cálculo." }
+      ],
+      "correcta": 0,
+      "estrategia": "Si el enunciado describe QUÉ hace el sistema con los datos (calcula, registra, envía, genera), es funcional. Si describe CÓMO DE BIEN o bajo qué restricción lo hace, es no funcional.",
+      "conceptos": ["Requerimiento funcional"],
+      "fuentes": [{ "recurso": "sommerville-2016", "detalle": "Cap. 4.1" }]
+    },
+    {
+      "id": "A1-102", "subarea": "1.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "En una app de banca, cada transferencia debe firmarse digitalmente y registrarse en una bitácora inalterable, de manera que el cliente no pueda negar después haberla ordenado.",
+      "pregunta": "¿Qué subcaracterística de seguridad (ISO/IEC 25010) atiende este requerimiento?",
+      "opciones": [
+        { "texto": "Confidencialidad", "explicacion": "Incorrecta. La confidencialidad asegura que solo los autorizados accedan a los datos; no prueba la autoría de una acción." },
+        { "texto": "No repudio", "explicacion": "Correcta. El no repudio es el grado en que se puede demostrar que una acción o un evento ocurrió y quién lo realizó, de modo que no se pueda negar después." },
+        { "texto": "Integridad", "explicacion": "Incorrecta. La integridad impide modificaciones no autorizadas de los datos. La bitácora la apoya, pero el objetivo declarado es que el cliente no pueda negar la operación." }
+      ],
+      "correcta": 1,
+      "estrategia": "Seguridad en ISO 25010: confidencialidad (quién ve), integridad (quién modifica), no repudio (no se puede negar), responsabilidad (rastrear acciones), autenticidad (es quien dice ser), resistencia (soporta ataques). La frase «no pueda negar» es la pista.",
+      "conceptos": ["Seguridad", "No repudio", "ISO/IEC 25010"],
+      "fuentes": [{ "recurso": "iso-25010-2023", "detalle": "Seguridad" }]
+    },
+    {
+      "id": "A1-103", "subarea": "1.1", "formato": "completamiento", "nivel": "satisfactorio",
+      "base": "Una cadena de tiendas contratará cajeros temporales en diciembre. Se establece: «Un cajero sin experiencia previa debe poder registrar una venta completa, sin capacitación, en sus primeros 10 minutos de uso».",
+      "pregunta": "Este requerimiento corresponde a la subcaracterística de ________ de la capacidad de interacción (antes, usabilidad).",
+      "opciones": [
+        { "texto": "operabilidad", "explicacion": "Incorrecta. La operabilidad trata de que el sistema sea fácil de operar y controlar en el uso cotidiano, no del tiempo que tarda en aprenderse." },
+        { "texto": "inclusividad", "explicacion": "Incorrecta. La inclusividad busca que personas con características y capacidades diversas puedan usar el sistema; el requisito trata del aprendizaje de usuarios nuevos." },
+        { "texto": "capacidad de aprendizaje", "explicacion": "Correcta. Mide qué tan rápido usuarios nuevos logran usar el sistema de manera efectiva. «Sin capacitación, en 10 minutos» es una métrica típica de aprendizaje." }
+      ],
+      "correcta": 2,
+      "estrategia": "Busca el sujeto y la condición: «usuario nuevo» + «en X minutos» = capacidad de aprendizaje.",
+      "conceptos": ["Capacidad de interacción", "Capacidad de aprendizaje"],
+      "fuentes": [{ "recurso": "iso-25010-2023", "detalle": "Interaction capability" }]
+    },
+    {
+      "id": "A1-104", "subarea": "1.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "El sistema de una farmacia debe recibir las recetas electrónicas que emite el sistema del hospital vecino, que usa el estándar HL7 FHIR, sin que el personal tenga que capturarlas de nuevo.",
+      "pregunta": "¿Qué característica de calidad del producto se especifica?",
+      "opciones": [
+        { "texto": "Compatibilidad (interoperabilidad)", "explicacion": "Correcta. La interoperabilidad es la capacidad de dos o más sistemas para intercambiar información y usarla. Es una subcaracterística de la compatibilidad." },
+        { "texto": "Flexibilidad", "explicacion": "Incorrecta. La flexibilidad (antes, portabilidad) trata de adaptar el sistema a otros entornos de hardware o software, no de intercambiar datos con otro sistema." },
+        { "texto": "Adecuación funcional", "explicacion": "Incorrecta. La adecuación funcional evalúa si las funciones cubren las necesidades. Aquí el foco es el intercambio con un sistema externo con un estándar común." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Intercambiar datos con otro sistema» o «usar un estándar de mensajería» → compatibilidad / interoperabilidad.",
+      "conceptos": ["Compatibilidad", "Interoperabilidad"],
+      "fuentes": [{ "recurso": "iso-25010-2023", "detalle": "Compatibilidad" }]
+    },
+    {
+      "id": "A1-105", "subarea": "1.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "El director de finanzas de una universidad establece: «El nuevo sistema de admisiones deberá ejecutarse en los servidores Linux que ya tiene la institución; no hay presupuesto para adquirir hardware ni licencias adicionales».",
+      "pregunta": "¿Cómo se clasifica esta declaración?",
+      "opciones": [
+        { "texto": "Requerimiento funcional del sistema", "explicacion": "Incorrecta. No describe ninguna función del sistema de admisiones." },
+        { "texto": "Restricción de implementación (requerimiento no funcional organizacional)", "explicacion": "Correcta. Limita las opciones de diseño (plataforma, presupuesto) por una decisión administrativa de la organización. Es una restricción, no una función." },
+        { "texto": "Requerimiento de dominio", "explicacion": "Incorrecta. Los requerimientos de dominio provienen de las reglas del área de aplicación (por ejemplo, el reglamento de admisión), no de la infraestructura disponible." }
+      ],
+      "correcta": 1,
+      "estrategia": "Las restricciones administrativas (presupuesto, plataforma obligatoria, plazos) limitan el CÓMO, no el QUÉ. En los descriptores de nivel sobresaliente se mencionan explícitamente.",
+      "conceptos": ["Restricciones", "Requerimientos organizacionales"],
+      "fuentes": [{ "recurso": "sommerville-2016", "detalle": "Cap. 4.1.2" }, { "recurso": "wiegers-2023" }]
+    },
+    {
+      "id": "A1-106", "subarea": "1.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "En la revisión de un documento de requerimientos aparece: «El sistema responderá en 0 milisegundos a cualquier consulta, con 10 millones de usuarios simultáneos, operando en un solo servidor de gama media».",
+      "pregunta": "¿Qué característica de un buen requerimiento incumple principalmente?",
+      "opciones": [
+        { "texto": "Completitud", "explicacion": "Incorrecta. El requerimiento especifica tiempo, carga y plataforma, así que no le falta información." },
+        { "texto": "Consistencia", "explicacion": "Incorrecta. La consistencia se evalúa entre requerimientos (que no se contradigan entre sí); aquí el problema está en el propio enunciado." },
+        { "texto": "Factibilidad", "explicacion": "Correcta. Un requerimiento factible se puede implementar con la tecnología, el presupuesto y las restricciones disponibles. Un tiempo de 0 ms con esa carga en un solo servidor es técnicamente imposible." }
+      ],
+      "correcta": 2,
+      "estrategia": "Si el requerimiento pide algo físicamente imposible o fuera de los recursos disponibles, falla la factibilidad (realismo). Si falta información, falla la completitud.",
+      "conceptos": ["Factibilidad", "Validación de requerimientos"],
+      "fuentes": [{ "recurso": "iso-29148-2018", "detalle": "Feasible" }]
+    },
+    {
+      "id": "A1-107", "subarea": "1.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Un robot de asistencia quirúrgica debe detener el brazo mecánico de inmediato si detecta un movimiento fuera del rango permitido, para evitar lesionar al paciente.",
+      "pregunta": "¿Qué característica de ISO/IEC 25010:2023 atiende este requerimiento?",
+      "opciones": [
+        { "texto": "Protección (safety)", "explicacion": "Correcta. La característica safety, nueva en 2023, trata de evitar daño a personas, bienes o al medio ambiente. Incluye subcaracterísticas como fail safe y restricción operacional." },
+        { "texto": "Seguridad (security)", "explicacion": "Incorrecta. La seguridad (security) protege la información contra accesos y modificaciones no autorizados; aquí no hay amenaza a los datos." },
+        { "texto": "Fiabilidad", "explicacion": "Incorrecta. La fiabilidad busca que el sistema funcione sin fallas; el requerimiento define qué hacer ante una condición peligrosa para evitar daño, que es el objetivo de safety." }
+      ],
+      "correcta": 0,
+      "estrategia": "Daño a personas o al entorno → safety (protección). Daño a la información → security (seguridad).",
+      "conceptos": ["Safety", "ISO/IEC 25010:2023"],
+      "fuentes": [{ "recurso": "iso-25010-2023", "detalle": "Safety (nueva en 2023)" }]
+    },
+    {
+      "id": "A1-108", "subarea": "1.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Para un nuevo sistema de compras, los gerentes de compras, almacén y finanzas tienen visiones contradictorias del proceso. El patrocinador necesita un acuerdo en tres días y propone reunirlos en sesiones intensivas guiadas por un facilitador neutral.",
+      "pregunta": "¿Qué técnica de obtención de requerimientos propone?",
+      "opciones": [
+        { "texto": "Cuestionarios", "explicacion": "Incorrecta. Los cuestionarios recogen información de forma individual y asíncrona; no resuelven conflictos ni generan consenso." },
+        { "texto": "Taller JAD (Joint Application Development)", "explicacion": "Correcta. JAD reúne a los stakeholders clave en sesiones estructuradas con un facilitador para acordar requerimientos rápidamente y resolver conflictos en el momento." },
+        { "texto": "Etnografía", "explicacion": "Incorrecta. La etnografía observa el trabajo real durante un tiempo; es útil para el conocimiento tácito, no para negociar visiones contradictorias en tres días." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Varias áreas» + «consenso» + «facilitador» + «poco tiempo» → taller JAD.",
+      "conceptos": ["Elicitación", "JAD", "Talleres"],
+      "fuentes": [{ "recurso": "wiegers-2023", "detalle": "Elicitation techniques" }]
+    },
+    {
+      "id": "A1-109", "subarea": "1.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "En una encuesta sobre una app de citas médicas, los usuarios dicen que no esperan que la app les sugiera automáticamente el mejor horario según su historial; si no existe no se molestan, pero cuando la prueban les entusiasma.",
+      "pregunta": "Según el modelo Kano, ¿cómo se clasifica esta característica?",
+      "opciones": [
+        { "texto": "Atractiva (de deleite)", "explicacion": "Correcta. Las características atractivas no se esperan, su ausencia no causa insatisfacción y su presencia genera entusiasmo." },
+        { "texto": "Básica (obligatoria)", "explicacion": "Incorrecta. Las básicas se dan por hecho: su ausencia causa gran insatisfacción y su presencia no entusiasma (por ejemplo, poder cancelar una cita)." },
+        { "texto": "Unidimensional (de desempeño)", "explicacion": "Incorrecta. En las de desempeño, la satisfacción crece de forma proporcional a qué tan bien se cumplen (por ejemplo, la rapidez de carga)." }
+      ],
+      "correcta": 0,
+      "estrategia": "Pregúntate qué pasa si la característica falta: enojo → básica; menos satisfacción proporcional → desempeño; nada → atractiva o indiferente.",
+      "conceptos": ["Modelo Kano", "Priorización"],
+      "fuentes": [{ "recurso": "hatton-2008" }]
+    },
+    {
+      "id": "A1-110", "subarea": "1.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "El cliente de una app de reservaciones de restaurantes reconoce: «No sé bien cómo debe verse ni en qué orden van los pasos; lo sabré cuando lo vea».",
+      "pregunta": "¿Qué técnica conviene más para validar los requerimientos con este cliente?",
+      "opciones": [
+        { "texto": "Revisión formal del documento de especificación", "explicacion": "Incorrecta. Un cliente que no puede imaginar el sistema difícilmente detectará errores leyendo un documento textual." },
+        { "texto": "Generación de casos de prueba a partir de los requerimientos", "explicacion": "Incorrecta. Ayuda a detectar requerimientos ambiguos o no verificables, pero lo hace el equipo técnico y no aclara al cliente qué necesita." },
+        { "texto": "Prototipado", "explicacion": "Correcta. Un prototipo permite que el cliente interactúe con una representación del sistema, descubra lo que realmente quiere y valide o corrija los requerimientos." }
+      ],
+      "correcta": 2,
+      "estrategia": "«Lo sabré cuando lo vea» es la frase clásica que lleva al prototipado.",
+      "conceptos": ["Validación de requerimientos", "Prototipado"],
+      "fuentes": [{ "recurso": "sommerville-2016", "detalle": "Cap. 4.6" }]
+    },
+    {
+      "id": "A1-111", "subarea": "1.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "En plena construcción de un sistema de ventas, con la línea base de requerimientos aprobada, el cliente pide cambiar la fórmula del cálculo de comisiones.",
+      "pregunta": "¿Cuál es el primer paso correcto según la gestión de requerimientos?",
+      "opciones": [
+        { "texto": "Analizar el impacto del cambio con la matriz de trazabilidad y someterlo a aprobación", "explicacion": "Correcta. La gestión del cambio exige registrar la solicitud, analizar su impacto (módulos, pruebas, costo, calendario) con apoyo de la trazabilidad y que el comité o el responsable la apruebe antes de implementarla." },
+        { "texto": "Implementarlo de inmediato para mantener contento al cliente", "explicacion": "Incorrecta. Implementar sin analizar el impacto genera retrabajo, defectos y desviaciones de costo y tiempo no controladas." },
+        { "texto": "Rechazarlo porque la línea base ya está congelada", "explicacion": "Incorrecta. Una línea base no prohíbe los cambios; establece que se hagan mediante un proceso formal de control." }
+      ],
+      "correcta": 0,
+      "estrategia": "En gestión de requerimientos y de configuración, el orden es: solicitud → análisis de impacto → aprobación → implementación → actualización de la trazabilidad.",
+      "conceptos": ["Gestión de cambios", "Trazabilidad", "Línea base"],
+      "fuentes": [{ "recurso": "sommerville-2016", "detalle": "Cap. 4.7 Gestión de requerimientos" }]
+    },
+    {
+      "id": "A1-112", "subarea": "1.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Al analizar los requerimientos de un expediente clínico, el equipo detecta que el área de seguridad exige bloquear la cuenta tras tres intentos fallidos, mientras que el área de urgencias exige que los médicos accedan sin interrupciones en cualquier momento.",
+      "pregunta": "¿En qué actividad del proceso de obtención y análisis se resuelve esta situación?",
+      "opciones": [
+        { "texto": "Descubrimiento de requerimientos", "explicacion": "Incorrecta. Ambos requerimientos ya se descubrieron; el problema ahora es que entran en conflicto." },
+        { "texto": "Priorización y negociación", "explicacion": "Correcta. En esta actividad se resuelven los conflictos entre stakeholders mediante la negociación (por ejemplo, un acceso de emergencia auditado) y se acuerdan prioridades." },
+        { "texto": "Especificación", "explicacion": "Incorrecta. La especificación documenta los requerimientos ya acordados; documentar dos requerimientos contradictorios produciría una SRS inconsistente." }
+      ],
+      "correcta": 1,
+      "estrategia": "Conflicto entre stakeholders → negociación. Requerimientos que se contradicen en un documento → falta de consistencia.",
+      "conceptos": ["Negociación", "Conflictos de requerimientos"],
+      "fuentes": [{ "recurso": "sommerville-2016", "detalle": "Cap. 4.3" }]
+    },
+    {
+      "id": "A1-113", "subarea": "1.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En la especificación del caso de uso «Pagar pedido» de una tienda en línea se indica: «El cliente está autenticado y su carrito contiene al menos un producto».",
+      "pregunta": "¿A qué sección del caso de uso corresponde este enunciado?",
+      "opciones": [
+        { "texto": "Precondición", "explicacion": "Correcta. Las precondiciones describen lo que debe ser verdadero antes de que el caso de uso pueda iniciar." },
+        { "texto": "Postcondición", "explicacion": "Incorrecta. La postcondición describe el estado del sistema al terminar el caso de uso (por ejemplo, «el pedido queda registrado como pagado»)." },
+        { "texto": "Flujo alterno", "explicacion": "Incorrecta. Un flujo alterno describe un camino distinto al flujo básico durante la ejecución (por ejemplo, una tarjeta rechazada)." }
+      ],
+      "correcta": 0,
+      "estrategia": "Antes de iniciar → precondición; al terminar → postcondición; durante, por otro camino → flujo alterno o de excepción.",
+      "conceptos": ["Casos de uso", "Precondición", "Postcondición"],
+      "fuentes": [{ "recurso": "jacobson-usecase2" }, { "recurso": "larman-uml-patrones" }]
+    },
+    {
+      "id": "A1-114", "subarea": "1.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En el caso de uso «Retirar efectivo», si el saldo es insuficiente, el cajero muestra un mensaje y le ofrece al cliente retirar una cantidad menor.",
+      "pregunta": "¿Cómo se documenta este comportamiento?",
+      "opciones": [
+        { "texto": "Como parte del flujo básico", "explicacion": "Incorrecta. El flujo básico (camino feliz) describe el escenario normal en el que el retiro se realiza sin problemas." },
+        { "texto": "Como postcondición", "explicacion": "Incorrecta. Las postcondiciones son estados finales, no secuencias de pasos alternativas." },
+        { "texto": "Como flujo alterno (o de excepción)", "explicacion": "Correcta. Los flujos alternos describen variaciones o situaciones excepcionales que se desvían del flujo básico en un paso determinado." }
+      ],
+      "correcta": 2,
+      "estrategia": "Los «si ocurre X…» que se desvían del camino normal son flujos alternos o de excepción.",
+      "conceptos": ["Casos de uso", "Flujo alterno"],
+      "fuentes": [{ "recurso": "jacobson-usecase2" }]
+    },
+    {
+      "id": "A1-115", "subarea": "1.3", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "En un sistema de soporte existen los actores Cliente y Cliente Premium. El Cliente Premium puede hacer todo lo que hace un Cliente y, además, «Solicitar soporte prioritario».",
+      "pregunta": "¿Cómo se modela la relación entre ambos actores en UML?",
+      "opciones": [
+        { "texto": "Con una relación «include» entre los actores", "explicacion": "Incorrecta. «include» se usa entre casos de uso, no entre actores." },
+        { "texto": "Con una generalización: Cliente Premium hereda de Cliente", "explicacion": "Correcta. La generalización entre actores indica que el actor especializado participa en todos los casos de uso del actor general, además de los propios." },
+        { "texto": "Con una relación «extend» de Cliente hacia Cliente Premium", "explicacion": "Incorrecta. «extend» también es una relación entre casos de uso, para comportamiento opcional." }
+      ],
+      "correcta": 1,
+      "estrategia": "Entre actores solo existe la generalización. «include» y «extend» son exclusivamente entre casos de uso.",
+      "conceptos": ["Generalización de actores", "Casos de uso", "UML"],
+      "fuentes": [{ "recurso": "booch-uml-2005", "detalle": "Use case diagrams" }]
+    },
+    {
+      "id": "A1-116", "subarea": "1.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Para la historia «Como cliente quiero retirar dinero para disponer de efectivo», el equipo redacta criterios de aceptación en formato Gherkin.",
+      "pregunta": "¿Cuál criterio está bien redactado?",
+      "opciones": [
+        { "texto": "Dado que tengo $500 en mi cuenta, cuando retiro $200, entonces mi saldo debe ser $300 y recibo el efectivo", "explicacion": "Correcta. Tiene contexto (Dado), acción (Cuando) y resultado verificable (Entonces), con valores concretos que permiten probarlo." },
+        { "texto": "El retiro debe funcionar bien y ser rápido", "explicacion": "Incorrecta. Es ambiguo y no verificable: «bien» y «rápido» no tienen un criterio objetivo." },
+        { "texto": "Usar un botón verde con la palabra «Retirar»", "explicacion": "Incorrecta. Es una decisión de diseño de la interfaz, no un criterio de aceptación del comportamiento esperado." }
+      ],
+      "correcta": 0,
+      "estrategia": "Un buen criterio de aceptación es verificable: contexto + acción + resultado observable, con datos concretos.",
+      "conceptos": ["Criterios de aceptación", "Gherkin", "BDD"],
+      "fuentes": [{ "recurso": "visual-paradigm-us" }]
+    },
+    {
+      "id": "A1-117", "subarea": "1.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En el Product Backlog aparece la historia: «Como gerente quiero un módulo completo de contabilidad». El equipo no logra estimarla y está seguro de que no cabe en un Sprint.",
+      "pregunta": "¿Qué criterio INVEST incumple principalmente y qué conviene hacer?",
+      "opciones": [
+        { "texto": "Independiente: fusionarla con otras historias", "explicacion": "Incorrecta. El problema no es la dependencia con otras historias, y fusionarla la haría aún más grande." },
+        { "texto": "Valiosa: eliminarla del backlog", "explicacion": "Incorrecta. La contabilidad sí aporta valor; el problema es su tamaño." },
+        { "texto": "Pequeña (Small): dividirla en historias más pequeñas", "explicacion": "Correcta. Es una épica: hay que dividirla en historias que se puedan estimar y terminar dentro de un Sprint (por ejemplo, «registrar póliza de ingreso»)." }
+      ],
+      "correcta": 2,
+      "estrategia": "«No se puede estimar» + «no cabe en un Sprint» = historia demasiado grande (épica) → dividir.",
+      "conceptos": ["INVEST", "Épicas", "Historias de usuario"],
+      "fuentes": [{ "recurso": "patton-2014" }]
+    },
+    {
+      "id": "A1-118", "subarea": "1.3", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Se redacta una especificación de requerimientos de software (SRS) conforme a ISO/IEC/IEEE 29148 para un sistema de facturación que debe comunicarse con el servicio web del SAT para timbrar los comprobantes.",
+      "pregunta": "¿En qué apartado de la SRS se documenta principalmente esa comunicación?",
+      "opciones": [
+        { "texto": "Interfaces externas", "explicacion": "Correcta. Los requisitos de interfaces externas describen cómo se comunica el sistema con usuarios, hardware, software y servicios externos (protocolos, formatos y mensajes)." },
+        { "texto": "Glosario o definiciones", "explicacion": "Incorrecta. El glosario define términos para evitar ambigüedades; no especifica comportamientos ni comunicaciones." },
+        { "texto": "Requisitos de desempeño", "explicacion": "Incorrecta. Aquí se especifican tiempos de respuesta y capacidad; podría incluir el tiempo de timbrado, pero no la definición de la interfaz con el SAT." }
+      ],
+      "correcta": 0,
+      "estrategia": "Cualquier intercambio con un sistema de terceros (API, servicio web, dispositivo) se documenta en interfaces externas.",
+      "conceptos": ["SRS", "ISO/IEC/IEEE 29148", "Interfaces externas"],
+      "fuentes": [{ "recurso": "iso-29148-2018", "detalle": "SRS content" }]
+    }
+  ]
+}

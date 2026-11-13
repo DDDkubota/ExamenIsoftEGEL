@@ -1,0 +1,170 @@
+{
+  "temario": "egel-plus-isoft-2026",
+  "area": "LYC",
+  "banco": "base",
+  "estimulos": [
+    {
+      "id": "LYC-E1",
+      "titulo": "Convocatoria: Hackatón Ciudad Abierta 2027",
+      "nota": "Texto original de práctica (ámbito de participación social). Ficticio.",
+      "texto": "El Ayuntamiento de San Jerónimo, a través de su Dirección de Innovación, convoca a estudiantes y egresados de educación superior a participar en el Hackatón Ciudad Abierta 2027, cuyo objetivo es desarrollar soluciones tecnológicas que utilicen los datos abiertos del municipio para mejorar los servicios públicos.\n\nBASES\n\n1. Podrán participar equipos de tres a cinco integrantes, todos mayores de edad, de los cuales al menos uno deberá estar inscrito en una institución de educación superior al momento del registro.\n\n2. Los proyectos deberán emplear al menos dos de los conjuntos de datos publicados en el portal municipal: transporte, alumbrado, recolección de residuos o seguridad vial.\n\n3. El código fuente deberá publicarse con una licencia abierta, de modo que el Ayuntamiento y la ciudadanía puedan reutilizarlo y mejorarlo sin costo.\n\n4. El registro estará abierto del 15 de enero al 5 de febrero de 2027 en el sitio web de la Dirección de Innovación. No se aceptarán registros extemporáneos.\n\n5. El hackatón se realizará los días 20 y 21 de febrero en la Biblioteca Central. Los equipos tendrán 36 horas para presentar un prototipo funcional.\n\nPREMIACIÓN\n\nUn jurado integrado por especialistas de la academia, de la sociedad civil y del Ayuntamiento evaluará la utilidad social, la viabilidad técnica y la claridad de la presentación. El primer lugar recibirá $60 000 y acompañamiento durante seis meses para implementar su solución en una dependencia municipal.\n\nLos casos no previstos en esta convocatoria serán resueltos por el comité organizador."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "LYC-001",
+      "subarea": "L1.1",
+      "formato": "multirreactivo",
+      "estimulo": "LYC-E1",
+      "nivel": "satisfactorio",
+      "base": "Lea la convocatoria y responda.",
+      "pregunta": "Según la convocatoria, ¿qué condición debe cumplir un equipo para poder registrarse?",
+      "opciones": [
+        { "texto": "Que todos sus integrantes estén inscritos en una institución de educación superior", "explicacion": "Incorrecta. La base 1 pide que solo *al menos uno* esté inscrito; los demás pueden ser egresados." },
+        { "texto": "Que al menos uno de sus integrantes esté inscrito en una institución de educación superior", "explicacion": "Correcta. Es lo que establece literalmente la base 1, junto con tener de tres a cinco integrantes mayores de edad." },
+        { "texto": "Que haya desarrollado previamente un prototipo funcional", "explicacion": "Incorrecta. El prototipo se presenta *durante* el hackatón (base 5), no es un requisito de registro." }
+      ],
+      "correcta": 1,
+      "estrategia": "Para identificar información, vuelve al texto y localiza la oración exacta. Cuidado con los cuantificadores («todos» frente a «al menos uno»): son el distractor más común.",
+      "conceptos": ["Identificación de información", "Convocatoria"],
+      "fuentes": [
+        { "recurso": "guia-oficial-2026", "detalle": "2.6.2 Comprensión lectora" }
+      ]
+    },
+    {
+      "id": "LYC-002",
+      "subarea": "L1.2",
+      "formato": "multirreactivo",
+      "estimulo": "LYC-E1",
+      "nivel": "satisfactorio",
+      "base": "Lea la convocatoria y responda.",
+      "pregunta": "¿Cuál es el propósito central de la convocatoria?",
+      "opciones": [
+        { "texto": "Seleccionar programadores para contratarlos en el Ayuntamiento", "explicacion": "Incorrecta. No se menciona ninguna contratación; el premio incluye acompañamiento para implementar la solución, no un empleo." },
+        { "texto": "Difundir el portal de datos abiertos entre la ciudadanía", "explicacion": "Incorrecta. El uso del portal es un medio (base 2), no el fin; además, la convocatoria se dirige a estudiantes y egresados, no a la ciudadanía en general." },
+        { "texto": "Promover que estudiantes y egresados creen soluciones con datos públicos que mejoren los servicios del municipio", "explicacion": "Correcta. Resume el objetivo del primer párrafo y es coherente con los criterios del jurado (utilidad social y viabilidad) y con el premio (implementación en una dependencia)." }
+      ],
+      "correcta": 2,
+      "estrategia": "La idea central abarca todo el texto. Descarta las opciones que solo recogen un detalle o un medio, o que agregan algo que el texto no dice.",
+      "conceptos": ["Interpretación global", "Idea central"],
+      "fuentes": [
+        { "recurso": "guia-oficial-2026", "detalle": "2.6.2 Interpretación" }
+      ]
+    },
+    {
+      "id": "LYC-003",
+      "subarea": "L1.3",
+      "formato": "multirreactivo",
+      "estimulo": "LYC-E1",
+      "nivel": "sobresaliente",
+      "base": "Lea la convocatoria y responda.",
+      "pregunta": "¿Cuál de los siguientes equipos cumple con las bases de la convocatoria?",
+      "opciones": [
+        { "texto": "Cuatro egresados mayores de edad, uno de los cuales cursa actualmente una maestría, que usarán los datos de transporte y de alumbrado", "explicacion": "Correcta. Cumple el número de integrantes (3 a 5), la mayoría de edad, la inscripción de al menos uno en educación superior (la maestría lo es) y el uso de dos conjuntos de datos." },
+        { "texto": "Tres estudiantes universitarios de 19 años que usarán solo los datos de seguridad vial", "explicacion": "Incorrecta. Incumple la base 2: deben emplear al menos dos conjuntos de datos." },
+        { "texto": "Cinco estudiantes universitarios, dos de ellos de 17 años, que usarán los datos de residuos y de transporte", "explicacion": "Incorrecta. Incumple la base 1: todos los integrantes deben ser mayores de edad." }
+      ],
+      "correcta": 0,
+      "estrategia": "Para evaluar un ejemplo, haz una lista de verificación con cada condición del texto y descarta la opción en cuanto falle una.",
+      "conceptos": ["Evaluación de la forma y el contenido", "Ejemplificación"],
+      "fuentes": [
+        { "recurso": "guia-oficial-2026", "detalle": "2.6.2 Evaluación de la forma y el contenido" }
+      ]
+    },
+    {
+      "id": "LYC-004",
+      "subarea": "L2.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Un egresado de Ingeniería de Software prepara una carta de exposición de motivos para solicitar su ingreso a un programa de maestría.",
+      "pregunta": "¿Qué fragmento cumple con el propósito comunicativo y el registro adecuados?",
+      "opciones": [
+        { "texto": "«Hola, qué tal. Les escribo porque la neta me late mucho su maestría y creo que estaría padre entrar.»", "explicacion": "Incorrecta. Usa un registro informal y coloquial que no corresponde a una carta formal dirigida a un comité académico." },
+        { "texto": "«Por medio de la presente, manifiesto mi interés en ingresar a la Maestría en Ciencias de la Computación, motivado por mi experiencia en proyectos de análisis de datos y por mi deseo de desarrollar investigación aplicada en salud.»", "explicacion": "Correcta. Tiene un registro formal, se dirige al receptor de manera adecuada y expone las razones personales y académicas de la solicitud, que es la función de este género." },
+        { "texto": "«La maestría es un programa de posgrado con duración de dos años que ofrece formación en computación, inteligencia artificial y sistemas distribuidos.»", "explicacion": "Incorrecta. Es un texto expositivo-descriptivo sobre el programa; no expone los motivos del solicitante." }
+      ],
+      "correcta": 1,
+      "estrategia": "Verifica dos cosas: 1) que el texto cumpla la función del género (exponer motivos, convocar, informar, argumentar) y 2) que el registro sea el adecuado para el receptor (formal o especializado frente a coloquial).",
+      "conceptos": ["Dimensión comunicativa", "Registro lingüístico", "Carta de exposición de motivos"],
+      "fuentes": [
+        { "recurso": "guia-oficial-2026", "detalle": "2.6.3 Redacción indirecta: dimensión comunicativa" }
+      ]
+    },
+    {
+      "id": "LYC-005",
+      "subarea": "L2.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Elija la oración que presenta una concordancia correcta.",
+      "pregunta": "¿Cuál oración está redactada correctamente?",
+      "opciones": [
+        { "texto": "Los resultados de la encuesta aplicada a los usuarios demuestra que la aplicación es lenta.", "explicacion": "Incorrecta. El núcleo del sujeto es «resultados» (plural), así que el verbo debe ir en plural: «demuestran». El sustantivo cercano «encuesta» confunde." },
+        { "texto": "El resultado de las encuestas aplicadas a los usuarios demuestran que la aplicación es lenta.", "explicacion": "Incorrecta. El núcleo es «resultado» (singular); el verbo debe ser «demuestra». Aquí el error es la atracción del plural «encuestas»." },
+        { "texto": "Los resultados de la encuesta aplicada a los usuarios demuestran que la aplicación es lenta.", "explicacion": "Correcta. El sujeto («Los resultados») y el verbo («demuestran») concuerdan en número, y «aplicada» concuerda en género y número con «encuesta»." }
+      ],
+      "correcta": 2,
+      "estrategia": "Localiza el núcleo del sujeto (quita los complementos que empiezan con «de…») y comprueba que el verbo concuerde con él, no con la palabra más cercana.",
+      "conceptos": ["Concordancia sujeto-verbo", "Concordancia nominal"],
+      "fuentes": [
+        { "recurso": "rae-dpd", "detalle": "Concordancia" }
+      ]
+    },
+    {
+      "id": "LYC-006",
+      "subarea": "L2.2",
+      "formato": "completamiento",
+      "nivel": "satisfactorio",
+      "base": "El servidor principal dejó de responder durante dos horas; ________, los clientes no pudieron completar sus pagos en línea.",
+      "pregunta": "¿Qué marcador textual completa el enunciado de forma coherente?",
+      "opciones": [
+        { "texto": "por consiguiente", "explicacion": "Correcta. Es un marcador consecutivo: introduce la consecuencia (no se completaron los pagos) de lo dicho antes (el servidor dejó de responder)." },
+        { "texto": "sin embargo", "explicacion": "Incorrecta. Es un marcador adversativo: indicaría una oposición entre las dos ideas, cuando en realidad la segunda es consecuencia de la primera." },
+        { "texto": "es decir", "explicacion": "Incorrecta. Es un marcador reformulativo o explicativo: introduciría la misma idea con otras palabras, y la segunda parte es una idea distinta." }
+      ],
+      "correcta": 0,
+      "estrategia": "Identifica la relación lógica entre las dos ideas (causa-consecuencia, oposición, adición, explicación) y luego elige el marcador de esa familia.",
+      "conceptos": ["Cohesión textual", "Marcadores discursivos"],
+      "fuentes": [
+        { "recurso": "guia-oficial-2026", "detalle": "2.6.3 Cohesión textual: marcadores textuales" }
+      ]
+    },
+    {
+      "id": "LYC-007",
+      "subarea": "L2.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Elija la oración que cumple con la norma ortográfica.",
+      "pregunta": "¿Cuál oración está escrita correctamente?",
+      "opciones": [
+        { "texto": "Aun no se si el vendrá, pero te avisare.", "explicacion": "Incorrecta. Faltan las tildes en «Aún» (equivale a «todavía»), «sé» (del verbo saber), «él» (pronombre) y «avisaré» (aguda terminada en vocal)." },
+        { "texto": "Aún no sé si él vendrá, pero te avisaré.", "explicacion": "Correcta. Usa la tilde diacrítica en «Aún», «sé» y «él», acentúa las agudas terminadas en vocal («vendrá», «avisaré») y coloca la coma antes de la conjunción adversativa «pero»." },
+        { "texto": "Aún no se si él vendra pero, te avisaré.", "explicacion": "Incorrecta. «se» debe llevar tilde (verbo saber), «vendrá» es aguda terminada en vocal y la coma debe ir antes de «pero», no después." }
+      ],
+      "correcta": 1,
+      "estrategia": "Revisa por capas: 1) tildes diacríticas (él/el, sé/se, tú/tu, más/mas, aún/aun), 2) reglas generales (agudas en n, s o vocal) y 3) puntuación (coma antes de pero, mas, sino, aunque).",
+      "conceptos": ["Acentuación", "Tilde diacrítica", "Puntuación"],
+      "fuentes": [
+        { "recurso": "rae-ortografia", "detalle": "Acentuación gráfica y tilde diacrítica" }
+      ]
+    },
+    {
+      "id": "LYC-008",
+      "subarea": "L2.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Elija la instrucción con la puntuación correcta.",
+      "pregunta": "¿Cuál enunciado está puntuado correctamente?",
+      "opciones": [
+        { "texto": "Para instalar el programa descargue, el archivo ejecútelo y siga las instrucciones.", "explicacion": "Incorrecta. La coma separa el verbo «descargue» de su complemento directo «el archivo», y falta la coma entre los elementos de la enumeración." },
+        { "texto": "Para instalar, el programa descargue el archivo, ejecútelo, y siga las instrucciones.", "explicacion": "Incorrecta. La coma tras «instalar» rompe el complemento «instalar el programa», y la coma antes de «y» en esta enumeración simple no corresponde." },
+        { "texto": "Para instalar el programa, descargue el archivo, ejecútelo y siga las instrucciones.", "explicacion": "Correcta. La coma separa el complemento de finalidad antepuesto («Para instalar el programa») y las comas separan los elementos de la enumeración; el último se une con «y» sin coma." }
+      ],
+      "correcta": 2,
+      "estrategia": "Nunca separes con coma el sujeto del verbo ni el verbo de su complemento directo. Usa coma tras un complemento antepuesto largo y entre los elementos de una enumeración, salvo antes de la «y» final.",
+      "conceptos": ["Puntuación", "Coma", "Enumeración"],
+      "fuentes": [
+        { "recurso": "rae-ortografia", "detalle": "Uso de la coma" }
+      ]
+    }
+  ]
+}

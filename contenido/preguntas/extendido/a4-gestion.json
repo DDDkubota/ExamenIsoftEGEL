@@ -1,0 +1,204 @@
+{
+  "temario": "egel-plus-isoft-2026",
+  "area": "A4",
+  "banco": "extendido",
+  "estimulos": [],
+  "preguntas": [
+    {
+      "id": "A4-101", "subarea": "4.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Para recuperar dos semanas de atraso sin aumentar el presupuesto, el líder de proyecto decide iniciar el desarrollo del backend mientras el diseño de la base de datos aún no termina, aceptando el riesgo de retrabajo.",
+      "pregunta": "¿Qué técnica de compresión del cronograma aplica?",
+      "opciones": [
+        { "texto": "Ejecución rápida (fast tracking)", "explicacion": "Correcta. Consiste en realizar en paralelo actividades que estaban en secuencia; ahorra tiempo sin costo adicional directo, pero aumenta el riesgo de retrabajo." },
+        { "texto": "Intensificación (crashing)", "explicacion": "Incorrecta. Agrega recursos (horas extra, más personas) para acortar actividades de la ruta crítica, lo que aumenta el costo." },
+        { "texto": "Nivelación de recursos", "explicacion": "Incorrecta. Ajusta las fechas para no sobreasignar recursos y suele alargar el cronograma, no acortarlo." }
+      ],
+      "correcta": 0,
+      "estrategia": "Paralelizar = fast tracking (más riesgo). Agregar recursos = crashing (más costo).",
+      "conceptos": ["Compresión del cronograma", "Fast tracking", "Crashing"],
+      "fuentes": [{ "recurso": "pmbok-7" }, { "recurso": "kerzner-2022" }]
+    },
+    {
+      "id": "A4-102", "subarea": "4.1", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Un proyecto de facturación identifica dos eventos:\n• Amenaza: 20 % de probabilidad de que la autoridad fiscal cambie el esquema, con un costo de retrabajo de $500 000.\n• Oportunidad: 10 % de probabilidad de recibir un bono de $200 000 por entrega anticipada.\nSe permite usar calculadora.",
+      "pregunta": "¿Cuál es el valor monetario esperado (VME) neto de ambos eventos?",
+      "opciones": [
+        { "texto": "−$100 000", "explicacion": "Incorrecta. Solo considera la amenaza (0.20 × −500 000) e ignora la oportunidad." },
+        { "texto": "−$80 000", "explicacion": "Correcta. VME = (0.20 × −500 000) + (0.10 × 200 000) = −100 000 + 20 000 = −$80 000. Las amenazas restan y las oportunidades suman." },
+        { "texto": "−$300 000", "explicacion": "Incorrecta. Resta los montos sin ponderarlos por su probabilidad." }
+      ],
+      "correcta": 1,
+      "estrategia": "VME = Σ (probabilidad × impacto), con signo negativo para las amenazas y positivo para las oportunidades.",
+      "conceptos": ["Análisis cuantitativo de riesgos", "Valor monetario esperado"],
+      "fuentes": [{ "recurso": "pmbok-7", "detalle": "Incertidumbre" }]
+    },
+    {
+      "id": "A4-103", "subarea": "4.1", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "En la matriz RACI de un proyecto, para la actividad «Aprobar el diseño de la base de datos» se debe indicar a la única persona que rinde cuentas por el resultado y da la aprobación final.",
+      "pregunta": "¿Qué letra se asigna a esa persona?",
+      "opciones": [
+        { "texto": "R (Responsible)", "explicacion": "Incorrecta. R es quien ejecuta el trabajo; puede haber varias personas responsables." },
+        { "texto": "C (Consulted)", "explicacion": "Incorrecta. C es quien aporta su opinión antes de la decisión (comunicación bidireccional)." },
+        { "texto": "A (Accountable)", "explicacion": "Correcta. A es quien rinde cuentas y aprueba; debe haber exactamente una por actividad." }
+      ],
+      "correcta": 2,
+      "estrategia": "RACI: R hace el trabajo, A aprueba (solo una por actividad), C es consultado, I es informado.",
+      "conceptos": ["Matriz RACI", "Recursos humanos"],
+      "fuentes": [{ "recurso": "pmbok-7", "detalle": "Equipo" }]
+    },
+    {
+      "id": "A4-104", "subarea": "4.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Un equipo de QA quiere identificar las causas raíz del alto número de defectos en un sistema, agrupándolas en categorías como personas, métodos, herramientas, materiales y entorno.",
+      "pregunta": "¿Qué herramienta de calidad debe usar?",
+      "opciones": [
+        { "texto": "Diagrama de Ishikawa (causa-efecto)", "explicacion": "Correcta. El diagrama de espina de pescado organiza las posibles causas de un problema en categorías para analizar su raíz." },
+        { "texto": "Diagrama de Pareto", "explicacion": "Incorrecta. Pareto prioriza las causas por frecuencia (80/20), pero no las organiza en categorías para buscar la raíz." },
+        { "texto": "Diagrama de Gantt", "explicacion": "Incorrecta. Es una herramienta de cronograma, no de análisis de calidad." }
+      ],
+      "correcta": 0,
+      "estrategia": "Causas agrupadas en categorías → Ishikawa. Priorizar las pocas causas más frecuentes → Pareto.",
+      "conceptos": ["Ishikawa", "Herramientas de calidad"],
+      "fuentes": [{ "recurso": "arciniega-2017" }]
+    },
+    {
+      "id": "A4-105", "subarea": "4.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Al analizar 400 defectos, el equipo descubre que 80 % de ellos se concentran en 3 de los 15 módulos del sistema y quiere decidir dónde enfocar las revisiones.",
+      "pregunta": "¿Qué herramienta representa mejor esta situación para priorizar?",
+      "opciones": [
+        { "texto": "Diagrama de Ishikawa", "explicacion": "Incorrecta. Ishikawa explora causas por categorías, pero no ordena por frecuencia." },
+        { "texto": "Diagrama de Pareto", "explicacion": "Correcta. El diagrama de Pareto ordena las categorías de mayor a menor frecuencia con una curva acumulada y hace evidente el 80/20 para priorizar." },
+        { "texto": "Red PERT", "explicacion": "Incorrecta. PERT sirve para estimar y programar actividades." }
+      ],
+      "correcta": 1,
+      "estrategia": "«80 % de los efectos vienen del 20 % de las causas» → Pareto.",
+      "conceptos": ["Pareto", "Priorización de defectos"],
+      "fuentes": [{ "recurso": "arciniega-2017" }]
+    },
+    {
+      "id": "A4-106", "subarea": "4.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Un servicio tiene un tiempo medio entre fallas (MTBF) de 990 horas y un tiempo medio de reparación (MTTR) de 10 horas. Se permite usar calculadora.",
+      "pregunta": "¿Cuál es su disponibilidad?",
+      "opciones": [
+        { "texto": "90 %", "explicacion": "Incorrecta. Sería el resultado si el MTTR fuera de 110 horas." },
+        { "texto": "99.9 %", "explicacion": "Incorrecta. Para 99.9 %, el MTTR tendría que ser de aproximadamente 1 hora." },
+        { "texto": "99 %", "explicacion": "Correcta. Disponibilidad = MTBF / (MTBF + MTTR) = 990 / 1000 = 0.99 = 99 %." }
+      ],
+      "correcta": 2,
+      "estrategia": "Disponibilidad = MTBF / (MTBF + MTTR). Reducir el MTTR (reparar más rápido) también mejora la disponibilidad.",
+      "conceptos": ["MTBF", "MTTR", "Disponibilidad", "Métricas"],
+      "fuentes": [{ "recurso": "pressman-2020", "detalle": "Métricas de fiabilidad" }]
+    },
+    {
+      "id": "A4-107", "subarea": "4.2", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Durante el desarrollo de un sistema se encontraron y corrigieron 90 defectos antes de la entrega; en los primeros tres meses de operación, los usuarios reportaron 10 defectos más. Se permite usar calculadora.",
+      "pregunta": "¿Cuál es la eficiencia en la eliminación de defectos (DRE)?",
+      "opciones": [
+        { "texto": "0.90 (90 %)", "explicacion": "Correcta. DRE = E / (E + D) = 90 / (90 + 10) = 0.90: el proceso eliminó 90 % de los defectos antes de entregar." },
+        { "texto": "0.10 (10 %)", "explicacion": "Incorrecta. Es la proporción de defectos que escaparon a producción, no la eficiencia de eliminación." },
+        { "texto": "9", "explicacion": "Incorrecta. Es la razón 90/10; la DRE es una proporción entre 0 y 1." }
+      ],
+      "correcta": 0,
+      "estrategia": "DRE = defectos encontrados antes / (antes + después). Mientras más cerca de 1, mejor es el proceso de calidad.",
+      "conceptos": ["DRE", "Métricas de calidad"],
+      "fuentes": [{ "recurso": "pressman-2020" }]
+    },
+    {
+      "id": "A4-108", "subarea": "4.2", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Antes de integrar un módulo crítico, la empresa organiza una revisión con roles definidos (moderador, autor, lector y registrador), con preparación previa, listas de verificación y registro de métricas de los defectos encontrados.",
+      "pregunta": "¿Qué técnica de aseguramiento de la calidad aplica?",
+      "opciones": [
+        { "texto": "Walkthrough informal", "explicacion": "Incorrecta. En un walkthrough el autor guía la revisión de manera informal, sin roles ni métricas formales." },
+        { "texto": "Inspección formal (tipo Fagan)", "explicacion": "Correcta. La inspección de Fagan es la revisión más formal: tiene roles definidos, etapas (planeación, preparación, reunión, retrabajo y seguimiento), listas de verificación y métricas." },
+        { "texto": "Prueba de caja negra", "explicacion": "Incorrecta. Es una técnica dinámica que ejecuta el software; la revisión descrita es estática." }
+      ],
+      "correcta": 1,
+      "estrategia": "Las revisiones van de menor a mayor formalidad: revisión informal → walkthrough → revisión técnica → inspección (Fagan).",
+      "conceptos": ["Inspecciones", "Revisiones técnicas", "SQA"],
+      "fuentes": [{ "recurso": "sanchez-swebok-2012" }]
+    },
+    {
+      "id": "A4-109", "subarea": "4.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Al inicio de cada Sprint, el Scrum Team define por qué el Sprint es valioso, qué elementos del Product Backlog se pueden terminar y cómo se hará el trabajo.",
+      "pregunta": "¿Qué evento de Scrum se describe?",
+      "opciones": [
+        { "texto": "Sprint Planning", "explicacion": "Correcta. La Guía de Scrum 2020 define tres temas para la Sprint Planning: por qué (Objetivo del Sprint), qué (elementos seleccionados) y cómo (plan de trabajo)." },
+        { "texto": "Sprint Review", "explicacion": "Incorrecta. Se realiza al final del Sprint para inspeccionar el incremento con los stakeholders." },
+        { "texto": "Daily Scrum", "explicacion": "Incorrecta. Es una reunión diaria de 15 minutos para ajustar el plan hacia el Objetivo del Sprint." }
+      ],
+      "correcta": 0,
+      "estrategia": "Inicio del Sprint con por qué / qué / cómo → Sprint Planning.",
+      "conceptos": ["Scrum", "Sprint Planning"],
+      "fuentes": [{ "recurso": "scrum-guide-2020" }]
+    },
+    {
+      "id": "A4-110", "subarea": "4.3", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Según la Guía de Scrum 2020, cada artefacto tiene un compromiso que aporta transparencia y foco.",
+      "pregunta": "¿Cuál es el compromiso asociado al Incremento?",
+      "opciones": [
+        { "texto": "El Objetivo del Sprint", "explicacion": "Incorrecta. Es el compromiso del Sprint Backlog." },
+        { "texto": "La Definición de Terminado", "explicacion": "Correcta. La Definición de Terminado describe el estado de calidad que debe cumplir un Incremento; un elemento que no la cumple no se puede liberar ni presentar en la Review." },
+        { "texto": "El Objetivo del Producto", "explicacion": "Incorrecta. Es el compromiso del Product Backlog." }
+      ],
+      "correcta": 1,
+      "estrategia": "Product Backlog → Objetivo del Producto; Sprint Backlog → Objetivo del Sprint; Incremento → Definición de Terminado.",
+      "conceptos": ["Scrum", "Definición de Terminado", "Artefactos"],
+      "fuentes": [{ "recurso": "scrum-guide-2020" }]
+    },
+    {
+      "id": "A4-111", "subarea": "4.3", "formato": "cuestionamiento-directo", "nivel": "sobresaliente",
+      "base": "Un proyecto de software para control de drones tiene un alto riesgo técnico. En cada ciclo se definen objetivos, se identifican y analizan los riesgos, se construyen prototipos para reducirlos y se planea el siguiente ciclo con el cliente.",
+      "pregunta": "¿Qué modelo de proceso se sigue?",
+      "opciones": [
+        { "texto": "Cascada", "explicacion": "Incorrecta. La cascada avanza fase por fase sin ciclos de análisis de riesgos." },
+        { "texto": "Kanban", "explicacion": "Incorrecta. Kanban gestiona un flujo continuo de trabajo, sin ciclos centrados en riesgos." },
+        { "texto": "Espiral (Boehm)", "explicacion": "Correcta. El modelo en espiral es iterativo y está guiado por el riesgo: cada vuelta incluye objetivos, análisis de riesgos (con prototipos), desarrollo y planificación." }
+      ],
+      "correcta": 2,
+      "estrategia": "«Análisis de riesgos explícito en cada ciclo» → espiral.",
+      "conceptos": ["Modelo en espiral", "Gestión de riesgos"],
+      "fuentes": [{ "recurso": "pressman-2020", "detalle": "Modelos evolutivos" }]
+    },
+    {
+      "id": "A4-112", "subarea": "4.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Una dependencia de gobierno contrata a precio fijo un sistema de nómina cuyos requisitos están definidos por ley y no cambiarán. El equipo es grande, está distribuido y requiere documentación formal de cada fase para auditorías.",
+      "pregunta": "¿Qué modelo de proceso es el más adecuado?",
+      "opciones": [
+        { "texto": "Cascada", "explicacion": "Correcta. Con requisitos estables, un contrato a precio fijo y la necesidad de documentación formal por fase, el modelo en cascada es apropiado y predecible." },
+        { "texto": "Programación extrema (XP)", "explicacion": "Incorrecta. XP está pensada para equipos pequeños y ubicados en un mismo lugar, con requisitos cambiantes y poca documentación formal." },
+        { "texto": "Kanban", "explicacion": "Incorrecta. Kanban se orienta a un flujo continuo de trabajo, no a un desarrollo por fases con entregables documentados." }
+      ],
+      "correcta": 0,
+      "estrategia": "Requisitos estables + documentación formal + contrato fijo → tradicional (cascada o V).",
+      "conceptos": ["Modelo en cascada", "Selección de metodología"],
+      "fuentes": [{ "recurso": "maida-2015" }]
+    },
+    {
+      "id": "A4-113", "subarea": "4.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Una empresa entrega primero un módulo de ventas totalmente funcional, que los usuarios ya operan; tres meses después entrega el de inventarios, y luego el de facturación. Cada entrega agrega funcionalidad al sistema en operación.",
+      "pregunta": "¿Qué modelo de proceso se describe?",
+      "opciones": [
+        { "texto": "Prototipo desechable", "explicacion": "Incorrecta. Un prototipo desechable se construye para aclarar requisitos y luego se descarta; no entra en operación." },
+        { "texto": "Incremental", "explicacion": "Correcta. El sistema se entrega en incrementos funcionales: cada uno es operable y agrega capacidades al anterior." },
+        { "texto": "Cascada", "explicacion": "Incorrecta. En la cascada el sistema completo se entrega al final." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Entregas parciales operativas que suman funcionalidad» → incremental.",
+      "conceptos": ["Modelo incremental"],
+      "fuentes": [{ "recurso": "sommerville-2016", "detalle": "Cap. 2" }]
+    },
+    {
+      "id": "A4-114", "subarea": "4.3", "formato": "cuestionamiento-directo", "nivel": "satisfactorio",
+      "base": "Un equipo que adopta Scrum discute cuánto debe durar el Daily Scrum y cuál es su propósito.",
+      "pregunta": "Según la Guía de Scrum 2020, ¿cuál es la respuesta correcta?",
+      "opciones": [
+        { "texto": "Una hora; cada desarrollador informa al gerente lo que hizo", "explicacion": "Incorrecta. No es una reunión de reporte para un gerente, y su duración máxima es de 15 minutos." },
+        { "texto": "15 minutos; el Scrum Master asigna las tareas del día", "explicacion": "Incorrecta. Los Developers se autogestionan; el Scrum Master no asigna tareas." },
+        { "texto": "15 minutos; los Developers inspeccionan el progreso hacia el Objetivo del Sprint y adaptan el Sprint Backlog", "explicacion": "Correcta. Es un evento de 15 minutos para los Developers, cuyo propósito es inspeccionar el progreso y ajustar el plan." }
+      ],
+      "correcta": 2,
+      "estrategia": "En Scrum nadie asigna tareas a los Developers y el Daily es de ellos, no un reporte a un jefe.",
+      "conceptos": ["Daily Scrum", "Autogestión"],
+      "fuentes": [{ "recurso": "scrum-guide-2020" }]
+    }
+  ]
+}

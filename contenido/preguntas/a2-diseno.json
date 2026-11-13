@@ -1,0 +1,285 @@
+{
+  "temario": "egel-plus-isoft-2026",
+  "area": "A2",
+  "banco": "base",
+  "estimulos": [],
+  "preguntas": [
+    {
+      "id": "A2-001",
+      "subarea": "2.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Una plataforma de comercio electrónico tiene cuatro equipos independientes (catálogo, carrito, pagos y envíos). En el Buen Fin, el catálogo recibe diez veces más tráfico que pagos, y cada equipo quiere desplegar varias veces al día sin coordinarse con los demás.",
+      "pregunta": "¿Qué estilo arquitectónico satisface mejor estos requerimientos?",
+      "opciones": [
+        { "texto": "Monolito en capas", "explicacion": "Incorrecta. Un monolito se despliega y se escala como una sola unidad: no permite escalar solo el catálogo ni que los equipos desplieguen de forma independiente." },
+        { "texto": "Microservicios", "explicacion": "Correcta. Cada servicio se alinea a una capacidad del negocio, tiene su propio ciclo de despliegue y se escala por separado. El costo es una mayor complejidad operativa (red, observabilidad, consistencia eventual)." },
+        { "texto": "Cliente-servidor de dos capas", "explicacion": "Incorrecta. Separa la presentación del servidor de datos, pero no divide la lógica de negocio en unidades que se desplieguen o escalen por separado." }
+      ],
+      "correcta": 1,
+      "estrategia": "Relaciona los atributos de calidad con el estilo: escalado independiente + equipos autónomos + despliegue frecuente → microservicios. Si el caso fuera un equipo pequeño con un dominio simple, el monolito sería la respuesta razonable.",
+      "conceptos": ["Estilos arquitectónicos", "Microservicios", "Escalabilidad"],
+      "fuentes": [
+        { "recurso": "ingeno-2018", "detalle": "Cap. Patrones arquitectónicos: microservicios" },
+        { "recurso": "bass-2021", "detalle": "Atributos de calidad y tácticas" }
+      ]
+    },
+    {
+      "id": "A2-002",
+      "subarea": "2.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "El arquitecto de un sistema hospitalario debe documentar en qué servidores, contenedores y red se ejecutará cada componente, para que el área de infraestructura dimensione el hardware.",
+      "pregunta": "¿Qué vista del modelo 4+1 de Kruchten debe elaborar?",
+      "opciones": [
+        { "texto": "Vista lógica", "explicacion": "Incorrecta. La vista lógica muestra la funcionalidad que el sistema ofrece al usuario final (clases, objetos, relaciones)." },
+        { "texto": "Vista de procesos", "explicacion": "Incorrecta. La vista de procesos aborda concurrencia, distribución en tiempo de ejecución, hilos y sincronización, no la asignación a nodos de hardware." },
+        { "texto": "Vista física", "explicacion": "Correcta. La vista física (o de despliegue) mapea el software a los nodos de hardware y a la topología de red. En UML se representa con el diagrama de despliegue." }
+      ],
+      "correcta": 2,
+      "estrategia": "4+1: Lógica (qué hace, para el usuario), Desarrollo (cómo se organiza el código, para los programadores), Procesos (concurrencia y desempeño, para los integradores), Física (hardware, para infraestructura) + Escenarios (casos de uso que unen las cuatro).",
+      "conceptos": ["Modelo 4+1", "Vista física", "Diagrama de despliegue"],
+      "fuentes": [
+        { "recurso": "kruchten-1995", "detalle": "The 4+1 View Model of Software Architecture" },
+        { "recurso": "clements-2010", "detalle": "Vistas de asignación (allocation views)" }
+      ]
+    },
+    {
+      "id": "A2-003",
+      "subarea": "2.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Antes de construir un sistema de pagos, el arquitecto reúne a los stakeholders, construye un árbol de utilidad con escenarios de desempeño, seguridad y disponibilidad, analiza los enfoques arquitectónicos propuestos e identifica puntos de sensibilidad y puntos de compromiso (tradeoff).",
+      "pregunta": "¿Qué método de evaluación de arquitectura está aplicando?",
+      "opciones": [
+        { "texto": "ATAM", "explicacion": "Correcta. El Architecture Tradeoff Analysis Method (SEI) usa un árbol de utilidad para priorizar escenarios de atributos de calidad y produce como salidas riesgos, no-riesgos, puntos de sensibilidad y puntos de compromiso." },
+        { "texto": "SAAM", "explicacion": "Incorrecta. SAAM también se basa en escenarios, pero se enfoca sobre todo en la modificabilidad y no incluye el árbol de utilidad ni el análisis explícito de compromisos entre varios atributos." },
+        { "texto": "Análisis de puntos de función", "explicacion": "Incorrecta. Los puntos de función miden el tamaño funcional del software para estimar esfuerzo; no evalúan arquitecturas." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Tradeoff» y «árbol de utilidad» son las palabras clave de ATAM. Si el enunciado solo hablara de escenarios de cambio, podría ser SAAM.",
+      "conceptos": ["ATAM", "Atributos de calidad", "Puntos de sensibilidad", "Tradeoff"],
+      "fuentes": [
+        { "recurso": "blokdyk-2018", "detalle": "ATAM" },
+        { "recurso": "bass-2021", "detalle": "Cap. Evaluación de arquitecturas" }
+      ]
+    },
+    {
+      "id": "A2-004",
+      "subarea": "2.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En una planta industrial, cientos de sensores IoT envían lecturas de temperatura. Los módulos de alertas, el tablero en tiempo real y el almacenamiento histórico deben reaccionar a esas lecturas. Se quiere agregar nuevos consumidores sin modificar a los sensores.",
+      "pregunta": "¿Qué patrón arquitectónico es el más adecuado?",
+      "opciones": [
+        { "texto": "Tuberías y filtros", "explicacion": "Incorrecta. Tuberías y filtros procesa datos en una secuencia fija de transformaciones; no distribuye un mismo evento a varios consumidores independientes." },
+        { "texto": "Publicador-suscriptor (dirigido por eventos)", "explicacion": "Correcta. Los sensores publican eventos en un bróker o tópico y los consumidores se suscriben. Productores y consumidores quedan desacoplados, así que se pueden agregar suscriptores sin tocar a los publicadores." },
+        { "texto": "Arquitectura en capas", "explicacion": "Incorrecta. Las capas organizan responsabilidades en niveles (presentación, negocio, datos), pero no resuelven la difusión de eventos a muchos consumidores." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Varios interesados reaccionan a un evento» + «agregar consumidores sin cambiar al emisor» → publicador-suscriptor (a nivel de clases, el equivalente es el patrón Observer).",
+      "conceptos": ["Arquitectura dirigida por eventos", "Pub/Sub", "Desacoplamiento"],
+      "fuentes": [
+        { "recurso": "ingeno-2018", "detalle": "Event-driven architecture" },
+        { "recurso": "suarez-2016", "detalle": "Patrones arquitectónicos por dominio de requerimientos" }
+      ]
+    },
+    {
+      "id": "A2-005",
+      "subarea": "2.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Durante una revisión de diseño se encuentra la clase «Utilerias», que contiene métodos para enviar correos, calcular el IVA, comprimir imágenes y validar CURP. Los métodos no comparten datos ni tienen relación entre sí.",
+      "pregunta": "¿Qué tipo de cohesión presenta la clase?",
+      "opciones": [
+        { "texto": "Funcional", "explicacion": "Incorrecta. La cohesión funcional, la más deseable, se da cuando todos los elementos contribuyen a una sola tarea bien definida." },
+        { "texto": "Coincidental", "explicacion": "Correcta. La cohesión coincidental es la más baja: los elementos se agrupan sin ninguna relación significativa, solo «por conveniencia». Conviene separar la clase en módulos con una responsabilidad cada uno." },
+        { "texto": "Secuencial", "explicacion": "Incorrecta. En la cohesión secuencial, la salida de un elemento es la entrada del siguiente. Aquí los métodos no intercambian datos." }
+      ],
+      "correcta": 1,
+      "estrategia": "Escala de cohesión, de peor a mejor: coincidental < lógica < temporal < procedimental < comunicacional < secuencial < funcional. Si los elementos no tienen nada en común, es coincidental.",
+      "conceptos": ["Cohesión", "Principio de responsabilidad única"],
+      "fuentes": [
+        { "recurso": "pascual-2019", "detalle": "Acoplamiento y cohesión" },
+        { "recurso": "pressman-2020", "detalle": "Conceptos de diseño: independencia funcional" }
+      ]
+    },
+    {
+      "id": "A2-006",
+      "subarea": "2.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En un sistema de inventarios, el módulo de Ventas modifica directamente la variable global «stockActual», que también leen y escriben los módulos de Compras y Reportes. Un error en Ventas ha corrompido los reportes.",
+      "pregunta": "¿Qué tipo de acoplamiento existe entre los módulos?",
+      "opciones": [
+        { "texto": "Acoplamiento común", "explicacion": "Correcta. Hay acoplamiento común (o global) cuando varios módulos comparten datos globales. Es uno de los más fuertes e indeseables, porque un cambio en un módulo afecta a los demás de forma difícil de rastrear." },
+        { "texto": "Acoplamiento de datos", "explicacion": "Incorrecta. El acoplamiento de datos, el más débil y deseable, ocurre cuando los módulos se comunican pasando solo los parámetros simples que necesitan." },
+        { "texto": "Acoplamiento de control", "explicacion": "Incorrecta. En el acoplamiento de control un módulo le pasa a otro una bandera que dirige su lógica interna; aquí se comparte un dato global." }
+      ],
+      "correcta": 0,
+      "estrategia": "Escala de acoplamiento, de mejor a peor: datos < estampado (estructuras) < control (banderas) < externo < común (globales) < contenido (un módulo modifica el interior de otro). «Variable global compartida» → común.",
+      "conceptos": ["Acoplamiento", "Variables globales", "Encapsulamiento"],
+      "fuentes": [
+        { "recurso": "pascual-2019", "detalle": "Tipos de acoplamiento" },
+        { "recurso": "sommerville-2016", "detalle": "Diseño orientado a objetos" }
+      ]
+    },
+    {
+      "id": "A2-007",
+      "subarea": "2.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Una tienda en línea debe integrar una pasarela de pagos de un tercero. La aplicación espera la interfaz «ProcesadorPago.cobrar(monto)», pero el SDK de la pasarela expone «GatewayClient.makeCharge(cents, currency)». El SDK no se puede modificar.",
+      "pregunta": "¿Qué patrón de diseño resuelve la incompatibilidad?",
+      "opciones": [
+        { "texto": "Decorator", "explicacion": "Incorrecta. Decorator agrega responsabilidades a un objeto de forma dinámica, pero mantiene la misma interfaz; no convierte una interfaz en otra." },
+        { "texto": "Adapter", "explicacion": "Correcta. Adapter (patrón estructural del GoF) envuelve la clase existente y traduce su interfaz a la que espera el cliente: cobrar(monto) llama a makeCharge(monto*100, \"MXN\")." },
+        { "texto": "Factory Method", "explicacion": "Incorrecta. Factory Method es creacional: delega en subclases qué objeto instanciar, pero no resuelve que las interfaces sean incompatibles." }
+      ],
+      "correcta": 1,
+      "estrategia": "Clasifica primero el problema: ¿crear objetos (creacional), componer estructuras o interfaces (estructural) o repartir comportamiento (de comportamiento)? «Interfaz incompatible» es un problema estructural → Adapter.",
+      "conceptos": ["Patrones GoF", "Adapter", "Patrones estructurales"],
+      "fuentes": [
+        { "recurso": "patrones-upsam", "detalle": "Patrones estructurales" },
+        { "recurso": "larman-uml-patrones", "detalle": "Patrones GoF: Adaptador" }
+      ]
+    },
+    {
+      "id": "A2-008",
+      "subarea": "2.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "En una app de envíos, el costo se calcula con un algoritmo distinto según la paquetería (Estafeta, DHL, FedEx). El usuario elige la paquetería en tiempo de ejecución, y el negocio planea agregar más sin modificar la clase «Envio».",
+      "pregunta": "¿Qué patrón de diseño se debe aplicar?",
+      "opciones": [
+        { "texto": "State", "explicacion": "Incorrecta. State cambia el comportamiento de un objeto cuando cambia su estado interno, y son los propios estados los que deciden las transiciones. Aquí el algoritmo lo elige el cliente; no es una transición de estado." },
+        { "texto": "Template Method", "explicacion": "Incorrecta. Template Method fija el esqueleto de un algoritmo en una superclase y deja pasos a las subclases mediante herencia, así que el algoritmo no se puede intercambiar en tiempo de ejecución." },
+        { "texto": "Strategy", "explicacion": "Correcta. Strategy encapsula una familia de algoritmos intercambiables detrás de una interfaz común (CalculadoraCosto) y permite elegirlos en tiempo de ejecución. Cumple el principio abierto/cerrado." }
+      ],
+      "correcta": 2,
+      "estrategia": "«Familia de algoritmos intercambiables elegidos en tiempo de ejecución» = Strategy. State y Strategy tienen diagramas muy parecidos: la diferencia está en quién decide el cambio (el cliente o el propio estado).",
+      "conceptos": ["Strategy", "Principio abierto/cerrado", "Composición sobre herencia"],
+      "fuentes": [
+        { "recurso": "patrones-upsam", "detalle": "Patrones de comportamiento" },
+        { "recurso": "larman-uml-patrones", "detalle": "Patrón Estrategia" }
+      ]
+    },
+    {
+      "id": "A2-009",
+      "subarea": "2.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Una base de datos tiene la tabla:\nDetallePedido(id_pedido, id_producto, nombre_producto, cantidad)\ncuya llave primaria es (id_pedido, id_producto). El atributo «nombre_producto» depende únicamente de «id_producto».",
+      "pregunta": "¿Qué forma normal incumple la tabla?",
+      "opciones": [
+        { "texto": "Primera forma normal", "explicacion": "Incorrecta. La tabla tiene valores atómicos y no tiene grupos repetidos, así que cumple la 1FN." },
+        { "texto": "Segunda forma normal", "explicacion": "Correcta. Hay una dependencia parcial: «nombre_producto» depende solo de una parte de la llave compuesta. La 2FN exige que todo atributo no clave dependa de la llave completa. La solución es mover «nombre_producto» a una tabla Producto(id_producto, nombre_producto)." },
+        { "texto": "Tercera forma normal", "explicacion": "Incorrecta. La 3FN elimina dependencias transitivas (un atributo no clave que depende de otro atributo no clave). El problema aquí es anterior: una dependencia parcial de la llave." }
+      ],
+      "correcta": 1,
+      "estrategia": "Llave compuesta + atributo que depende solo de una parte de ella → 2FN. Atributo no clave que depende de otro atributo no clave → 3FN. Atributos multivaluados o grupos repetidos → 1FN.",
+      "conceptos": ["Normalización", "Dependencia parcial", "Dependencia transitiva"],
+      "fuentes": [
+        { "recurso": "date-2006", "detalle": "Normalización: 1FN, 2FN, 3FN, FNBC" },
+        { "recurso": "harrington-2016", "detalle": "Normalization" }
+      ]
+    },
+    {
+      "id": "A2-010",
+      "subarea": "2.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Una cadena de farmacias tiene sucursales en las regiones Norte, Centro y Sur, y cada región administra a sus propios clientes. Para reducir la latencia, la tabla Clientes se divide por filas según el valor del campo «region» y cada parte se almacena en el servidor de su región.",
+      "pregunta": "¿Qué técnica de diseño de bases de datos distribuidas se aplicó?",
+      "opciones": [
+        { "texto": "Fragmentación vertical", "explicacion": "Incorrecta. La fragmentación vertical divide la tabla por columnas (proyecciones), y cada fragmento conserva la llave primaria." },
+        { "texto": "Replicación total", "explicacion": "Incorrecta. En la replicación total cada sitio guarda una copia completa de la tabla; aquí cada sitio guarda solo una parte." },
+        { "texto": "Fragmentación horizontal", "explicacion": "Correcta. La fragmentación horizontal divide la tabla por filas mediante un predicado de selección (region = 'Norte', etc.). La tabla original se reconstruye con la UNIÓN de los fragmentos." }
+      ],
+      "correcta": 2,
+      "estrategia": "Filas → horizontal (se reconstruye con UNION); columnas → vertical (se reconstruye con JOIN por la llave); copias → replicación.",
+      "conceptos": ["Bases de datos distribuidas", "Fragmentación horizontal / vertical", "Replicación"],
+      "fuentes": [
+        { "recurso": "meier-2019", "detalle": "Distribución de datos" },
+        { "recurso": "ullman-2016", "detalle": "Bases de datos distribuidas" }
+      ]
+    },
+    {
+      "id": "A2-011",
+      "subarea": "2.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Un marketplace vende artículos muy distintos: los celulares tienen atributos como RAM y cámara; la ropa, talla y material; los libros, ISBN y autor. Casi siempre se consulta un producto completo por su identificador, y con frecuencia se agregan nuevas categorías con atributos propios.",
+      "pregunta": "¿Qué modelo de datos no relacional es el más adecuado?",
+      "opciones": [
+        { "texto": "Documental (por ejemplo, MongoDB)", "explicacion": "Correcta. Las bases documentales guardan cada producto como un documento JSON/BSON de esquema flexible, con atributos distintos por documento, y lo recuperan completo en una sola lectura." },
+        { "texto": "De grafos (por ejemplo, Neo4j)", "explicacion": "Incorrecta. Los grafos brillan cuando lo importante son las relaciones y los recorridos entre entidades (redes sociales, recomendaciones), no con atributos variables por entidad." },
+        { "texto": "Clave-valor (por ejemplo, Redis)", "explicacion": "Incorrecta. Un almacén clave-valor trata el valor como un bloque opaco: sirve para cachés o sesiones, pero dificulta consultar o filtrar por atributos internos del producto." }
+      ],
+      "correcta": 0,
+      "estrategia": "Esquema variable + agregados que se leen completos → documental. Relaciones profundas → grafos. Acceso por llave a alta velocidad → clave-valor. Grandes volúmenes por columnas o series de tiempo → columnar.",
+      "conceptos": ["NoSQL", "Modelo documental", "Esquema flexible"],
+      "fuentes": [
+        { "recurso": "meier-2019", "detalle": "Modelos NoSQL" }
+      ]
+    },
+    {
+      "id": "A2-012",
+      "subarea": "2.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En una app de trámites, al subir un documento PDF de 20 MB la pantalla se queda igual durante 40 segundos, sin ninguna indicación. Muchos usuarios vuelven a presionar «Enviar» y el sistema registra solicitudes duplicadas.",
+      "pregunta": "¿Qué heurística de usabilidad de Nielsen se incumple principalmente?",
+      "opciones": [
+        { "texto": "Consistencia y estándares", "explicacion": "Incorrecta. Esta heurística pide usar convenciones uniformes dentro de la app y respecto de la plataforma; el problema no es una inconsistencia." },
+        { "texto": "Visibilidad del estado del sistema", "explicacion": "Correcta. El sistema debe mantener informado al usuario de lo que ocurre, con retroalimentación oportuna (barra de progreso, indicador de carga). Su ausencia provoca la repetición de la acción." },
+        { "texto": "Flexibilidad y eficiencia de uso", "explicacion": "Incorrecta. Esta heurística se refiere a atajos para usuarios expertos y a la personalización; no a la falta de retroalimentación." }
+      ],
+      "correcta": 1,
+      "estrategia": "Cuando el usuario «no sabe qué pasa», la respuesta es visibilidad del estado del sistema. Cuando el usuario «se equivoca», piensa en prevención de errores o en ayudar a reconocerlos y recuperarse de ellos.",
+      "conceptos": ["Heurísticas de Nielsen", "Retroalimentación", "Usabilidad"],
+      "fuentes": [
+        { "recurso": "nielsen-2024", "detalle": "Heurística #1: Visibility of system status" }
+      ]
+    },
+    {
+      "id": "A2-013",
+      "subarea": "2.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En la primera semana de un proyecto, el equipo de UX quiere validar con usuarios reales si la estructura de navegación y el flujo de alta de una app de citas médicas tienen sentido. Necesita iterar varias veces al día con un costo mínimo.",
+      "pregunta": "¿Qué tipo de prototipo conviene usar?",
+      "opciones": [
+        { "texto": "Prototipo de baja fidelidad (bocetos en papel o wireframes)", "explicacion": "Correcta. Los prototipos de baja fidelidad son baratos y rápidos de cambiar, y llevan la retroalimentación al flujo y a la estructura, no a colores o detalles visuales. Son ideales en etapas tempranas." },
+        { "texto": "Prototipo de alta fidelidad interactivo", "explicacion": "Incorrecta. Requiere más tiempo para construirse y modificarse, y suele dirigir la retroalimentación al aspecto visual; conviene más adelante, para validar detalles de interacción." },
+        { "texto": "Prueba A/B en producción", "explicacion": "Incorrecta. Una prueba A/B requiere un producto ya liberado y tráfico real; no sirve para explorar el diseño en la primera semana." }
+      ],
+      "correcta": 0,
+      "estrategia": "Etapa temprana + iterar rápido + validar estructura → baja fidelidad. Validar microinteracciones o percepción visual → alta fidelidad.",
+      "conceptos": ["Prototipado", "Fidelidad", "Diseño centrado en el usuario"],
+      "fuentes": [
+        { "recurso": "pernice-2016", "detalle": "UX prototypes: low vs. high fidelity" },
+        { "recurso": "greenberg-2012", "detalle": "Sketching user experiences" }
+      ]
+    },
+    {
+      "id": "A2-014",
+      "subarea": "2.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Se prepara una prueba de usabilidad de una app de viajes para verificar el flujo de cancelación y reembolso.",
+      "pregunta": "¿Cuál escenario de tarea está mejor redactado para la prueba?",
+      "opciones": [
+        { "texto": "«Haz clic en ‹Mis viajes›, selecciona el viaje y presiona ‹Cancelar›».", "explicacion": "Incorrecta. Da instrucciones paso a paso y usa las etiquetas de la interfaz, así que no mide si el usuario encontraría el camino por sí mismo." },
+        { "texto": "«Tienes reservado un viaje a Monterrey este viernes y ya no podrás ir. Cancélalo y averigua cuánto dinero te devolverán».", "explicacion": "Correcta. Es realista, tiene una meta clara y verificable y no revela la ubicación de los controles. Así lo recomienda Nielsen Norman Group para convertir las metas del usuario en escenarios de tarea." },
+        { "texto": "«¿Qué opinas del diseño de la pantalla de viajes?».", "explicacion": "Incorrecta. Es una pregunta de opinión, no una tarea, y no permite observar si el usuario completa el flujo." }
+      ],
+      "correcta": 1,
+      "estrategia": "Un buen escenario de tarea es realista, accionable, sin pistas («no digas dónde hacer clic») y con un final verificable.",
+      "conceptos": ["Pruebas de usabilidad", "Escenarios de tarea", "Casos de prueba de interfaz"],
+      "fuentes": [
+        { "recurso": "mccloskey-2014", "detalle": "Turn user goals into task scenarios" }
+      ]
+    }
+  ]
+}

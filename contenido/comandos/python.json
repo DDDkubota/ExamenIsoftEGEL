@@ -1,0 +1,14 @@
+{
+  "id": "python", "nombre": "Python", "icono": "🐍", "subareas": ["3.1", "3.3"],
+  "descripcion": "Entornos virtuales, paquetes y pruebas en Python.",
+  "comandos": [
+    { "comando": "python3 -m venv .venv", "descripcion": "Crea un entorno virtual aislado para el proyecto." },
+    { "comando": "source .venv/bin/activate", "descripcion": "Activa el entorno virtual (en Windows: .venv\\Scripts\\activate)." },
+    { "comando": "pip install <paquete>", "descripcion": "Instala un paquete en el entorno activo.", "ejemplo": "pip install pandas" },
+    { "comando": "pip freeze > requirements.txt", "descripcion": "Guarda las dependencias exactas del entorno." },
+    { "comando": "pip install -r requirements.txt", "descripcion": "Instala las dependencias listadas en un archivo." },
+    { "comando": "python3 -m pytest", "descripcion": "Ejecuta las pruebas unitarias con pytest." },
+    { "comando": "python3 -m http.server 8080", "descripcion": "Levanta un servidor web estático en la carpeta actual (sirve para ver este simulador)." },
+    { "comando": "python3 -m pylint modulo.py", "descripcion": "Análisis estático del código (estilo, errores, code smells)." }
+  ]
+}

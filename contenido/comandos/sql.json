@@ -1,0 +1,28 @@
+{
+  "id": "sql", "nombre": "SQL", "icono": "🗄️", "subareas": ["2.2", "3.4"],
+  "descripcion": "Definición (DDL), manipulación (DML), control (DCL) y transacciones (TCL) en bases de datos relacionales.",
+  "comandos": [
+    { "comando": "CREATE TABLE alumno (id INT PRIMARY KEY, nombre VARCHAR(80) NOT NULL);", "descripcion": "DDL: crea una tabla con llave primaria y restricción NOT NULL." },
+    { "comando": "ALTER TABLE alumno ADD correo VARCHAR(120) UNIQUE;", "descripcion": "DDL: agrega una columna con restricción de unicidad." },
+    { "comando": "FOREIGN KEY (id_curso) REFERENCES curso(id)", "descripcion": "Define una llave foránea (integridad referencial)." },
+    { "comando": "DROP TABLE tabla;", "descripcion": "DDL: elimina la tabla completa (estructura y datos)." },
+    { "comando": "INSERT INTO alumno (id, nombre) VALUES (1, 'Ana');", "descripcion": "DML: inserta un registro." },
+    { "comando": "UPDATE producto SET precio = precio * 1.1 WHERE id = 7;", "descripcion": "DML: actualiza registros. ¡Sin WHERE afecta todas las filas!" },
+    { "comando": "DELETE FROM sesion WHERE fecha < '2026-01-01';", "descripcion": "DML: elimina las filas que cumplen la condición." },
+    { "comando": "SELECT nombre FROM alumno WHERE promedio >= 9 ORDER BY nombre;", "descripcion": "Consulta con filtro y ordenamiento." },
+    { "comando": "SELECT DISTINCT ciudad FROM cliente;", "descripcion": "Devuelve los valores sin duplicados." },
+    { "comando": "SELECT a.nombre, c.titulo FROM alumno a INNER JOIN inscripcion i ON a.id = i.id_alumno INNER JOIN curso c ON c.id = i.id_curso;", "descripcion": "INNER JOIN: solo las filas con coincidencias en ambas tablas." },
+    { "comando": "SELECT a.nombre FROM alumno a LEFT JOIN inscripcion i ON a.id = i.id_alumno WHERE i.id_alumno IS NULL;", "descripcion": "LEFT JOIN + IS NULL: registros sin relación (anti-join)." },
+    { "comando": "SELECT depto, COUNT(*) FROM empleado GROUP BY depto HAVING COUNT(*) > 5;", "descripcion": "Agrupa y filtra grupos con HAVING (WHERE no admite agregados)." },
+    { "comando": "SELECT AVG(salario), MAX(salario), MIN(salario), SUM(salario) FROM empleado;", "descripcion": "Funciones de agregación." },
+    { "comando": "SELECT nombre FROM empleado WHERE salario > (SELECT AVG(salario) FROM empleado);", "descripcion": "Subconsulta escalar en el WHERE." },
+    { "comando": "SELECT * FROM producto WHERE nombre LIKE 'Lap%';", "descripcion": "Búsqueda por patrón (% = cualquier cadena, _ = un carácter)." },
+    { "comando": "SELECT * FROM venta WHERE fecha BETWEEN '2026-01-01' AND '2026-01-31';", "descripcion": "Filtro por rango, inclusivo en ambos extremos." },
+    { "comando": "CREATE INDEX idx_cliente_correo ON cliente(correo);", "descripcion": "Crea un índice para acelerar las búsquedas por una columna." },
+    { "comando": "CREATE VIEW v_activos AS SELECT * FROM cliente WHERE activo = 1;", "descripcion": "Crea una vista (consulta guardada que se usa como tabla)." },
+    { "comando": "BEGIN; ... COMMIT; / ROLLBACK;", "descripcion": "TCL: agrupa operaciones en una transacción atómica, confirmándola o deshaciéndola." },
+    { "comando": "GRANT SELECT ON ventas TO analista; / REVOKE ...", "descripcion": "DCL: otorga o revoca permisos." },
+    { "comando": "SELECT * FROM t UNION SELECT * FROM t2;", "descripcion": "Combina resultados de consultas compatibles, sin duplicados (UNION ALL los conserva)." },
+    { "comando": "CREATE TRIGGER ... BEFORE INSERT ON tabla ...", "descripcion": "Trigger: lógica que se ejecuta automáticamente ante un evento de la tabla." }
+  ]
+}

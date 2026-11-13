@@ -1,0 +1,426 @@
+{
+  "temario": "egel-plus-isoft-2026",
+  "area": "A3",
+  "banco": "base",
+  "estimulos": [],
+  "preguntas": [
+    {
+      "id": "A3-001",
+      "subarea": "3.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Se desarrollará el firmware de un medidor de agua que usa un microcontrolador con 32 KB de RAM y sin sistema operativo. El código debe acceder directamente a los registros del hardware y controlar con precisión el uso de memoria.",
+      "pregunta": "¿Qué lenguaje de programación es el más adecuado?",
+      "opciones": [
+        { "texto": "Python", "explicacion": "Incorrecta. Python es interpretado y tiene recolector de basura; su intérprete consume más memoria de la disponible y no da un control fino de la memoria (MicroPython existe, pero sacrifica control y rendimiento)." },
+        { "texto": "C", "explicacion": "Correcta. C se compila a código máquina eficiente, permite manipular direcciones de memoria con apuntadores y acceder directamente a los registros del hardware. Es el estándar de facto en sistemas embebidos." },
+        { "texto": "JavaScript", "explicacion": "Incorrecta. JavaScript necesita un motor (navegador o Node.js) y administra la memoria de forma automática; no es apropiado para hardware con recursos tan limitados." }
+      ],
+      "correcta": 1,
+      "estrategia": "Recursos mínimos + acceso al hardware + sin SO → C (o C++/Rust). Análisis de datos → Python. Web en el cliente → JavaScript/TypeScript. Empresarial multiplataforma → Java/C#.",
+      "conceptos": ["Lenguajes compilados vs. interpretados", "Sistemas embebidos", "Manejo de memoria"],
+      "fuentes": [
+        { "recurso": "banahan-2010", "detalle": "The C Book" },
+        { "recurso": "francis-2022", "detalle": "Comparación de Python con otros lenguajes" }
+      ]
+    },
+    {
+      "id": "A3-002",
+      "subarea": "3.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Un equipo de 25 desarrolladores mantiene un frontend grande en JavaScript con React. La mayoría de los errores en producción se deben a propiedades inexistentes o a tipos inesperados («undefined is not a function»). El equipo quiere detectar esos errores antes de ejecutar el código, sin abandonar el ecosistema de JavaScript.",
+      "pregunta": "¿Qué lenguaje deben adoptar?",
+      "opciones": [
+        { "texto": "TypeScript", "explicacion": "Correcta. TypeScript es un superconjunto de JavaScript con tipado estático opcional: el compilador detecta los errores de tipo antes de la ejecución y transpila a JavaScript, compatible con React y npm." },
+        { "texto": "PHP", "explicacion": "Incorrecta. PHP se ejecuta en el servidor y no reemplaza a JavaScript en el navegador." },
+        { "texto": "Haskell", "explicacion": "Incorrecta. Haskell tiene un sistema de tipos estático muy fuerte, pero es un lenguaje funcional puro ajeno al ecosistema de React/npm; obligaría a reescribir todo." }
+      ],
+      "correcta": 0,
+      "estrategia": "Fíjate en la restricción «sin abandonar el ecosistema»: elimina cualquier opción que obligue a reescribir todo.",
+      "conceptos": ["Tipado estático vs. dinámico", "TypeScript", "Transpilación"],
+      "fuentes": [
+        { "recurso": "ohanlon-2019", "detalle": "TypeScript con Angular, React y Vue" },
+        { "recurso": "burets-2025", "detalle": "PHP vs. JavaScript" }
+      ]
+    },
+    {
+      "id": "A3-003",
+      "subarea": "3.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Observe la siguiente clase en Java:",
+      "codigo": "package banco;\n\npublic class Cuenta {\n    private double saldo;\n    protected String titular;\n    static int totalCuentas;\n\n    public void depositar(double monto) {\n        saldo += monto;\n    }\n}",
+      "pregunta": "¿Qué afirmación es correcta?",
+      "opciones": [
+        { "texto": "«saldo» solo puede leerse o modificarse directamente desde el código de la clase Cuenta", "explicacion": "Correcta. El modificador private restringe el acceso a la propia clase; las demás clases deben usar métodos públicos como depositar(). Así se aplica el encapsulamiento." },
+        { "texto": "«titular» es accesible desde cualquier clase de cualquier paquete", "explicacion": "Incorrecta. protected permite el acceso desde el mismo paquete y desde las subclases (aunque estén en otro paquete), pero no desde cualquier clase. Eso lo hace public." },
+        { "texto": "«totalCuentas» tiene un valor distinto en cada objeto Cuenta", "explicacion": "Incorrecta. static significa que la variable pertenece a la clase y que todas las instancias la comparten, así que hay un solo valor." }
+      ],
+      "correcta": 0,
+      "estrategia": "Repasa la tabla de visibilidad de Java: private (clase) < default/package (paquete) < protected (paquete + subclases) < public (todos). static = de la clase, no del objeto.",
+      "conceptos": ["Modificadores de acceso", "Alcance", "static", "Encapsulamiento"],
+      "fuentes": [
+        { "recurso": "loy-2023", "detalle": "Clases y control de acceso" },
+        { "recurso": "dean-2009", "detalle": "Introducción a la programación con Java" }
+      ]
+    },
+    {
+      "id": "A3-004",
+      "subarea": "3.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Analice el siguiente fragmento en Python:",
+      "codigo": "x = [1, 2, 3]\ny = x\ny.append(4)\nprint(len(x))",
+      "pregunta": "¿Qué se imprime al ejecutarlo?",
+      "opciones": [
+        { "texto": "3", "explicacion": "Incorrecta. Sería el resultado si «y = x» copiara la lista, pero en Python la asignación copia la referencia, no el objeto." },
+        { "texto": "4", "explicacion": "Correcta. Las listas son objetos mutables; «y = x» hace que ambas variables apunten a la misma lista, de modo que append(4) también modifica lo que ve x. Para copiar se usa x.copy() o list(x)." },
+        { "texto": "Se produce un error de tipo", "explicacion": "Incorrecta. Todas las operaciones son válidas para una lista." }
+      ],
+      "correcta": 1,
+      "estrategia": "Distingue entre tipos primitivos o inmutables (int, str, tuple), en los que reasignar crea un valor nuevo, y estructuras mutables (list, dict, objetos), en las que la asignación comparte la referencia.",
+      "conceptos": ["Referencias", "Mutabilidad", "Datos estructurados"],
+      "fuentes": [
+        { "recurso": "francis-2022", "detalle": "Características de Python" },
+        { "recurso": "sanchez-2013", "detalle": "Estructuras de datos" }
+      ]
+    },
+    {
+      "id": "A3-005",
+      "subarea": "3.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Considere la siguiente expresión en Haskell:",
+      "codigo": "map (*2) (filter even [1..10])",
+      "pregunta": "¿Cuál es el resultado de evaluarla?",
+      "opciones": [
+        { "texto": "[2,4,6,8,10]", "explicacion": "Incorrecta. Es el resultado de filter even, pero falta aplicar map (*2) a cada elemento." },
+        { "texto": "[4,8,12,16,20]", "explicacion": "Correcta. Primero filter even [1..10] produce [2,4,6,8,10]; después map (*2) duplica cada elemento. Es composición de funciones de orden superior, sin efectos laterales ni variables mutables (paradigma funcional)." },
+        { "texto": "[2,6,10,14,18]", "explicacion": "Incorrecta. Sería el resultado de duplicar los números impares, pero even conserva los pares." }
+      ],
+      "correcta": 1,
+      "estrategia": "En las expresiones funcionales, evalúa de adentro hacia afuera: primero el argumento más interno (filter), luego la función externa (map).",
+      "conceptos": ["Paradigma funcional", "Funciones de orden superior", "map / filter", "Inmutabilidad"],
+      "fuentes": [
+        { "recurso": "ecured-haskell", "detalle": "Lenguaje Haskell" },
+        { "recurso": "gabbrielli-2010", "detalle": "Paradigma funcional" }
+      ]
+    },
+    {
+      "id": "A3-006",
+      "subarea": "3.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Se tiene la siguiente base de conocimiento en Prolog:",
+      "codigo": "progenitor(juan, maria).\nprogenitor(maria, ana).\nprogenitor(maria, luis).\nabuelo(X, Z) :- progenitor(X, Y), progenitor(Y, Z).\n\n?- abuelo(juan, Q).",
+      "pregunta": "¿Cuál es la primera respuesta que devuelve la consulta?",
+      "opciones": [
+        { "texto": "Q = maria", "explicacion": "Incorrecta. maria es hija de juan (progenitor directo), no su nieta." },
+        { "texto": "false", "explicacion": "Incorrecta. La regla se puede satisfacer: existe un Y (maria) que es hijo de juan y progenitor de alguien." },
+        { "texto": "Q = ana", "explicacion": "Correcta. El motor unifica X = juan, encuentra progenitor(juan, maria) → Y = maria, y después busca progenitor(maria, Z) en orden: el primer hecho da Z = ana. Si se pide otra solución (con ;), devuelve Q = luis." }
+      ],
+      "correcta": 2,
+      "estrategia": "En el paradigma lógico, sigue la unificación y el backtracking en el orden en que están escritos los hechos: de arriba abajo y de izquierda a derecha.",
+      "conceptos": ["Paradigma lógico", "Prolog", "Unificación", "Backtracking"],
+      "fuentes": [
+        { "recurso": "gabbrielli-2010", "detalle": "Logic programming paradigm" }
+      ]
+    },
+    {
+      "id": "A3-007",
+      "subarea": "3.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En un sistema de diseño, la clase abstracta Figura declara el método area(). Las clases Circulo y Rectangulo heredan de Figura e implementan area() cada una a su manera. Un método recorre una List<Figura> e invoca area() en cada elemento sin saber de qué clase concreta es.",
+      "pregunta": "¿Qué principio de la programación orientada a objetos se aprovecha?",
+      "opciones": [
+        { "texto": "Encapsulamiento", "explicacion": "Incorrecta. El encapsulamiento oculta el estado interno detrás de una interfaz; aquí lo relevante es que una misma llamada se comporte distinto según el objeto." },
+        { "texto": "Sobrecarga de métodos", "explicacion": "Incorrecta. La sobrecarga define varios métodos con el mismo nombre y distintos parámetros en la misma clase, y se resuelve en compilación; aquí se trata de sobrescritura (override) entre clases." },
+        { "texto": "Polimorfismo (de subtipo o dinámico)", "explicacion": "Correcta. El mismo mensaje area() se resuelve en tiempo de ejecución según la clase real del objeto (enlace dinámico). Así se puede agregar un Triangulo sin modificar el método que recorre la lista." }
+      ],
+      "correcta": 2,
+      "estrategia": "«Misma llamada, comportamiento distinto según el objeto, decidido en ejecución» = polimorfismo. Si fueran firmas distintas en la misma clase, sería sobrecarga.",
+      "conceptos": ["Polimorfismo", "Herencia", "Sobrescritura vs. sobrecarga"],
+      "fuentes": [
+        { "recurso": "joyanes-2014", "detalle": "Programación orientada a objetos en Java y C++" },
+        { "recurso": "weitzenfeld-objetos", "detalle": "Cap. 4 Modelado OO" }
+      ]
+    },
+    {
+      "id": "A3-008",
+      "subarea": "3.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Un programa en C para calcular la nómina está organizado en funciones (leerEmpleados, calcularISR, imprimirRecibo). Usa solo secuencia, selección (if/switch) e iteración (for/while), no usa goto, y los datos se pasan como parámetros entre funciones.",
+      "pregunta": "¿A qué paradigma corresponde principalmente este diseño?",
+      "opciones": [
+        { "texto": "Programación estructurada (imperativa procedimental)", "explicacion": "Correcta. La programación estructurada se basa en el teorema de Böhm-Jacopini (secuencia, selección e iteración), evita goto y descompone el problema en procedimientos o funciones." },
+        { "texto": "Programación lógica", "explicacion": "Incorrecta. La programación lógica declara hechos y reglas y deja que un motor de inferencia deduzca las respuestas; no hay un flujo de control explícito." },
+        { "texto": "Programación funcional pura", "explicacion": "Incorrecta. La programación funcional pura evita el estado mutable y los ciclos y usa recursión y composición de funciones; un programa en C con ciclos y variables mutables es imperativo." }
+      ],
+      "correcta": 0,
+      "estrategia": "Identifica cómo se expresa la solución: pasos con estado mutable → imperativo (estructurado u OO); reglas y hechos → lógico; composición de funciones sin estado → funcional.",
+      "conceptos": ["Programación estructurada", "Böhm-Jacopini", "Paradigma imperativo"],
+      "fuentes": [
+        { "recurso": "herrera-2017", "detalle": "Lógica de programación" },
+        { "recurso": "juganaru-2014", "detalle": "Introducción a la programación" }
+      ]
+    },
+    {
+      "id": "A3-009",
+      "subarea": "3.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Dos desarrolladores trabajan al mismo tiempo en funcionalidades distintas de una API. El líder técnico exige que la rama principal siempre esté estable y que todo cambio sea revisado por otra persona antes de integrarse.",
+      "pregunta": "¿Qué práctica de control de versiones con Git deben seguir?",
+      "opciones": [
+        { "texto": "Hacer commit directamente en main y corregir los conflictos después", "explicacion": "Incorrecta. Integrar sin revisión en la rama principal la vuelve inestable e incumple el requisito de revisión." },
+        { "texto": "Crear una rama por funcionalidad e integrarla a main mediante un pull/merge request revisado", "explicacion": "Correcta. Las ramas de funcionalidad (feature branches) aíslan el trabajo, y el pull request habilita la revisión de código y la ejecución de pruebas automatizadas antes del merge." },
+        { "texto": "Usar git stash para guardar los cambios de cada desarrollador", "explicacion": "Incorrecta. stash guarda temporalmente cambios locales sin hacer commit; no es un mecanismo de colaboración ni de revisión." }
+      ],
+      "correcta": 1,
+      "estrategia": "Si el caso pide aislar trabajo + revisar + mantener main estable → ramas + pull request (GitHub Flow / Git Flow).",
+      "conceptos": ["Control de versiones", "Git", "Ramas", "Revisión de código"],
+      "fuentes": [
+        { "recurso": "pavlenko-2024", "detalle": "Documentación y herramientas de desarrollo" },
+        { "recurso": "swebok-v4", "detalle": "Software Configuration Management" }
+      ]
+    },
+    {
+      "id": "A3-010",
+      "subarea": "3.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "En una fintech, cada commit dispara un pipeline que compila, ejecuta las pruebas automatizadas y genera un artefacto desplegable en el ambiente de staging. El paso a producción se hace con un botón, solo cuando el gerente de producto lo aprueba.",
+      "pregunta": "¿Qué práctica DevOps describe el caso?",
+      "opciones": [
+        { "texto": "Despliegue continuo", "explicacion": "Incorrecta. En el despliegue continuo todo cambio que pasa el pipeline llega a producción automáticamente, sin aprobación manual." },
+        { "texto": "Solo integración continua", "explicacion": "Incorrecta. La integración continua cubre integrar y probar cada cambio con frecuencia. Aquí el pipeline va más allá: deja el software listo para liberar." },
+        { "texto": "Entrega continua", "explicacion": "Correcta. En la entrega continua, cada cambio que pasa las pruebas queda siempre en estado liberable, pero la liberación a producción es una decisión manual del negocio." }
+      ],
+      "correcta": 2,
+      "estrategia": "CI = integrar y probar. CD (entrega) = siempre listo y con aprobación manual. CD (despliegue) = sale solo a producción. Busca si existe «aprobación humana».",
+      "conceptos": ["Integración continua", "Entrega continua", "Despliegue continuo", "Pipeline"],
+      "fuentes": [
+        { "recurso": "swebok-v4", "detalle": "Software Engineering Operations" }
+      ]
+    },
+    {
+      "id": "A3-011",
+      "subarea": "3.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Un equipo quiere detectar código duplicado, variables sin usar, funciones demasiado complejas y vulnerabilidades como inyección SQL antes de ejecutar el programa, de forma automática en cada pull request.",
+      "pregunta": "¿Qué tipo de herramienta deben incorporar?",
+      "opciones": [
+        { "texto": "Analizador estático de código (por ejemplo, SonarQube o un linter)", "explicacion": "Correcta. El análisis estático examina el código fuente sin ejecutarlo y detecta code smells, duplicación, complejidad y patrones de vulnerabilidad. Es una herramienta de validación del código fuente." },
+        { "texto": "Herramienta de pruebas de carga (por ejemplo, JMeter)", "explicacion": "Incorrecta. Las pruebas de carga ejecutan el sistema bajo estrés para medir su desempeño; no analizan la calidad del código fuente." },
+        { "texto": "Depurador (debugger) del IDE", "explicacion": "Incorrecta. El depurador ayuda a inspeccionar la ejecución paso a paso de forma manual; no se automatiza en cada pull request ni detecta duplicación." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Sin ejecutar el programa» = análisis estático. «Ejecutando» = pruebas dinámicas (unitarias, de carga, de integración).",
+      "conceptos": ["Análisis estático", "Validación de código fuente", "Code smells"],
+      "fuentes": [
+        { "recurso": "mcconnell-checklist", "detalle": "Code Complete checklists: calidad de código" }
+      ]
+    },
+    {
+      "id": "A3-012",
+      "subarea": "3.3",
+      "formato": "ordenamiento",
+      "nivel": "satisfactorio",
+      "base": "El plan de pruebas de un sistema de control de inventarios define los niveles de prueba que se ejecutarán.",
+      "lista": [
+        "1. Pruebas de aceptación con el usuario",
+        "2. Pruebas unitarias de cada clase",
+        "3. Pruebas del sistema completo",
+        "4. Pruebas de integración entre módulos"
+      ],
+      "pregunta": "¿Cuál es el orden en que se ejecutan?",
+      "opciones": [
+        { "texto": "2, 3, 4, 1", "explicacion": "Incorrecta. No se puede probar el sistema completo antes de verificar que los módulos funcionan juntos." },
+        { "texto": "2, 4, 3, 1", "explicacion": "Correcta. Se prueba de lo particular a lo general: unidad → integración → sistema → aceptación. Es el orden del lado derecho del modelo en V." },
+        { "texto": "4, 2, 1, 3", "explicacion": "Incorrecta. Integrar antes de probar las unidades dificulta localizar los defectos, y la aceptación es la última validación." }
+      ],
+      "correcta": 1,
+      "estrategia": "Los niveles de prueba van de lo pequeño a lo grande, y la aceptación (validación con el cliente) siempre va al final.",
+      "conceptos": ["Niveles de prueba", "Modelo en V", "Plan de pruebas"],
+      "fuentes": [
+        { "recurso": "weitzenfeld-pruebas", "detalle": "Cap. 10 Modelo de pruebas" },
+        { "recurso": "sommerville-2016", "detalle": "Cap. 8 Pruebas de software" }
+      ]
+    },
+    {
+      "id": "A3-013",
+      "subarea": "3.4",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Una escuela tiene las tablas:\nAlumno(id, nombre)\nInscripcion(id_alumno, id_curso)\nSe necesita la lista de nombres de los alumnos que no están inscritos en ningún curso.",
+      "pregunta": "¿Qué consulta SQL obtiene el resultado correcto?",
+      "opciones": [
+        { "texto": "SELECT a.nombre FROM Alumno a LEFT JOIN Inscripcion i ON a.id = i.id_alumno WHERE i.id_alumno IS NULL;", "explicacion": "Correcta. LEFT JOIN conserva a todos los alumnos; los que no tienen inscripción quedan con NULL en las columnas de Inscripcion, y el WHERE filtra solo a esos. (También funcionaría NOT EXISTS)." },
+        { "texto": "SELECT a.nombre FROM Alumno a INNER JOIN Inscripcion i ON a.id = i.id_alumno WHERE i.id_alumno IS NULL;", "explicacion": "Incorrecta. INNER JOIN solo devuelve las coincidencias, por lo que nunca habrá filas con i.id_alumno NULL: el resultado siempre está vacío." },
+        { "texto": "SELECT a.nombre FROM Alumno a, Inscripcion i WHERE a.id <> i.id_alumno;", "explicacion": "Incorrecta. El producto cartesiano con «<>» devuelve casi todas las combinaciones distintas, incluidos alumnos que sí están inscritos en otros cursos." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Los que NO tienen…» → LEFT JOIN + IS NULL, o NOT EXISTS / NOT IN. Desconfía de las opciones con INNER JOIN cuando se buscan ausencias.",
+      "conceptos": ["SQL", "LEFT JOIN", "Anti-join", "NULL"],
+      "fuentes": [
+        { "recurso": "beaulieu-2020", "detalle": "Joins y subconsultas" }
+      ]
+    },
+    {
+      "id": "A3-014",
+      "subarea": "3.4",
+      "formato": "completamiento",
+      "nivel": "satisfactorio",
+      "base": "Se necesita listar los departamentos con más de 5 empleados a partir de la tabla Empleado(id, nombre, departamento):\nSELECT departamento, COUNT(*) FROM Empleado GROUP BY departamento ______;",
+      "pregunta": "¿Qué cláusula completa correctamente la consulta?",
+      "opciones": [
+        { "texto": "WHERE COUNT(*) > 5", "explicacion": "Incorrecta. WHERE filtra filas antes de agrupar y no admite funciones de agregación, así que la consulta da error." },
+        { "texto": "HAVING COUNT(*) > 5", "explicacion": "Correcta. HAVING filtra grupos después del GROUP BY y sí puede usar funciones de agregación como COUNT, SUM o AVG." },
+        { "texto": "ORDER BY COUNT(*) > 5", "explicacion": "Incorrecta. ORDER BY solo ordena el resultado; no elimina los grupos con 5 o menos empleados." }
+      ],
+      "correcta": 1,
+      "estrategia": "Orden lógico de SQL: FROM → WHERE (filas) → GROUP BY → HAVING (grupos) → SELECT → ORDER BY. Una condición sobre un agregado va en HAVING.",
+      "conceptos": ["GROUP BY", "HAVING", "Funciones de agregación"],
+      "fuentes": [
+        { "recurso": "beaulieu-2020", "detalle": "Agrupación y agregados" }
+      ]
+    },
+    {
+      "id": "A3-015",
+      "subarea": "3.4",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Un laboratorio clínico almacena: (1) la tabla de citas con columnas fijas (folio, paciente, fecha, hora); (2) los resultados de estudios en JSON, con campos distintos según el tipo de estudio; y (3) las imágenes de rayos X en formato DICOM.",
+      "pregunta": "¿Cuál es la clasificación correcta de los datos 1, 2 y 3, respectivamente?",
+      "opciones": [
+        { "texto": "Estructurados, no estructurados, semiestructurados", "explicacion": "Incorrecta. El JSON sí tiene estructura (pares clave-valor y etiquetas), aunque flexible; la imagen no tiene un esquema consultable por campos." },
+        { "texto": "Semiestructurados, estructurados, no estructurados", "explicacion": "Incorrecta. Una tabla con esquema fijo es el ejemplo típico de dato estructurado." },
+        { "texto": "Estructurados, semiestructurados, no estructurados", "explicacion": "Correcta. Las tablas con esquema fijo son estructuradas; JSON y XML son semiestructurados (autodescriptivos, con esquema flexible); imágenes, audio y video son no estructurados." }
+      ],
+      "correcta": 2,
+      "estrategia": "Esquema rígido (tablas) → estructurado; etiquetas o llaves con esquema flexible (JSON, XML, YAML) → semiestructurado; contenido binario o libre (imagen, video, texto libre) → no estructurado.",
+      "conceptos": ["Tipos de datos", "Semiestructurados", "NoSQL"],
+      "fuentes": [
+        { "recurso": "meier-2019", "detalle": "SQL & NoSQL databases" }
+      ]
+    },
+    {
+      "id": "A3-016",
+      "subarea": "3.4",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En una transferencia bancaria se ejecutan dos operaciones: un cargo a la cuenta origen y un abono a la cuenta destino. Si el abono falla después de aplicar el cargo, el sistema debe deshacer el cargo para que el dinero no «desaparezca».",
+      "pregunta": "¿Qué propiedad ACID garantiza este comportamiento?",
+      "opciones": [
+        { "texto": "Atomicidad", "explicacion": "Correcta. La atomicidad asegura que la transacción se ejecute completa o no se ejecute en absoluto: si falla una parte, se hace rollback de todo." },
+        { "texto": "Aislamiento", "explicacion": "Incorrecta. El aislamiento evita que las transacciones concurrentes interfieran entre sí (lecturas sucias, fantasmas); no trata la falla parcial de una sola transacción." },
+        { "texto": "Durabilidad", "explicacion": "Incorrecta. La durabilidad garantiza que los cambios confirmados (commit) persistan aunque haya fallas posteriores; aquí la transacción nunca llega a confirmarse." }
+      ],
+      "correcta": 0,
+      "estrategia": "«Todo o nada» = atomicidad; «reglas e integridad válidas antes y después» = consistencia; «concurrencia» = aislamiento; «sobrevive a caídas tras el commit» = durabilidad.",
+      "conceptos": ["Transacciones", "ACID", "Rollback"],
+      "fuentes": [
+        { "recurso": "date-2001", "detalle": "Recuperación y transacciones" }
+      ]
+    },
+    {
+      "id": "A3-017",
+      "subarea": "3.4",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Una tienda en línea tiene un servidor PostgreSQL que recibe todas las escrituras. El área de inteligencia de negocios ejecuta reportes pesados que degradan el desempeño de las ventas. Se decide crear copias que se actualizan automáticamente desde el servidor principal y que solo atienden consultas de lectura.",
+      "pregunta": "¿Qué enfoque de replicación se implementa?",
+      "opciones": [
+        { "texto": "Multimaestro", "explicacion": "Incorrecta. En la replicación multimaestro varios nodos aceptan escrituras y se sincronizan entre sí, con resolución de conflictos; aquí solo un nodo escribe." },
+        { "texto": "Primario-réplica (maestro-esclavo) con réplicas de solo lectura", "explicacion": "Correcta. Un nodo primario recibe las escrituras y las propaga a réplicas que atienden consultas de lectura, lo que libera de carga al primario." },
+        { "texto": "Fragmentación vertical", "explicacion": "Incorrecta. La fragmentación divide los datos entre sitios; no crea copias completas para repartir la carga de lectura." }
+      ],
+      "correcta": 1,
+      "estrategia": "¿Cuántos nodos aceptan escrituras? Uno → primario-réplica; varios → multimaestro. ¿Se copian los datos o se dividen? Copiar = replicación; dividir = fragmentación.",
+      "conceptos": ["Replicación", "Réplicas de lectura", "Escalabilidad de lectura"],
+      "fuentes": [
+        { "recurso": "meier-2019", "detalle": "Replicación y consistencia" }
+      ]
+    },
+    {
+      "id": "A3-018",
+      "subarea": "3.5",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Una mueblería quiere una app de realidad aumentada para que el cliente vea los muebles en su sala usando la cámara y los sensores de profundidad del teléfono. Requiere el máximo rendimiento gráfico en iOS y Android y cuenta con presupuesto para dos equipos de desarrollo.",
+      "pregunta": "¿Qué tipo de aplicación debe desarrollarse?",
+      "opciones": [
+        { "texto": "Nativa para cada plataforma (Swift/ARKit y Kotlin/ARCore)", "explicacion": "Correcta. Las apps nativas acceden directamente y sin capas intermedias a las APIs de hardware y de RA de cada sistema operativo, con el mejor rendimiento. El presupuesto para dos equipos elimina su principal desventaja." },
+        { "texto": "Web progresiva (PWA)", "explicacion": "Incorrecta. Las PWA tienen un acceso limitado a los sensores y a las APIs de RA, sobre todo en iOS, y un rendimiento gráfico inferior." },
+        { "texto": "Híbrida basada en WebView", "explicacion": "Incorrecta. Las apps híbridas con WebView (Cordova/Ionic) ejecutan HTML/JS dentro de un contenedor, lo que agrega una capa que penaliza el rendimiento gráfico intensivo." }
+      ],
+      "correcta": 0,
+      "estrategia": "Rendimiento máximo + hardware específico + presupuesto → nativa. Un solo equipo y tiempo corto → multiplataforma (Flutter/React Native). Contenido simple y sin instalación → PWA o web responsiva.",
+      "conceptos": ["Apps nativas", "Híbridas", "PWA", "Plataformas móviles"],
+      "fuentes": [
+        { "recurso": "laudon-2016", "detalle": "Plataformas móviles" }
+      ]
+    },
+    {
+      "id": "A3-019",
+      "subarea": "3.5",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Una startup de tres desarrolladores debe lanzar en cuatro meses una app de pedidos de comida en iOS y Android. Necesita un rendimiento cercano al nativo y quiere mantener una sola base de código.",
+      "pregunta": "¿Qué enfoque de desarrollo es el más adecuado?",
+      "opciones": [
+        { "texto": "Desarrollo nativo independiente para cada plataforma", "explicacion": "Incorrecta. Duplica el esfuerzo con dos bases de código, algo inviable para tres personas en cuatro meses." },
+        { "texto": "Desarrollo embebido sobre un RTOS", "explicacion": "Incorrecta. Los sistemas embebidos con sistemas operativos de tiempo real se usan en dispositivos dedicados, no en apps móviles de consumo." },
+        { "texto": "Framework multiplataforma con compilación nativa (por ejemplo, Flutter o React Native)", "explicacion": "Correcta. Permiten una base de código compartida que se compila o renderiza con componentes nativos, con un rendimiento cercano al nativo y un menor costo y tiempo de desarrollo." }
+      ],
+      "correcta": 2,
+      "estrategia": "Pondera las restricciones del caso (equipo pequeño, tiempo corto, una sola base de código) antes de pensar en el «ideal técnico».",
+      "conceptos": ["Desarrollo multiplataforma", "Flutter", "React Native"],
+      "fuentes": [
+        { "recurso": "ohanlon-2019", "detalle": "Frameworks JavaScript/TypeScript" }
+      ]
+    },
+    {
+      "id": "A3-020",
+      "subarea": "3.5",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Un fabricante diseña una bomba de insulina portátil. El software debe leer el sensor de glucosa cada 100 ms y activar el motor dentro de un plazo máximo garantizado; si no responde a tiempo, el error puede poner en riesgo al paciente.",
+      "pregunta": "¿Qué plataforma de ejecución es la más adecuada?",
+      "opciones": [
+        { "texto": "Aplicación de escritorio en Windows", "explicacion": "Incorrecta. Un sistema operativo de propósito general no garantiza plazos deterministas: el planificador puede retrasar la tarea crítica." },
+        { "texto": "Sistema embebido con un sistema operativo de tiempo real (RTOS)", "explicacion": "Correcta. Un RTOS (por ejemplo, FreeRTOS o Zephyr) ofrece planificación determinista por prioridades, necesaria para sistemas de tiempo real duro como los dispositivos médicos." },
+        { "texto": "Microservicio en la nube", "explicacion": "Incorrecta. La latencia de red y la dependencia de la conectividad hacen imposible garantizar respuestas en 100 ms en un dispositivo crítico." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Plazo garantizado» o «tiempo real duro» + dispositivo dedicado → embebido con RTOS.",
+      "conceptos": ["Sistemas embebidos", "Tiempo real", "RTOS"],
+      "fuentes": [
+        { "recurso": "sommerville-2016", "detalle": "Cap. 21 Ingeniería de software de tiempo real" }
+      ]
+    },
+    {
+      "id": "A3-021",
+      "subarea": "3.5",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Un equipo pequeño quiere publicar su aplicación web en Node.js. Solo desea subir el código y configurar variables de entorno; no quiere instalar ni parchar el sistema operativo ni administrar servidores, y espera que el proveedor escale la aplicación automáticamente.",
+      "pregunta": "¿Qué modelo de servicio en la nube debe contratar?",
+      "opciones": [
+        { "texto": "IaaS (infraestructura como servicio)", "explicacion": "Incorrecta. En IaaS el proveedor entrega máquinas virtuales, red y almacenamiento, pero el cliente administra el sistema operativo, el runtime y los parches." },
+        { "texto": "PaaS (plataforma como servicio)", "explicacion": "Correcta. En PaaS el proveedor administra la infraestructura, el SO y el runtime; el cliente solo despliega su código y su configuración (por ejemplo, Heroku, App Engine o Azure App Service)." },
+        { "texto": "SaaS (software como servicio)", "explicacion": "Incorrecta. SaaS es un software terminado que se consume como servicio (Gmail, Salesforce); no sirve para desplegar una aplicación propia." }
+      ],
+      "correcta": 1,
+      "estrategia": "¿Qué administra el cliente? Todo, desde el SO → IaaS; solo su código → PaaS; nada, solo lo usa → SaaS.",
+      "conceptos": ["Cómputo en la nube", "IaaS / PaaS / SaaS"],
+      "fuentes": [
+        { "recurso": "laudon-2016", "detalle": "Infraestructura de TI y computación en la nube" }
+      ]
+    }
+  ]
+}

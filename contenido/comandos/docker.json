@@ -1,0 +1,18 @@
+{
+  "id": "docker", "nombre": "Docker", "icono": "🐳", "subareas": ["3.3", "3.5"],
+  "descripcion": "Contenedores: empaquetar una aplicación con sus dependencias para que corra igual en cualquier entorno.",
+  "comandos": [
+    { "comando": "docker build -t miapp:1.0 .", "descripcion": "Construye una imagen a partir del Dockerfile de la carpeta actual." },
+    { "comando": "docker run -d -p 8080:3000 --name web miapp:1.0", "descripcion": "Ejecuta un contenedor en segundo plano, mapeando el puerto 8080 del host al 3000 del contenedor." },
+    { "comando": "docker ps -a", "descripcion": "Lista los contenedores (con -a, también los detenidos)." },
+    { "comando": "docker logs -f web", "descripcion": "Muestra la bitácora de un contenedor y la sigue en tiempo real." },
+    { "comando": "docker exec -it web sh", "descripcion": "Abre una terminal dentro de un contenedor en ejecución." },
+    { "comando": "docker stop web / docker rm web", "descripcion": "Detiene / elimina un contenedor." },
+    { "comando": "docker images / docker rmi <imagen>", "descripcion": "Lista / elimina imágenes locales." },
+    { "comando": "docker pull postgres:16", "descripcion": "Descarga una imagen de un registro (Docker Hub)." },
+    { "comando": "docker run -e POSTGRES_PASSWORD=secreto -v datos:/var/lib/postgresql/data postgres:16", "descripcion": "Pasa variables de entorno y monta un volumen para persistir los datos." },
+    { "comando": "docker compose up -d", "descripcion": "Levanta varios servicios definidos en compose.yaml (por ejemplo, app + BD)." },
+    { "comando": "docker compose down", "descripcion": "Detiene y elimina los servicios del compose." },
+    { "comando": "FROM node:22-alpine\nWORKDIR /app\nCOPY . .\nRUN npm ci\nCMD [\"npm\", \"start\"]", "descripcion": "Dockerfile mínimo: imagen base, carpeta de trabajo, copia, instalación y comando de arranque." }
+  ]
+}

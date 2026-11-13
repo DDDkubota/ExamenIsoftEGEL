@@ -1,0 +1,14 @@
+{
+  "id": "github-cli", "nombre": "GitHub CLI (gh)", "icono": "🐙", "subareas": ["3.3"],
+  "descripcion": "Gestiona repositorios, Pull Requests, issues y Actions desde la terminal.",
+  "comandos": [
+    { "comando": "gh auth login", "descripcion": "Inicia sesión en GitHub desde la terminal." },
+    { "comando": "gh repo create <nombre> --public --clone", "descripcion": "Crea un repositorio en tu cuenta y lo clona." },
+    { "comando": "gh repo create <nombre> --template <dueño/repo> --public --clone", "descripcion": "Crea tu propio repositorio a partir de un repositorio plantilla.", "ejemplo": "gh repo create mi-egel --template DDDkubota/ExamenIsoftEGEL --public --clone" },
+    { "comando": "gh repo fork <dueño/repo> --clone", "descripcion": "Hace un fork en tu cuenta y lo clona, con el original configurado como upstream." },
+    { "comando": "gh pr create --fill", "descripcion": "Abre un Pull Request con el título y la descripción tomados de los commits." },
+    { "comando": "gh pr checkout <número>", "descripcion": "Descarga la rama de un Pull Request para revisarla localmente." },
+    { "comando": "gh issue create", "descripcion": "Crea un issue de forma interactiva." },
+    { "comando": "gh run list / gh run watch", "descripcion": "Lista y sigue las ejecuciones de GitHub Actions (CI)." }
+  ]
+}

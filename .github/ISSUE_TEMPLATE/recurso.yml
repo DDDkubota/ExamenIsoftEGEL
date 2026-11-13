@@ -1,0 +1,18 @@
+name: Agregar o corregir un recurso / URL
+description: Propón un libro, artículo, video o URL, o reporta un enlace roto
+labels: [recursos]
+body:
+  - type: textarea
+    id: json
+    attributes:
+      label: Recurso(s)
+      description: Puedes pegar el JSON que genera la app en Biblioteca → «Copiar JSON».
+      render: json
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      multiple: true
+      options: [A1 Análisis, A2 Diseño, A3 Desarrollo, A4 Gestión, L1 Comprensión lectora, L2 Redacción indirecta]

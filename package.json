@@ -1,0 +1,15 @@
+{
+  "name": "examen-isoft-egel",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Guía, simulador y biblioteca para el EGEL Plus ISOFT (Ceneval)",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/servir.mjs",
+    "validar": "node scripts/validar.mjs",
+    "test": "node scripts/validar.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

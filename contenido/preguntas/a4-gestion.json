@@ -1,0 +1,329 @@
+{
+  "temario": "egel-plus-isoft-2026",
+  "area": "A4",
+  "banco": "base",
+  "estimulos": [],
+  "preguntas": [
+    {
+      "id": "A4-001",
+      "subarea": "4.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "El cronograma de un proyecto de software tiene estas actividades (duración en semanas):\nA. Análisis — 3 — sin predecesora\nB. Diseño de la interfaz — 2 — depende de A\nC. Desarrollo del backend — 4 — depende de A\nD. Integración y pruebas — 2 — depende de B y C",
+      "pregunta": "¿Cuál es la duración mínima del proyecto y su ruta crítica?",
+      "opciones": [
+        { "texto": "7 semanas; ruta A-B-D", "explicacion": "Incorrecta. A-B-D suma 7, pero D no puede empezar hasta que termine C (semana 7), así que A-B-D tiene 2 semanas de holgura y no es la ruta crítica." },
+        { "texto": "11 semanas; ruta A-B-C-D", "explicacion": "Incorrecta. B y C son paralelas (las dos dependen solo de A), así que sus duraciones no se suman." },
+        { "texto": "9 semanas; ruta A-C-D", "explicacion": "Correcta. La ruta crítica es la secuencia más larga de actividades dependientes: A(3) + C(4) + D(2) = 9. Un retraso en A, C o D retrasa todo el proyecto." }
+      ],
+      "correcta": 2,
+      "estrategia": "Enumera todas las rutas de inicio a fin, suma sus duraciones y elige la mayor. Las actividades paralelas no se suman.",
+      "conceptos": ["Método de la ruta crítica (CPM)", "Holgura", "Cronograma"],
+      "fuentes": [
+        { "recurso": "kerzner-2022", "detalle": "Network scheduling techniques" },
+        { "recurso": "campo-2013", "detalle": "Planificación temporal" }
+      ]
+    },
+    {
+      "id": "A4-002",
+      "subarea": "4.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "A la mitad de un proyecto, el reporte de valor ganado indica:\nValor planeado (PV) = $100 000\nValor ganado (EV) = $80 000\nCosto real (AC) = $90 000",
+      "pregunta": "¿Cuál es la situación del proyecto?",
+      "opciones": [
+        { "texto": "Va atrasado y por encima del presupuesto", "explicacion": "Correcta. SPI = EV/PV = 0.80 (< 1, atrasado; SV = −$20 000). CPI = EV/AC ≈ 0.89 (< 1, sobrecosto; CV = −$10 000): por cada peso gastado se obtienen 89 centavos de valor." },
+        { "texto": "Va adelantado y por debajo del presupuesto", "explicacion": "Incorrecta. Para ir adelantado se necesitaría EV > PV, y para ir bajo presupuesto, EV > AC. No ocurre ninguna de las dos." },
+        { "texto": "Va atrasado pero por debajo del presupuesto", "explicacion": "Incorrecta. Es cierto que se gastó menos de lo planeado (AC < PV), pero el costo se evalúa contra el valor ganado: AC ($90 000) > EV ($80 000), así que hay sobrecosto." }
+      ],
+      "correcta": 0,
+      "estrategia": "Todo se compara contra EV: SV = EV − PV (cronograma), CV = EV − AC (costo). Índices menores a 1 son malos. El error clásico es comparar AC con PV.",
+      "conceptos": ["Valor ganado (EVM)", "SPI", "CPI"],
+      "fuentes": [
+        { "recurso": "pmbok-7", "detalle": "Dominio de desempeño: Medición" },
+        { "recurso": "kerzner-2022", "detalle": "Earned value measurement" }
+      ]
+    },
+    {
+      "id": "A4-003",
+      "subarea": "4.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Para estimar la duración del módulo de facturación electrónica, el equipo aplica la estimación de tres valores (PERT) con: optimista = 4 días, más probable = 6 días y pesimista = 14 días. Se permite usar calculadora.",
+      "pregunta": "¿Cuál es la duración esperada?",
+      "opciones": [
+        { "texto": "8 días", "explicacion": "Incorrecta. Es el promedio simple (triangular) de los tres valores: (4+6+14)/3 = 8. PERT pondera el valor más probable." },
+        { "texto": "7 días", "explicacion": "Correcta. PERT (beta): E = (O + 4M + P) / 6 = (4 + 24 + 14) / 6 = 42 / 6 = 7 días." },
+        { "texto": "6 días", "explicacion": "Incorrecta. Es solo el valor más probable; ignora el riesgo que representa el escenario pesimista." }
+      ],
+      "correcta": 1,
+      "estrategia": "Memoriza las dos fórmulas: PERT/beta (O+4M+P)/6 y triangular (O+M+P)/3. Los distractores suelen ser la triangular y el valor M.",
+      "conceptos": ["PERT", "Estimación de tres valores"],
+      "fuentes": [
+        { "recurso": "tenstep-2010", "detalle": "Técnicas de estimación" },
+        { "recurso": "gomez-2014", "detalle": "Guía práctica de estimación" }
+      ]
+    },
+    {
+      "id": "A4-004",
+      "subarea": "4.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "En un proyecto de comercio electrónico se identificó el riesgo de que el proveedor de hosting sufra caídas prolongadas durante el Buen Fin. La empresa firma un contrato con un SLA de 99.95% que incluye penalizaciones económicas para el proveedor y, además, contrata un seguro de interrupción de negocio.",
+      "pregunta": "¿Qué estrategia de respuesta al riesgo aplicó?",
+      "opciones": [
+        { "texto": "Mitigar", "explicacion": "Incorrecta. Mitigar sería reducir la probabilidad o el impacto con acciones propias, por ejemplo, desplegar en dos regiones o en dos proveedores." },
+        { "texto": "Aceptar", "explicacion": "Incorrecta. Aceptar implica no actuar, o solo crear una reserva de contingencia." },
+        { "texto": "Transferir", "explicacion": "Correcta. Transferir traslada el impacto (normalmente el financiero) y la responsabilidad a un tercero mediante contratos, seguros o garantías. El riesgo no desaparece, pero su costo lo absorbe otro." }
+      ],
+      "correcta": 2,
+      "estrategia": "Amenazas: evitar (eliminar la causa), transferir (a un tercero: seguro, contrato), mitigar (reducir P o I), aceptar (activa con reserva o pasiva), escalar. «Seguro», «contrato» o «penalización» → transferir.",
+      "conceptos": ["Gestión de riesgos", "Estrategias de respuesta"],
+      "fuentes": [
+        { "recurso": "pmbok-7", "detalle": "Dominio de desempeño: Incertidumbre" },
+        { "recurso": "kerzner-2022", "detalle": "Risk management" }
+      ]
+    },
+    {
+      "id": "A4-005",
+      "subarea": "4.1",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Una fábrica de software tiene un histórico de 40 proyectos con su tamaño en miles de líneas de código (KLOC) y su esfuerzo real. Para un nuevo proyecto, estima su tamaño en KLOC y lo ajusta con multiplicadores de esfuerzo como la experiencia del equipo, la complejidad del producto y las restricciones de tiempo.",
+      "pregunta": "¿Qué modelo de estimación está utilizando?",
+      "opciones": [
+        { "texto": "COCOMO", "explicacion": "Correcta. COCOMO (Boehm) es un modelo algorítmico que estima el esfuerzo como una función del tamaño (KLOC) ajustada por factores de costo o multiplicadores de esfuerzo, calibrada con datos históricos." },
+        { "texto": "Planning Poker", "explicacion": "Incorrecta. Planning Poker es una técnica de consenso por juicio experto con puntos de historia relativos; no usa KLOC ni multiplicadores." },
+        { "texto": "Delphi de banda ancha", "explicacion": "Incorrecta. Wideband Delphi combina estimaciones anónimas de expertos en rondas sucesivas; no es un modelo paramétrico basado en tamaño y factores." }
+      ],
+      "correcta": 0,
+      "estrategia": "Paramétrico/algorítmico (fórmulas con KLOC o puntos de función y factores) → COCOMO. Juicio experto en grupo → Delphi o Planning Poker. Por analogía → comparación con proyectos similares.",
+      "conceptos": ["COCOMO", "Estimación paramétrica", "Juicio experto"],
+      "fuentes": [
+        { "recurso": "garita-cocomo", "detalle": "Propuesta pedagógica de COCOMO" },
+        { "recurso": "usman-2015", "detalle": "Estimación en desarrollo ágil" }
+      ]
+    },
+    {
+      "id": "A4-006",
+      "subarea": "4.2",
+      "formato": "completamiento",
+      "nivel": "sobresaliente",
+      "base": "La revisión 2023 de la norma ISO/IEC 25010 reorganizó el modelo de calidad del producto en nueve características. Una de ellas cambió de nombre para enfatizar la interacción con usuarios diversos, e incorporó la subcaracterística de inclusividad.",
+      "pregunta": "La característica que antes se llamaba «usabilidad» ahora se denomina ________.",
+      "opciones": [
+        { "texto": "flexibilidad", "explicacion": "Incorrecta. «Flexibilidad» es el nuevo nombre de la antigua portabilidad (adaptabilidad, escalabilidad, instalabilidad, reemplazabilidad)." },
+        { "texto": "compatibilidad", "explicacion": "Incorrecta. La compatibilidad (coexistencia, interoperabilidad) ya existía en la versión 2011 y conservó su nombre." },
+        { "texto": "capacidad de interacción", "explicacion": "Correcta. En ISO/IEC 25010:2023 la usabilidad pasa a llamarse capacidad de interacción e incluye, entre otras, reconocimiento de adecuación, aprendizaje, operabilidad, protección contra errores, compromiso del usuario, inclusividad, asistencia al usuario y autodescriptividad." }
+      ],
+      "correcta": 2,
+      "estrategia": "Aprende la lista 2023: adecuación funcional, eficiencia de desempeño, compatibilidad, capacidad de interacción (antes usabilidad), fiabilidad, seguridad, mantenibilidad, flexibilidad (antes portabilidad) y protección/safety (nueva). Algunos materiales viejos aún usan la versión de 2011.",
+      "conceptos": ["ISO/IEC 25010:2023", "Modelo de calidad del producto", "SQuaRE"],
+      "fuentes": [
+        { "recurso": "iso-25010-2023", "detalle": "Cambios de la revisión 2023" },
+        { "recurso": "iso-25002-2024", "detalle": "Visión general del modelo de calidad" }
+      ]
+    },
+    {
+      "id": "A4-007",
+      "subarea": "4.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Una empresa de software tiene procesos documentados y estandarizados para toda la organización. Cada proyecto adapta esos procesos estándar con guías de adaptación (tailoring), aunque todavía no se controlan estadísticamente con métricas.",
+      "pregunta": "¿En qué nivel de madurez de CMMI se encuentra?",
+      "opciones": [
+        { "texto": "Nivel 2 – Gestionado", "explicacion": "Incorrecta. En el nivel 2 los procesos se planean y controlan proyecto por proyecto, pero todavía no hay un estándar común para toda la organización." },
+        { "texto": "Nivel 3 – Definido", "explicacion": "Correcta. En el nivel 3 la organización tiene procesos estándar definidos, que cada proyecto adapta según guías. Es justo lo descrito." },
+        { "texto": "Nivel 4 – Gestionado cuantitativamente", "explicacion": "Incorrecta. El nivel 4 exige controlar los procesos con métricas estadísticas y objetivos cuantitativos de calidad y desempeño, algo que el caso dice que aún no ocurre." }
+      ],
+      "correcta": 1,
+      "estrategia": "1 Inicial (caótico) → 2 Gestionado (por proyecto) → 3 Definido (estándar organizacional) → 4 Cuantitativo (estadística) → 5 En optimización (mejora continua). Busca «por proyecto» vs. «organizacional» vs. «estadístico».",
+      "conceptos": ["CMMI", "Niveles de madurez", "Calidad del proceso"],
+      "fuentes": [
+        { "recurso": "arciniega-2017", "detalle": "Normas y estándares de calidad" },
+        { "recurso": "sanchez-swebok-2012", "detalle": "Calidad del software" }
+      ]
+    },
+    {
+      "id": "A4-008",
+      "subarea": "4.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Una pequeña empresa mexicana de desarrollo con 12 empleados quiere mejorar y evaluar la calidad de sus procesos (gestión de negocio, gestión de proyectos y desarrollo), no la de un producto específico. Busca un modelo pensado para organizaciones de su tamaño y reconocido como norma mexicana.",
+      "pregunta": "¿Qué modelo debe adoptar?",
+      "opciones": [
+        { "texto": "MoProSoft (NMX-I-059-NYCE)", "explicacion": "Correcta. MoProSoft es un modelo de procesos creado en México para pequeñas y medianas empresas de software, y es la base de la familia ISO/IEC 29110 para entidades muy pequeñas. Evalúa la calidad del proceso." },
+        { "texto": "ISO/IEC 25010", "explicacion": "Incorrecta. Es un modelo de calidad del producto de software (características como mantenibilidad o fiabilidad), no de procesos organizacionales." },
+        { "texto": "Heurísticas de Nielsen", "explicacion": "Incorrecta. Son principios para evaluar la usabilidad de interfaces, no la madurez de los procesos." }
+      ],
+      "correcta": 0,
+      "estrategia": "Separa los modelos por objeto de evaluación: proceso (CMMI, MoProSoft, ISO/IEC 29110, ISO 9001, SPICE/ISO 33000), producto (ISO/IEC 25010) y uso (calidad en uso de 25019/25010).",
+      "conceptos": ["MoProSoft", "ISO/IEC 29110", "Calidad del proceso vs. producto"],
+      "fuentes": [
+        { "recurso": "arciniega-2017", "detalle": "Modelos de calidad en México" }
+      ]
+    },
+    {
+      "id": "A4-009",
+      "subarea": "4.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "En las pruebas de sistema de una aplicación de 15 000 líneas de código se registraron 45 defectos. Se permite usar calculadora.",
+      "pregunta": "¿Cuál es la densidad de defectos?",
+      "opciones": [
+        { "texto": "0.3 defectos por KLOC", "explicacion": "Incorrecta. Resulta de dividir mal las unidades (45/150). 15 000 LOC equivalen a 15 KLOC." },
+        { "texto": "30 defectos por KLOC", "explicacion": "Incorrecta. Resulta de multiplicar en lugar de dividir o de usar la escala equivocada." },
+        { "texto": "3 defectos por KLOC", "explicacion": "Correcta. Densidad de defectos = defectos / tamaño = 45 / 15 KLOC = 3 defectos por cada mil líneas de código." }
+      ],
+      "correcta": 2,
+      "estrategia": "Convierte primero las unidades (LOC → KLOC dividiendo entre 1000) y después aplica la fórmula.",
+      "conceptos": ["Métricas de calidad", "Densidad de defectos", "KLOC"],
+      "fuentes": [
+        { "recurso": "pressman-2020", "detalle": "Métricas de calidad del software" }
+      ]
+    },
+    {
+      "id": "A4-010",
+      "subarea": "4.2",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Al terminar el diseño de un sistema de control escolar, el equipo hace una inspección para comprobar que el documento de diseño cumple con la especificación de requerimientos y los estándares de la empresa, sin consultar todavía al usuario final.",
+      "pregunta": "¿Qué actividad de aseguramiento de la calidad está realizando?",
+      "opciones": [
+        { "texto": "Verificación", "explicacion": "Correcta. La verificación responde a «¿estamos construyendo el producto correctamente?»: revisa que cada producto de trabajo cumpla su especificación y los estándares (Boehm)." },
+        { "texto": "Validación", "explicacion": "Incorrecta. La validación responde a «¿estamos construyendo el producto correcto?»: confirma con el usuario que el software satisface sus necesidades reales." },
+        { "texto": "Prueba de aceptación", "explicacion": "Incorrecta. La prueba de aceptación es una forma de validación que se hace con el cliente, normalmente sobre el software ejecutable." }
+      ],
+      "correcta": 0,
+      "estrategia": "Verificación = contra la especificación (producto correctamente). Validación = contra las necesidades del usuario (producto correcto). Si no participa el usuario y se compara con un documento, es verificación.",
+      "conceptos": ["Verificación y validación (V&V)", "Inspecciones", "Aseguramiento de la calidad"],
+      "fuentes": [
+        { "recurso": "sommerville-2016", "detalle": "Cap. 8 Verificación y validación" },
+        { "recurso": "sanchez-swebok-2012", "detalle": "Calidad del software" }
+      ]
+    },
+    {
+      "id": "A4-011",
+      "subarea": "4.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "A la mitad de un Sprint de dos semanas, el gerente comercial le pide directamente a un desarrollador que agregue una funcionalidad «urgente» para un cliente importante. La funcionalidad no está relacionada con el Objetivo del Sprint.",
+      "pregunta": "De acuerdo con la Guía de Scrum 2020, ¿qué debe ocurrir?",
+      "opciones": [
+        { "texto": "Los Developers la agregan de inmediato al Sprint Backlog para no perder al cliente", "explicacion": "Incorrecta. Durante el Sprint no se hacen cambios que pongan en peligro el Objetivo del Sprint, y nadie fuera del Scrum Team dirige el trabajo de los Developers." },
+        { "texto": "Se canaliza al Product Owner, quien la evalúa y la ordena en el Product Backlog", "explicacion": "Correcta. El Product Owner es el responsable de gestionar y ordenar el Product Backlog y la única persona que representa las decisiones sobre el producto. La petición se considera para un Sprint futuro, salvo que el PO decida cancelar el actual." },
+        { "texto": "El Scrum Master cancela el Sprint para atender la petición", "explicacion": "Incorrecta. Solo el Product Owner tiene la autoridad para cancelar un Sprint, y solo cuando su objetivo se vuelve obsoleto." }
+      ],
+      "correcta": 1,
+      "estrategia": "En Scrum, todo lo que afecte «qué se construye» pasa por el Product Owner; el Scrum Master facilita y elimina impedimentos; los Developers deciden «cómo» hacer el trabajo del Sprint.",
+      "conceptos": ["Scrum 2020", "Product Owner", "Objetivo del Sprint", "Product Backlog"],
+      "fuentes": [
+        { "recurso": "scrum-guide-2020", "detalle": "Product Owner; Sprint" }
+      ]
+    },
+    {
+      "id": "A4-012",
+      "subarea": "4.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Al final de cada Sprint, el Scrum Team se reúne para inspeccionar cómo fue el Sprint respecto a las personas, las interacciones, los procesos, las herramientas y su Definición de Terminado, e identifica los cambios más útiles para mejorar su efectividad.",
+      "pregunta": "¿Qué evento de Scrum se describe?",
+      "opciones": [
+        { "texto": "Sprint Review", "explicacion": "Incorrecta. En la Sprint Review se inspecciona el resultado del Sprint (el incremento) con los stakeholders y se adapta el Product Backlog; se enfoca en el producto, no en el proceso del equipo." },
+        { "texto": "Daily Scrum", "explicacion": "Incorrecta. El Daily Scrum es un evento diario de 15 minutos para inspeccionar el progreso hacia el Objetivo del Sprint y adaptar el plan del día." },
+        { "texto": "Sprint Retrospective", "explicacion": "Correcta. La Retrospectiva sirve para planear formas de aumentar la calidad y la efectividad, inspeccionando a las personas, las interacciones, los procesos, las herramientas y la Definición de Terminado. Cierra el Sprint." }
+      ],
+      "correcta": 2,
+      "estrategia": "Review = el «qué» (producto, con stakeholders). Retrospective = el «cómo» (proceso del equipo). Planning = el plan del Sprint. Daily = el plan de las próximas 24 h.",
+      "conceptos": ["Eventos de Scrum", "Retrospectiva", "Mejora continua"],
+      "fuentes": [
+        { "recurso": "scrum-guide-2020", "detalle": "Sprint Retrospective" }
+      ]
+    },
+    {
+      "id": "A4-013",
+      "subarea": "4.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Un equipo de seis programadores desarrolla una app para un cliente cuyos requisitos cambian cada semana. El cliente acepta tener un representante trabajando en sitio con el equipo, y la empresa quiere practicar programación en pares, desarrollo guiado por pruebas (TDD) y entregas pequeñas frecuentes.",
+      "pregunta": "¿Qué metodología se ajusta mejor a estas condiciones?",
+      "opciones": [
+        { "texto": "Programación Extrema (XP)", "explicacion": "Correcta. XP está pensada para equipos pequeños con requisitos cambiantes, y entre sus prácticas incluye al cliente en sitio, la programación en pares, TDD, la integración continua y las entregas pequeñas." },
+        { "texto": "Cascada", "explicacion": "Incorrecta. La cascada supone requisitos estables y definidos al inicio; los cambios semanales la vuelven inviable." },
+        { "texto": "Proceso Unificado Racional (RUP)", "explicacion": "Incorrecta. RUP es iterativo, pero está orientado a la arquitectura y a la documentación, con roles y artefactos formales; no prescribe programación en pares ni cliente en sitio." }
+      ],
+      "correcta": 0,
+      "estrategia": "Las «prácticas técnicas» (pares, TDD, refactorización, cliente en sitio) son la firma de XP. Los roles y eventos (Sprint, PO, Scrum Master) son la de Scrum. El flujo continuo con límites WIP es la de Kanban.",
+      "conceptos": ["XP", "Metodologías ágiles", "TDD", "Programación en pares"],
+      "fuentes": [
+        { "recurso": "wells-xp", "detalle": "Extreme Programming: A gentle introduction" },
+        { "recurso": "gamboa-agil", "detalle": "Método ágil basado en XP, Scrum y OpenUP" }
+      ]
+    },
+    {
+      "id": "A4-014",
+      "subarea": "4.3",
+      "formato": "ordenamiento",
+      "nivel": "satisfactorio",
+      "base": "Una aseguradora usa el Proceso Unificado (RUP) para desarrollar su sistema de pólizas.",
+      "lista": [
+        "1. Construcción",
+        "2. Inicio (concepción)",
+        "3. Transición",
+        "4. Elaboración"
+      ],
+      "pregunta": "¿Cuál es el orden de las fases?",
+      "opciones": [
+        { "texto": "2, 1, 4, 3", "explicacion": "Incorrecta. La arquitectura se estabiliza en la Elaboración, antes de la Construcción." },
+        { "texto": "4, 2, 1, 3", "explicacion": "Incorrecta. El proyecto siempre comienza con la fase de Inicio, en la que se define el alcance y el caso de negocio." },
+        { "texto": "2, 4, 1, 3", "explicacion": "Correcta. Inicio (alcance y caso de negocio) → Elaboración (arquitectura base y mitigación de riesgos) → Construcción (desarrollo del producto) → Transición (despliegue a los usuarios). Cada fase puede tener varias iteraciones." }
+      ],
+      "correcta": 2,
+      "estrategia": "Mnemotecnia «I-E-C-T»: Inicio, Elaboración, Construcción, Transición.",
+      "conceptos": ["RUP", "Fases del Proceso Unificado", "Hitos"],
+      "fuentes": [
+        { "recurso": "booch-up-2008", "detalle": "El proceso unificado de desarrollo de software" },
+        { "recurso": "paredes-2019", "detalle": "Análisis de la metodología RUP" }
+      ]
+    },
+    {
+      "id": "A4-015",
+      "subarea": "4.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "satisfactorio",
+      "base": "Un equipo de soporte y mantenimiento recibe solicitudes de cambio y errores de forma continua e impredecible. Quiere visualizar el flujo de trabajo en un tablero, limitar cuántas tareas hay en cada columna y medir el tiempo de ciclo, sin trabajar con iteraciones de duración fija.",
+      "pregunta": "¿Qué método es el más adecuado?",
+      "opciones": [
+        { "texto": "Scrum", "explicacion": "Incorrecta. Scrum organiza el trabajo en Sprints de duración fija con un Objetivo del Sprint, lo que encaja mal con una demanda continua e impredecible." },
+        { "texto": "Kanban", "explicacion": "Correcta. Kanban visualiza el flujo, limita el trabajo en curso (WIP), gestiona el flujo con métricas como el tiempo de ciclo y el lead time y no requiere iteraciones fijas. Es ideal para soporte y mantenimiento." },
+        { "texto": "Modelo en espiral", "explicacion": "Incorrecta. El modelo en espiral está orientado a proyectos grandes con un análisis de riesgos explícito en cada ciclo, no a gestionar un flujo continuo de solicitudes." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Límites WIP», «flujo continuo» y «tablero» → Kanban. «Iteraciones de duración fija» → Scrum.",
+      "conceptos": ["Kanban", "WIP", "Tiempo de ciclo"],
+      "fuentes": [
+        { "recurso": "garcia-2018", "detalle": "Comparativo de metodologías" }
+      ]
+    },
+    {
+      "id": "A4-016",
+      "subarea": "4.3",
+      "formato": "cuestionamiento-directo",
+      "nivel": "sobresaliente",
+      "base": "Un proveedor de software aeronáutico debe demostrar ante un regulador que cada fase de desarrollo tiene asociada una fase de prueba equivalente: los requerimientos se validan con pruebas de aceptación, el diseño de alto nivel con pruebas de integración del sistema y el diseño detallado con pruebas unitarias.",
+      "pregunta": "¿Qué modelo de proceso refleja explícitamente esta correspondencia?",
+      "opciones": [
+        { "texto": "Modelo incremental", "explicacion": "Incorrecta. El modelo incremental entrega el sistema en partes funcionales sucesivas, pero no establece una correspondencia formal entre cada fase y un nivel de prueba." },
+        { "texto": "Modelo en V", "explicacion": "Correcta. El modelo en V es una variante de la cascada en la que el lado izquierdo (especificación y diseño) se enlaza con el lado derecho (niveles de prueba), lo que facilita la trazabilidad exigida en dominios regulados." },
+        { "texto": "Desarrollo rápido de aplicaciones (RAD)", "explicacion": "Incorrecta. RAD privilegia la velocidad mediante prototipos y componentes reutilizables, no la trazabilidad formal entre diseño y pruebas." }
+      ],
+      "correcta": 1,
+      "estrategia": "«Cada fase tiene su prueba correspondiente» = modelo en V. Cuando la respuesta depende de una sola característica que distingue al modelo, busca esa frase en la base.",
+      "conceptos": ["Modelo en V", "Trazabilidad", "Modelos de proceso"],
+      "fuentes": [
+        { "recurso": "maida-2015", "detalle": "Metodologías de desarrollo de software" },
+        { "recurso": "pressman-2020", "detalle": "Modelos de proceso prescriptivos" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "node-npm", "nombre": "Node.js / npm", "icono": "🟩", "subareas": ["3.1", "3.3", "3.5"],
+  "descripcion": "Entorno de ejecución de JavaScript en el servidor y su gestor de paquetes.",
+  "comandos": [
+    { "comando": "npm init -y", "descripcion": "Crea un package.json con valores por defecto." },
+    { "comando": "npm install <paquete>", "descripcion": "Instala una dependencia y la registra en package.json.", "ejemplo": "npm install express" },
+    { "comando": "npm install -D <paquete>", "descripcion": "Instala una dependencia solo de desarrollo (pruebas, linters)." },
+    { "comando": "npm ci", "descripcion": "Instalación limpia y reproducible a partir de package-lock.json (ideal para CI)." },
+    { "comando": "npm run <script>", "descripcion": "Ejecuta un script definido en package.json.", "ejemplo": "npm run dev" },
+    { "comando": "npm test", "descripcion": "Ejecuta el script de pruebas." },
+    { "comando": "npx <herramienta>", "descripcion": "Ejecuta un paquete sin instalarlo globalmente.", "ejemplo": "npx eslint ." },
+    { "comando": "node archivo.js", "descripcion": "Ejecuta un archivo JavaScript con Node." },
+    { "comando": "npm outdated / npm audit", "descripcion": "Muestra las dependencias desactualizadas / las vulnerabilidades conocidas." },
+    { "comando": "nvm install 22 && nvm use 22", "descripcion": "Instala y selecciona una versión de Node con nvm." }
+  ]
+}

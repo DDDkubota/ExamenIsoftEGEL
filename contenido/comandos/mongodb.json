@@ -1,0 +1,14 @@
+{
+  "id": "mongodb", "nombre": "MongoDB (NoSQL)", "icono": "🍃", "subareas": ["2.2", "3.4"],
+  "descripcion": "Base de datos documental: colecciones de documentos JSON/BSON con esquema flexible.",
+  "comandos": [
+    { "comando": "use escuela", "descripcion": "Selecciona (o crea al insertar) una base de datos." },
+    { "comando": "db.alumnos.insertOne({ nombre: \"Ana\", promedio: 9.4 })", "descripcion": "Inserta un documento en una colección." },
+    { "comando": "db.alumnos.find({ promedio: { $gte: 9 } }, { nombre: 1, _id: 0 })", "descripcion": "Consulta con filtro ($gte = ≥) y proyección (1 incluye, 0 excluye)." },
+    { "comando": "db.alumnos.updateOne({ nombre: \"Ana\" }, { $set: { promedio: 9.6 } })", "descripcion": "Actualiza los campos de un documento con $set." },
+    { "comando": "db.alumnos.deleteMany({ activo: false })", "descripcion": "Elimina los documentos que cumplen el filtro." },
+    { "comando": "db.ventas.aggregate([{ $group: { _id: \"$sucursal\", total: { $sum: \"$monto\" } } }])", "descripcion": "Pipeline de agregación: agrupa y suma (equivalente a GROUP BY)." },
+    { "comando": "db.alumnos.createIndex({ correo: 1 }, { unique: true })", "descripcion": "Crea un índice único sobre un campo." },
+    { "comando": "rs.status()", "descripcion": "Estado del replica set (replicación primario/secundarios)." }
+  ]
+}

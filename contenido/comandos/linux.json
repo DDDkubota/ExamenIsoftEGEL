@@ -1,0 +1,28 @@
+{
+  "id": "linux", "nombre": "Terminal Linux / Bash", "icono": "🐧", "subareas": ["3.3", "3.5"],
+  "descripcion": "Navegación, archivos, procesos, permisos y redes desde la terminal.",
+  "comandos": [
+    { "comando": "pwd", "descripcion": "Muestra la ruta de la carpeta actual." },
+    { "comando": "ls -la", "descripcion": "Lista todos los archivos (incluidos los ocultos) con permisos, tamaño y fecha." },
+    { "comando": "cd <ruta>", "descripcion": "Cambia de carpeta (cd .. sube un nivel; cd ~ va al inicio del usuario)." },
+    { "comando": "mkdir -p a/b/c", "descripcion": "Crea carpetas, incluidas las intermedias." },
+    { "comando": "cp -r origen destino", "descripcion": "Copia archivos o carpetas (-r = recursivo)." },
+    { "comando": "mv origen destino", "descripcion": "Mueve o renombra archivos." },
+    { "comando": "rm -r <carpeta>", "descripcion": "Elimina archivos o carpetas. ¡Sin papelera: úsalo con cuidado!" },
+    { "comando": "cat / less <archivo>", "descripcion": "Muestra el contenido de un archivo (less permite desplazarse)." },
+    { "comando": "head -n 20 / tail -f <archivo>", "descripcion": "Muestra el inicio o el final de un archivo; tail -f sigue una bitácora en tiempo real." },
+    { "comando": "grep -rn \"texto\" .", "descripcion": "Busca texto en los archivos de forma recursiva, con número de línea." },
+    { "comando": "find . -name \"*.js\"", "descripcion": "Busca archivos por nombre o patrón." },
+    { "comando": "chmod 755 script.sh", "descripcion": "Cambia los permisos (rwx para el dueño; rx para el grupo y otros)." },
+    { "comando": "chown usuario:grupo archivo", "descripcion": "Cambia el dueño y el grupo de un archivo." },
+    { "comando": "sudo <comando>", "descripcion": "Ejecuta un comando con privilegios de administrador." },
+    { "comando": "ps aux | grep node", "descripcion": "Lista los procesos y filtra por nombre (la tubería | conecta comandos)." },
+    { "comando": "kill <pid>", "descripcion": "Envía una señal para terminar un proceso (kill -9 lo fuerza)." },
+    { "comando": "top / htop", "descripcion": "Monitorea el uso de CPU y memoria por proceso." },
+    { "comando": "df -h / du -sh *", "descripcion": "Espacio libre en disco / tamaño de cada carpeta." },
+    { "comando": "curl -i https://api.ejemplo.com/salud", "descripcion": "Hace una petición HTTP y muestra los encabezados de la respuesta (útil para probar APIs)." },
+    { "comando": "ssh usuario@servidor", "descripcion": "Abre una sesión remota segura en un servidor." },
+    { "comando": "tar -czf respaldo.tar.gz carpeta/", "descripcion": "Comprime una carpeta en un archivo .tar.gz (-x para extraer)." },
+    { "comando": "echo $PATH / export VAR=valor", "descripcion": "Muestra o define variables de entorno." }
+  ]
+}

@@ -1,0 +1,30 @@
+name: Proponer o corregir una pregunta
+description: Sugiere un reactivo nuevo o reporta un error en uno existente
+labels: [preguntas]
+body:
+  - type: input
+    id: id
+    attributes:
+      label: ID de la pregunta (si es corrección)
+      placeholder: A2-009
+  - type: dropdown
+    id: subarea
+    attributes:
+      label: Subárea
+      options: ["1.1", "1.2", "1.3", "2.1", "2.2", "2.3", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "4.3", "L1 Comprensión lectora", "L2 Redacción indirecta"]
+    validations:
+      required: true
+  - type: textarea
+    id: contenido
+    attributes:
+      label: Pregunta / corrección
+      description: Caso (base), pregunta, 3 opciones, cuál es la correcta y por qué cada una es correcta o incorrecta.
+    validations:
+      required: true
+  - type: textarea
+    id: fuentes
+    attributes:
+      label: Fuentes que lo respaldan
+      description: Libro, página o URL. Las preguntas deben ser ORIGINALES (no copies reactivos reales de Ceneval).
+    validations:
+      required: true

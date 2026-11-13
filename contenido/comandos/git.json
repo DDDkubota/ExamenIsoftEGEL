@@ -1,0 +1,30 @@
+{
+  "id": "git", "nombre": "Git", "icono": "🌿", "subareas": ["3.3"],
+  "descripcion": "Control de versiones distribuido: historial, ramas, integración y colaboración.",
+  "comandos": [
+    { "comando": "git init", "descripcion": "Crea un repositorio nuevo en la carpeta actual." },
+    { "comando": "git clone <url>", "descripcion": "Descarga un repositorio remoto completo con su historial.", "ejemplo": "git clone https://github.com/usuario/proyecto.git" },
+    { "comando": "git status", "descripcion": "Muestra archivos modificados, preparados (staged) y sin seguimiento." },
+    { "comando": "git add <archivo>", "descripcion": "Prepara cambios para el siguiente commit (área de preparación o staging).", "ejemplo": "git add src/app.js" },
+    { "comando": "git commit -m \"mensaje\"", "descripcion": "Registra en el historial los cambios preparados, con un mensaje descriptivo." },
+    { "comando": "git log --oneline --graph", "descripcion": "Muestra el historial compacto con el grafo de ramas." },
+    { "comando": "git diff", "descripcion": "Muestra las diferencias de los cambios aún no preparados (con --staged, las de los preparados)." },
+    { "comando": "git branch <nombre>", "descripcion": "Crea una rama nueva a partir del commit actual." },
+    { "comando": "git switch -c <rama>", "descripcion": "Crea una rama y se cambia a ella (equivale a git checkout -b).", "ejemplo": "git switch -c feature/login" },
+    { "comando": "git merge <rama>", "descripcion": "Integra los cambios de otra rama en la rama actual." },
+    { "comando": "git rebase <rama>", "descripcion": "Reaplica tus commits sobre otra rama para obtener un historial lineal. No lo uses en ramas compartidas ya publicadas." },
+    { "comando": "git pull", "descripcion": "Descarga e integra los cambios del remoto (fetch + merge)." },
+    { "comando": "git fetch", "descripcion": "Descarga los cambios del remoto sin integrarlos." },
+    { "comando": "git push -u origin <rama>", "descripcion": "Publica la rama en el remoto y establece el seguimiento (upstream)." },
+    { "comando": "git revert <commit>", "descripcion": "Crea un commit que deshace otro, sin reescribir el historial. Es seguro en ramas compartidas." },
+    { "comando": "git reset --soft HEAD~1", "descripcion": "Deshace el último commit local y conserva los cambios preparados." },
+    { "comando": "git stash / git stash pop", "descripcion": "Guarda temporalmente los cambios sin commit y después los recupera." },
+    { "comando": "git tag -a v1.0 -m \"versión 1.0\"", "descripcion": "Marca un commit como versión (release)." },
+    { "comando": "git remote -v", "descripcion": "Lista los repositorios remotos configurados." },
+    { "comando": "git remote add upstream <url>", "descripcion": "Agrega el repositorio original (por ejemplo, el de un fork) como remoto adicional." },
+    { "comando": "git cherry-pick <commit>", "descripcion": "Aplica un commit específico de otra rama en la rama actual." },
+    { "comando": "git blame <archivo>", "descripcion": "Muestra quién modificó por última vez cada línea y en qué commit." },
+    { "comando": "git bisect start", "descripcion": "Búsqueda binaria en el historial para encontrar el commit que introdujo un error." },
+    { "comando": "git restore <archivo>", "descripcion": "Descarta los cambios no preparados de un archivo." }
+  ]
+}
