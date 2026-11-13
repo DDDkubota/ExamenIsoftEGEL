@@ -18,10 +18,12 @@
         "preguntas/extendido/a2-diseno.json",
         "preguntas/extendido/a3-desarrollo.json",
         "preguntas/extendido/a4-gestion.json",
-        "preguntas/extendido/lyc-lenguaje.json"
+        "preguntas/extendido/lyc-lenguaje.json",
+        "preguntas/reto/reto.json"
       ],
       "guias": {
         "estrategias": "guias/estrategias.md",
+        "temas-criticos": "guias/temas-criticos.md",
         "1.1": "guias/1.1.md",
         "1.2": "guias/1.2.md",
         "1.3": "guias/1.3.md",

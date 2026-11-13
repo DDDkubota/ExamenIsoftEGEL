@@ -108,6 +108,8 @@ for (const t of manifest.temarios) {
       if (p.formato === "ordenamiento" && !Array.isArray(p.lista)) err(donde, "ordenamiento requiere «lista»");
       if (p.formato === "multirreactivo" && !estimulos.has(p.estimulo)) err(donde, `estímulo «${p.estimulo}» no existe`);
       if (!p.estrategia) aviso(donde, "sin «estrategia» de resolución");
+      if (banco.banco === "reto" && !p.trampa) err(donde, "las preguntas del banco «reto» requieren el campo «trampa»");
+      if (p.trampa !== undefined && typeof p.trampa !== "string") err(donde, "«trampa» debe ser texto");
       if (!p.fuentes?.length) aviso(donde, "sin fuentes");
       for (const f of p.fuentes ?? []) if (f.recurso) (p._refs ??= []).push(f.recurso);
       for (const id of p._refs ?? []) (globalThis.__refs ??= []).push([donde, id]);
